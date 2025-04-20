@@ -1,0 +1,216 @@
+- type: entity
+  name: golden turret toolbox
+  parent: BaseItem
+  id: LeagueToolboxTurretRed
+  description: A solid gold toolbox. A rapper would kill for this.
+  components:
+  - type: Sprite
+    sprite: Objects/Tools/Toolboxes/toolbox_gold.rsi
+    state: icon
+  - type: Item
+    sprite: Objects/Tools/Toolboxes/toolbox_gold.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 100
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 1
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              LeagueTurretDisposableRed:
+                min: 1
+                max: 1
+
+- type: entity
+  name: golden turret toolbox
+  parent: BaseItem
+  id: LeagueToolboxTurretBlue
+  description: A solid gold toolbox. A rapper would kill for this.
+  components:
+  - type: Sprite
+    sprite: Objects/Tools/Toolboxes/toolbox_gold.rsi
+    state: icon
+  - type: Item
+    sprite: Objects/Tools/Toolboxes/toolbox_gold.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 100
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 1
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              LeagueTurretDisposableBlue:
+                min: 1
+                max: 1
+
+- type: entity
+  name: golden turret toolbox
+  parent: BaseItem
+  id: LeagueToolboxTurretYellow
+  description: A solid gold toolbox. A rapper would kill for this.
+  components:
+  - type: Sprite
+    sprite: Objects/Tools/Toolboxes/toolbox_gold.rsi
+    state: icon
+  - type: Item
+    sprite: Objects/Tools/Toolboxes/toolbox_gold.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 100
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 1
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              LeagueTurretDisposableYellow:
+                min: 1
+                max: 1
+
+- type: entity
+  name: golden turret toolbox
+  parent: BaseItem
+  id: LeagueToolboxTurretViolet
+  description: A solid gold toolbox. A rapper would kill for this.
+  components:
+  - type: Sprite
+    sprite: Objects/Tools/Toolboxes/toolbox_gold.rsi
+    state: icon
+  - type: Item
+    sprite: Objects/Tools/Toolboxes/toolbox_gold.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 100
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 1
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              LeagueTurretDisposableViolet:
+                min: 1
+                max: 1
+
+- type: entity
+  parent: BaseWeaponBallisticTurret
+  id: BaseLeagueTurretDisposable
+  name: disposable ballistic turret
+  suffix: base, Disposable
+  components:
+  - type: NpcFactionMember
+    factions:
+    - Syndicate
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 600
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:TriggerBehavior
+  - type: Gun
+    fireRate: 3
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    soundGunshot: /Audio/Weapons/Guns/Gunshots/gun_sentry.ogg
+  - type: BallisticAmmoProvider
+    proto: CartridgePistol
+    capacity: 100
+  - type: Repairable
+    qualityNeeded: "Anchoring"
+    doAfterDelay: 3
+  - type: TriggerWhenEmpty
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 10
+    intensitySlope: 1.5
+    totalIntensity: 30
+    canCreateVacuum: false
+
+- type: entity
+  parent: BaseLeagueTurretDisposable
+  id: LeagueTurretDisposableRed
+  name: disposable ballistic turret
+  suffix: Red
+  components:
+  - type: NpcFactionMember
+    factions:
+    - LeagueRed
+
+- type: entity
+  parent: BaseLeagueTurretDisposable
+  id: LeagueTurretDisposableBlue
+  name: disposable ballistic turret
+  suffix: Blue
+  components:
+  - type: NpcFactionMember
+    factions:
+    - LeagueBlue
+
+- type: entity
+  parent: BaseLeagueTurretDisposable
+  id: LeagueTurretDisposableYellow
+  name: disposable ballistic turret
+  suffix: base, Disposable
+  components:
+  - type: NpcFactionMember
+    factions:
+    - LeagueYellow
+
+- type: entity
+  parent: BaseLeagueTurretDisposable
+  id: LeagueTurretDisposableViolet
+  name: disposable ballistic turret
+  suffix: base, Disposable
+  components:
+  - type: NpcFactionMember
+    factions:
+    - LeagueViolet

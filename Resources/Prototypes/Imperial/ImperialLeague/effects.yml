@@ -1,0 +1,21 @@
+#- type: entity
+#  id: chronoEffectOutLeague
+#  mame: monkey
+#  parent: chronoEffectOut
+#  components:
+#  - type: EmitSoundOnSpawn
+#    sound:
+#      path: /Audio/Imperial/League/ES_Magic_Transition_-_SFX_Producer.ogg
+#  - type: TimedDespawn
+#    lifetime: 12
+
+#- type: entity
+#  id: chronoEffectInLeague
+#  mame: monkey
+#  parent: chronoEffectIn
+#  components:
+#  - type: EmitSoundOnSpawn
+#    sound:
+#      path: /Audio/Imperial/League/ES_Magic_Transition_-_SFX_Producer.ogg
+#  - type: TimedDespawn
+#    lifetime: 12

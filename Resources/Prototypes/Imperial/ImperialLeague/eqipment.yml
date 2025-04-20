@@ -1,0 +1,946 @@
+- type: entity
+  name: AKMS
+  parent: WeaponRifleAk
+  id: WeaponRifleAkLeague
+  description: An iconic weapon of war. Uses .30 rifle ammo.
+  components:
+  - type: Item
+    size: Ginormous
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineLightRifleCaseless
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineLightRifle
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeLightRifleCaseless
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeLightRifle
+#  - type: LeagueWeapon
+
+- type: entity
+  id: CartridgeLightRifleCaseless
+  name: cartridge (.30 rifle)
+  parent: BaseCartridgeLightRifle
+  components:
+  - type: CartridgeAmmo
+    proto: BulletLightRifle
+    deleteOnSpawn: true
+
+- type: entity
+  id: MagazinePistolCaselessRifleLeague
+  name: "magazine (.30 rifle)"
+  parent: MagazinePistolCaselessRifle
+
+- type: entity
+  id: MagazineLightRifleCaseless
+  name: "magazine (.30 rifle)"
+  parent: BaseMagazineLightRifle
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeLightRifleCaseless
+  - type: Sprite
+    layers:
+    - state: red
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+#Glock18MagazinePistol
+
+- type: entity
+  name: glock-18
+  parent: CSWeaponGlock-18
+  id: CSWeaponGlock-18League
+  suffix: CS
+  description: #descriprion
+  components:
+  - type: Sprite
+    sprite: Imperial/Other/CS/Weapon/glock18.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    size: Ginormous
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: Glock18MagazinePistolLeague
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazinePistol
+      gun_chamber:
+        name: Chamber
+        startingItem: #none
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgePistol
+  - type: Gun
+    fireRate: 3.5
+    angleDecay: 45
+    minAngle: 7
+    maxAngle: 35
+    cameraRecoilScalar: 10
+    angleIncrease: 5
+#  - type: LeagueWeapon
+  - type: AmmoCounter
+
+- type: entity
+  id: Glock18MagazinePistolLeague
+  name: glock18 magazine (.35 auto)
+  parent: BaseMagazinePistol
+  suffix: CS
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 17
+    proto: CartridgePistolLeague
+    whitelist:
+      tags:
+        - CartridgePistol
+  - type: Sprite
+    sprite: Imperial/Other/CS/Ammunition/glock18_mag.rsi
+    layers:
+    - state: red
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 6
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: CartridgePistolLeague
+  name: cartridge (.35 auto)
+  parent: BaseCartridgePistol
+  components:
+  - type: CartridgeAmmo
+    proto: BulletPistol
+    deleteOnSpawn: true
+
+- type: entity
+  name: MP5
+  parent: CSWeaponMP5
+  id: CSWeaponMP5League
+  suffix: CS
+  description: Not the most reliable German. It happens?
+  components:
+  - type: Item
+    size: Ginormous
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: mp5-MagazineLeague
+        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazinePistolSubMachineGun
+      gun_chamber:
+        name: Chamber
+        startingItem: #none
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgePistol
+  - type: Gun
+    fireRate: 8
+    angleDecay: 45
+    minAngle: 5
+    maxAngle: 45
+    cameraRecoilScalar: 10
+    angleIncrease: 6
+#  - type: LeagueWeapon
+
+- type: entity
+  id: mp5-MagazineLeague
+  mame: SMG magazine (.35 auto)
+  parent: mp5-Magazine
+  suffix: CS
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 28
+    proto: CartridgePistolLeague
+    whitelist:
+      tags:
+        - CartridgePistol
+
+- type: entity
+  name: energy sword
+  parent: EnergySword
+  id: EnergySwordLeague
+  description: A very loud & dangerous sword with a beam made of pure, concentrated plasma. Cuts through unarmored targets like butter.
+  components:
+  - type: DisarmMalus
+    malus: 0
+
+- type: entity
+  name: usp-s
+  id: CSWeaponUSP-SLeague
+  parent: WeaponPistolCobra
+  suffix: CS
+  description: Pew-Pew, fourty seven.
+  components:
+  - type: Item
+    size: Ginormous
+  - type: Sprite
+    sprite: Imperial/Other/CS/Weapon/usp_s.rsi
+  - type: ChamberMagazineAmmoProvider
+    boltClosed: false
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistolCaselessRifleLeague
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazinePistolCaselessRifle
+      gun_chamber:
+        name: Chamber
+        startingItem: #none
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeCaselessRifle
+  - type: Gun
+    fireRate: 2.85
+#  - type: LeagueWeapon
+  - type: AmmoCounter
+
+
+- type: entity
+  parent: ClothingBeltStorageBase
+  id: ClothingBeltSonaLeague
+  name: league sona belt
+  description: The standard security belt of the S-o.N.A. AI Dynamics corporation. Buyed for a league.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: Imperial/Other/Sona/Belt.rsi
+  - type: Clothing
+    sprite: Imperial/Other/Sona/Belt.rsi
+  - type: Storage
+    maxItemSize: Huge
+  - type: Appearance
+  - type: Unremoveable
+
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackSatchelLeague
+  name: league satchel
+  description: uwu
+  components:
+  - type: Unremoveable
+
+- type: entity
+  parent: ClothingUniformJumpsuitOperative
+  id: ClothingUniformJumpsuitOperativeLeague
+  name: league operative jumpsuit
+  description: uwu
+  components:
+  - type: Unremoveable
+
+- type: entity
+  parent: ClothingShoesBootsCombatFilled
+  id: ClothingShoesBootsCombatFilledLeague
+  name: league combat boots
+  description: uwu
+  components:
+  - type: Unremoveable
+
+- type: entity
+  parent: ClothingHandsGlovesCombat
+  id: ClothingHandsGlovesCombatLeague
+  name: league combat gloves
+  description: uwu
+  components:
+  - type: Unremoveable
+
+- type: entity
+  parent: GrenadeShrapnel
+  id: GrenadeShrapnelLeague
+  name: shrapnel grenade
+  description: Releases a deadly spray of shrapnel that causes severe bleeding.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Grenades/shrapnelgrenade.rsi
+    layers:
+    - state: icon
+      map: ["enum.TriggerVisualLayers.Base"]
+
+- type: entity
+  name: medicated suture
+  description: A suture soaked in medicine, treats blunt-force trauma effectively and closes wounds.
+  parent: BaseHealingItem
+  id: MedicatedSutureLeague
+  suffix: Full
+  components:
+  - type: Tag
+    tags:
+    - Brutepack
+  - type: Sprite
+    state: medicated-suture
+  - type: Item
+    heldPrefix: medicated-suture
+    storedRotation: -90
+  - type: Healing
+    damageContainers:
+      - Biological
+    damage:
+      #groups:
+      #  Brute: -30 # 10 for each type in the group
+      types:
+        Piercing: -50
+        Blunt: -50
+        Slash: -50
+        Heat: -50
+        Poison: -50
+        Asphyxiation: -50
+    #bloodlossModifier: -10 # a suture should stop ongoing bleeding
+    healingBeginSound:
+      path: "/Audio/Items/Medical/brutepack_begin.ogg"
+    healingEndSound:
+      path: "/Audio/Items/Medical/brutepack_end.ogg"
+  #- type: StackPrice
+  #  price: 20
+
+- type: entity
+  name: Hristov
+  parent: BaseWeaponSniper
+  id: WeaponSniperHristovLeague
+  description: A portable anti-materiel rifle. Fires armor piercing 14.5mm shells. Uses .60 anti-materiel ammo.
+  components:
+  - type: Item
+    size: Ginormous
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Snipers/heavy_sniper.rsi
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Snipers/heavy_sniper.rsi
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - CartridgeAntiMateriel
+    capacity: 5
+    proto: CartridgeAntiMaterielLeague
+#  - type: LeagueWeapon
+
+- type: entity
+  parent: BaseCartridge
+  id: CartridgeAntiMaterielLeague
+  name: cartridge (.60 anti-materiel)
+  components:
+  - type: Tag
+    tags:
+    - Cartridge
+    - CartridgeAntiMateriel
+  - type: CartridgeAmmo
+    deleteOnSpawn: true
+    proto: BulletAntiMaterielLeague
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/large_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 20
+
+- type: entity
+  noSpawn: true
+  parent: BaseBullet
+  id: BulletAntiMaterielLeague
+  name: bullet (.60 anti-materiel)
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 86
+        Structural: 30
+  - type: StaminaDamageOnCollide
+    damage: 35
+
+- type: entity
+  parent: PowerCellMedium
+  id: PowerCellMediumLeague
+  name: power cell
+
+- type: entity
+  parent: WeaponLaserSvalinn
+  id: WeaponLaserSvalinnLeague
+  name: ba
+  components:
+  - type: Item
+    size: Ginormous
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: PowerCellMediumLeague
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        whitelist:
+          tags:
+            - PowerCell
+            - PowerCellSmall
+#  - type: LeagueWeapon
+  - type: AmmoCounter
+  - type: HitscanBatteryAmmoProvider
+    proto: RedMediumLaser
+    fireCost: 62.5
+
+- type: entity
+  name: StormTrooper
+  parent: BaseWeaponShotgun
+  id: WeaponShotgunStormTrooperTGMCSBLeague
+  description: It's a magazine-fed shotgun designed for close quarters combat. Uses .50 shotgun shells.
+  components:
+  - type: Sprite
+    sprite: Imperial/SpecialUnits/RCU/Weapones/UTS-15/icon.rsi
+  - type: Item
+    sprite: Imperial/SpecialUnits/RCU/Weapones/UTS-15/inhand.rsi
+    size: Ginormous
+  - type: AmmoCounter
+  - type: Gun
+    fireRate: 1.6
+    projectileSpeed: 25
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/empty.ogg
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - ShellShotgun
+  - type: Appearance
+  - type: StaticPrice
+    price: 500
+#  - type: LeagueWeapon
+
+- type: entity
+  id: BaseMagazineShotgunStormTrooperTGMCLeague
+  name: ammo drum (.50 shells)
+  parent: BaseMagazineRifle
+  components:
+  - type: Tag
+    tags:
+    - BaseMagazineShotgunStormTrooperTGMC
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - ShellShotgun
+    proto: ShellShotgunLeague
+    capacity: 10
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/smg_cock.ogg
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Magazine/Shotgun/m12.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: ShellShotgunLeague
+  name: shell (.50)
+  parent: ShellShotgunImprovised
+  components:
+  - type: Sprite
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: CartridgeAmmo
+    #proto: PelletShotgun
+    deleteOnSpawn: true
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitLeagueLightBase
+  name: syndicate elite hardsuit
+  description: An elite version of the blood-red hardsuit, with improved mobility and fireproofing. Property of Gorlex Marauders.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Hardsuits/syndieelite.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Hardsuits/syndieelite.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.02
+    lowPressureMultiplier: 1000
+  - type: TemperatureProtection
+    coefficient: 0.001
+  - type: ExplosionResistance
+    damageCoefficient: 0.85
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.6
+        Heat: 0.6
+        Stamina: 0.6 ## Stamina resistance
+  - type: Item
+    size: Huge
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitLeagueLightBase
+
+- type: entity
+  parent: ClothingOuterHardsuitLeagueLightBase
+  id: ClothingOuterHardsuitLeagueLightBlue
+  name: syndicate elite hardsuit
+  description: An elite version of the blood-red hardsuit, with improved mobility and fireproofing. Property of Gorlex Marauders.
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/Armor/LightArmor/blue.rsi
+  - type: Clothing
+    sprite: Imperial/ImperialLeague/Armor/LightArmor/blue.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitLeagueLightBlue
+
+- type: entity
+  parent: ClothingOuterHardsuitLeagueLightBase
+  id: ClothingOuterHardsuitLeagueLightRed
+  name: syndicate elite hardsuit
+  description: An elite version of the blood-red hardsuit, with improved mobility and fireproofing. Property of Gorlex Marauders.
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/Armor/LightArmor/red.rsi
+  - type: Clothing
+    sprite: Imperial/ImperialLeague/Armor/LightArmor/red.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitLeagueLightRed
+
+- type: entity
+  parent: ClothingOuterHardsuitLeagueLightBase
+  id: ClothingOuterHardsuitLeagueLightViolet
+  name: syndicate elite hardsuit
+  description: An elite version of the blood-red hardsuit, with improved mobility and fireproofing. Property of Gorlex Marauders.
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/Armor/LightArmor/violet.rsi
+  - type: Clothing
+    sprite: Imperial/ImperialLeague/Armor/LightArmor/violet.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitLeagueLightViolet
+
+- type: entity
+  parent: ClothingOuterHardsuitLeagueLightBase
+  id: ClothingOuterHardsuitLeagueLightYellow
+  name: syndicate elite hardsuit
+  description: An elite version of the blood-red hardsuit, with improved mobility and fireproofing. Property of Gorlex Marauders.
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/Armor/LightArmor/yellow.rsi
+  - type: Clothing
+    sprite: Imperial/ImperialLeague/Armor/LightArmor/yellow.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitLeagueLightYellow
+
+- type: entity
+  parent: ClothingOuterHardsuitLeagueHeavyBase
+  id: ClothingOuterHardsuitLeagueHeavyBlue
+  name: syndicate elite hardsuit
+  description: An elite version of the blood-red hardsuit, with improved mobility and fireproofing. Property of Gorlex Marauders.
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/Armor/HeavyArmor/blue.rsi
+  - type: Clothing
+    sprite: Imperial/ImperialLeague/Armor/HeavyArmor/blue.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitLeagueHeavyBlue
+
+- type: entity
+  parent: ClothingOuterHardsuitLeagueHeavyBase
+  id: ClothingOuterHardsuitLeagueHeavyRed
+  name: syndicate elite hardsuit
+  description: An elite version of the blood-red hardsuit, with improved mobility and fireproofing. Property of Gorlex Marauders.
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/Armor/HeavyArmor/red.rsi
+  - type: Clothing
+    sprite: Imperial/ImperialLeague/Armor/HeavyArmor/red.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitLeagueHeavyRed
+
+- type: entity
+  parent: ClothingOuterHardsuitLeagueHeavyBase
+  id: ClothingOuterHardsuitLeagueHeavyViolet
+  name: syndicate elite hardsuit
+  description: An elite version of the blood-red hardsuit, with improved mobility and fireproofing. Property of Gorlex Marauders.
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/Armor/HeavyArmor/violet.rsi
+  - type: Clothing
+    sprite: Imperial/ImperialLeague/Armor/HeavyArmor/violet.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitLeagueHeavyViolet
+
+- type: entity
+  parent: ClothingOuterHardsuitLeagueHeavyBase
+  id: ClothingOuterHardsuitLeagueHeavyYellow
+  name: syndicate elite hardsuit
+  description: An elite version of the blood-red hardsuit, with improved mobility and fireproofing. Property of Gorlex Marauders.
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/Armor/HeavyArmor/yellow.rsi
+  - type: Clothing
+    sprite: Imperial/ImperialLeague/Armor/HeavyArmor/yellow.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitLeagueHeavyYellow
+
+
+
+- type: entity
+  parent: ClothingOuterHardsuitLeagueLightBase
+  id: ClothingOuterHardsuitLeagueHeavyBase
+  name: syndicate elite hardsuit
+  description: An elite version of the blood-red hardsuit, with improved mobility and fireproofing. Property of Gorlex Marauders.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ExplosionResistance
+    damageCoefficient: 0.55
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.4
+        Slash: 0.4
+        Piercing: 0.4
+        Heat: 0.4
+        Stamina: 0.4 ## Stamina resistance
+  - type: ClothingSpeedModifier
+    walkModifier: 0.8
+    sprintModifier: 0.8
+
+- type: entity
+  id: ClothingHeadHelmetHardsuitLeagueHeavyBase
+  name: syndicate elite helmet
+  description: An elite version of the blood-red hardsuit's helmet, with improved armor and fireproofing. Property of Gorlex Marauders.
+  parent: ClothingHeadHelmetHardsuitLeagueLightBase
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+
+- type: entity
+  parent: ClothingHeadHelmetHardsuitLeagueHeavyBase
+  id: ClothingHeadHelmetHardsuitLeagueHeavyBlue
+  name: syndicate elite helmet
+  description: An elite version of the blood-red hardsuit's helmet, with improved armor and fireproofing. Property of Gorlex Marauders.
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/Armor/HeavyHelmets/blue.rsi
+  - type: Clothing
+    sprite: Imperial/ImperialLeague/Armor/HeavyHelmets/blue.rsi
+
+- type: entity
+  parent: ClothingHeadHelmetHardsuitLeagueHeavyBase
+  id: ClothingHeadHelmetHardsuitLeagueHeavyRed
+  name: syndicate elite helmet
+  description: An elite version of the blood-red hardsuit's helmet, with improved armor and fireproofing. Property of Gorlex Marauders.
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/Armor/HeavyHelmets/red.rsi
+  - type: Clothing
+    sprite: Imperial/ImperialLeague/Armor/HeavyHelmets/red.rsi
+
+- type: entity
+  parent: ClothingHeadHelmetHardsuitLeagueHeavyBase
+  id: ClothingHeadHelmetHardsuitLeagueHeavyViolet
+  name: syndicate elite helmet
+  description: An elite version of the blood-red hardsuit's helmet, with improved armor and fireproofing. Property of Gorlex Marauders.
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/Armor/HeavyHelmets/violet.rsi
+  - type: Clothing
+    sprite: Imperial/ImperialLeague/Armor/HeavyHelmets/violet.rsi
+
+- type: entity
+  parent: ClothingHeadHelmetHardsuitLeagueHeavyBase
+  id: ClothingHeadHelmetHardsuitLeagueHeavyYellow
+  name: syndicate elite helmet
+  description: An elite version of the blood-red hardsuit's helmet, with improved armor and fireproofing. Property of Gorlex Marauders.
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/Armor/HeavyHelmets/yellow.rsi
+  - type: Clothing
+    sprite: Imperial/ImperialLeague/Armor/HeavyHelmets/yellow.rsi
+
+
+- type: entity
+  parent: ClothingHeadHelmetHardsuitLeagueLightBase
+  id: ClothingHeadHelmetHardsuitLeagueLightBlue
+  name: syndicate elite helmet
+  description: An elite version of the blood-red hardsuit's helmet, with improved armor and fireproofing. Property of Gorlex Marauders.
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/Armor/LightHelmets/blue.rsi
+  - type: Clothing
+    sprite: Imperial/ImperialLeague/Armor/LightHelmets/blue.rsi
+
+- type: entity
+  parent: ClothingHeadHelmetHardsuitLeagueLightBase
+  id: ClothingHeadHelmetHardsuitLeagueLightRed
+  name: syndicate elite helmet
+  description: An elite version of the blood-red hardsuit's helmet, with improved armor and fireproofing. Property of Gorlex Marauders.
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/Armor/LightHelmets/red.rsi
+  - type: Clothing
+    sprite: Imperial/ImperialLeague/Armor/LightHelmets/red.rsi
+
+- type: entity
+  parent: ClothingHeadHelmetHardsuitLeagueLightBase
+  id: ClothingHeadHelmetHardsuitLeagueLightViolet
+  name: syndicate elite helmet
+  description: An elite version of the blood-red hardsuit's helmet, with improved armor and fireproofing. Property of Gorlex Marauders.
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/Armor/LightHelmets/violet.rsi
+  - type: Clothing
+    sprite: Imperial/ImperialLeague/Armor/LightHelmets/violet.rsi
+
+- type: entity
+  parent: ClothingHeadHelmetHardsuitLeagueLightBase
+  id: ClothingHeadHelmetHardsuitLeagueLightYellow
+  name: syndicate elite helmet
+  description: An elite version of the blood-red hardsuit's helmet, with improved armor and fireproofing. Property of Gorlex Marauders.
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/Armor/LightHelmets/yellow.rsi
+  - type: Clothing
+    sprite: Imperial/ImperialLeague/Armor/LightHelmets/yellow.rsi
+
+- type: entity
+  id: ClothingHeadHelmetHardsuitLeagueLightBase
+  name: syndicate elite helmet
+  description: An elite version of the blood-red hardsuit's helmet, with improved armor and fireproofing. Property of Gorlex Marauders.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: Clothing/Head/Hardsuits/syndieelite.rsi
+    layers:
+    - state: icon
+    - state: icon-flash
+      visible: false
+      map: [ "light" ]
+    state: icon
+  - type: Clothing
+    equippedPrefix: off
+    sprite: Clothing/Head/Hardsuits/syndieelite.rsi
+    equipSound: /Audio/Mecha/mechmove03.ogg
+    unequipSound: /Audio/Mecha/mechmove03.ogg
+    quickEquip: false
+    slots: [ HEAD ]
+  - type: PointLight
+    enabled: false
+    radius: 3
+    energy: 2
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+    netsync: false
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
+  - type: TemperatureProtection
+    coefficient: 0.005
+  #- type: Armor
+  #  modifiers:
+  #    coefficients:
+  #      Blunt: 0.9
+  #      Slash: 0.9
+  #      Piercing: 0.9
+  #      Heat: 0.9
+  - type: ToggleableLightVisuals
+  - type: Appearance
+  - type: HandheldLight
+    addPrefix: true
+    blinkingBehaviourId: blinking
+    radiatingBehaviourId: radiating
+  - type: LightBehaviour
+    behaviours:
+      - !type:FadeBehaviour
+        id: radiating
+        interpolate: Linear
+        maxDuration: 2.0
+        startValue: 3.0
+        endValue: 2.0
+        isLooped: true
+        reverseWhenFinished: true
+      - !type:PulseBehaviour
+        id: blinking
+        interpolate: Nearest
+        maxDuration: 1.0
+        minValue: 0.1
+        maxValue: 2.0
+        isLooped: true
+  - type: Battery
+    maxCharge: 600
+    startingCharge: 600
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 2
+  - type: Clickable
+  - type: InteractionOutline
+    antihypo: true # imperial anti hypo thing
+  - type: GroupExamine
+  - type: Tag
+    tags:
+    - HidesHair
+    - WhitelistChameleon
+    - HidesNose
+
+- type: entity
+  parent: ClothingUniformJumpsuitOperativeLeague
+  id: ClothingUniformJumpsuitLeagueBlue
+  name: shit cloth
+  description: hoho
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/Jumpsuits/blue.rsi
+  - type: Clothing
+    sprite: Imperial/ImperialLeague/Jumpsuits/blue.rsi
+
+- type: entity
+  parent: ClothingUniformJumpsuitOperativeLeague
+  id: ClothingUniformJumpsuitLeagueRed
+  name: shit cloth
+  description: hoho
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/Jumpsuits/red.rsi
+  - type: Clothing
+    sprite: Imperial/ImperialLeague/Jumpsuits/red.rsi
+
+- type: entity
+  parent: ClothingUniformJumpsuitOperativeLeague
+  id: ClothingUniformJumpsuitLeagueYellow
+  name: shit cloth
+  description: hoho
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/Jumpsuits/yellow.rsi
+  - type: Clothing
+    sprite: Imperial/ImperialLeague/Jumpsuits/yellow.rsi
+
+- type: entity
+  parent: ClothingUniformJumpsuitOperativeLeague
+  id: ClothingUniformJumpsuitLeagueViolet
+  name: shit cloth
+  description: hoho
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/Jumpsuits/violet.rsi
+  - type: Clothing
+    sprite: Imperial/ImperialLeague/Jumpsuits/violet.rsi
+
+- type: entity
+  name: soaplet
+  id: SoapletSyndieLeague
+  noSpawn: true
+  parent: Soap
+  description: A tiny piece of syndicate soap.
+  components:
+  - type: Sprite
+    layers:
+    - state: syndie-soaplet
+  - type: Slippery
+    paralyzeTime: 1.5
+    launchForwardsMultiplier: 2.5
+  - type: StepTrigger
+    intersectRatio: 0.04
+  - type: Item
+    heldPrefix: syndie
+  - type: Fixtures
+    fixtures:
+      slips:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.08,-0.06,0.08,0.06"
+        layer:
+        - SlipLayer
+        hard: false
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.08,-0.06,0.08,0.06"
+        density: 1
+        mask:
+        - ItemMask
+  - type: DeleteOnTrigger
+  - type: EmitSoundOnTrigger
+    sound:
+      path: "/Audio/Effects/Fluids/splat.ogg"
+      params:
+        volume: -20
+
+- type: entity
+  parent: SlipocalypseClusterSoap
+  id: SlipocalypseClusterSoapLeague
+  name: slipocalypse clustersoap
+  description: Spreads small pieces of syndicate soap over an area upon landing on the floor.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Janitorial/soap.rsi
+    layers:
+    - state: syndie-4
+
+- type: entity
+  name: double-barreled shotgun
+  parent: WeaponShotgunDoubleBarreled
+  id: WeaponShotgunDoubleBarreledLeague
+  description: An immortal classic. Uses .50 shotgun shells.
+  suffix: Non-Lethal
+  components:
+  - type: BallisticAmmoProvider
+    proto: ShellShotgunLeague
+  - type: Gun
+    fireRate: 2
+    projectileSpeed: 25
+#  - type: LeagueWeapon

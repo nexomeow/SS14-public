@@ -1,0 +1,239 @@
+- type: entity
+  id: BaseLeagueVendingMachine
+  parent: BaseMachinePowered
+  name: vending machine
+  description: Just add capitalism!
+  abstract: true
+  components:
+  - type: StationAiWhitelist
+  - type: AmbientOnPowered
+  - type: AmbientSound
+    volume: -9
+    range: 3
+    enabled: false
+    sound:
+      path: /Audio/Ambience/Objects/vending_machine_hum.ogg
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/empty.rsi
+    snapCardinals: true
+  - type: Physics
+    bodyType: Static
+  - type: Transform
+    noRot: true
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.45,0.25,0.45"
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+        density: 200
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Breakage"]
+      - !type:EjectVendorItems
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel1:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalGlassBreak
+  - type: Repairable
+    doAfterDelay: 8
+  - type: ActivatableUIRequiresPower
+  - type: WiresPanel
+  - type: Anchorable
+  - type: TypingIndicator
+    proto: robot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Vending
+  - type: SpookySpeaker
+    messageSet: SpookySpeakerMessagesGeneric
+    speakChance: 0.2
+  - type: IntrinsicRadioReceiver
+  - type: ActiveRadio
+    channels:
+    - Common
+  - type: DoAfter
+  - type: Electrified
+    enabled: false
+    usesApcPower: true
+  - type: PointLight
+    enabled: false
+    castShadows: false
+    radius: 1.5
+  - type: LitOnPowered
+  - type: ApcPowerReceiver
+    powerLoad: 200
+  - type: Actions
+  - type: SentienceTarget
+    flavorKind: station-event-random-sentience-flavor-mechanical
+    weight: 0.025 # fuck you in particular (it now needs 40 vending machines to be as likely as 1 interesting animal)
+  - type: StaticPrice
+    price: 100
+  - type: Appearance
+  - type: WiresVisuals
+
+- type: entity
+  id: VendingMachineLeague
+  parent: BaseLeagueVendingMachine
+  name: vending machine
+  description: Just add capitalism!
+  abstract: true
+  components:
+  - type: StaticPrice
+    price: 100000
+  - type: UserInterface
+    interfaces:
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+  - type: ActivatableUI
+    key: enum.StoreUiKey.Key
+
+- type: entity
+  parent: VendingMachineLeague
+  id: VendingMachineLeagueBlue
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/VendingMachines/blue.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Store
+    categories:
+    - LeagueWeapon
+    - LeagueClothing
+    - LeagueMedicine
+    - LeagueAmmo
+    - LeagueArmorBlue
+    currencyWhitelist:
+    - ImperCoin
+    balance:
+      ImperCoin: 20
+
+- type: entity
+  parent:  VendingMachineLeague
+  id: VendingMachineLeagueRed
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/VendingMachines/red.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Store
+    categories:
+    - LeagueWeapon
+    - LeagueClothing
+    - LeagueMedicine
+    - LeagueAmmo
+    - LeagueArmorRed
+    currencyWhitelist:
+    - ImperCoin
+    balance:
+      ImperCoin: 20
+
+- type: entity
+  parent: VendingMachineLeague
+  id: VendingMachineLeagueYellow
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/VendingMachines/yellow.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Store
+    categories:
+    - LeagueWeapon
+    - LeagueClothing
+    - LeagueMedicine
+    - LeagueAmmo
+    - LeagueArmorYellow
+    currencyWhitelist:
+    - ImperCoin
+    balance:
+      ImperCoin: 20
+
+- type: entity
+  parent: VendingMachineLeague
+  id: VendingMachineLeagueViolet
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/VendingMachines/violet.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Store
+    categories:
+    - LeagueWeapon
+    - LeagueClothing
+    - LeagueMedicine
+    - LeagueAmmo
+    - LeagueArmorViolet
+    currencyWhitelist:
+    - ImperCoin
+    balance:
+      ImperCoin: 20
+
+- type: entity
+  parent: VendingMachineLeague
+  id: VendingMachineLeagueCenter
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/VendingMachines/center.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Store
+    categories:
+    - LeagueWeapon
+    - LeagueClothing
+    - LeagueMedicine
+    - LeagueAmmo
+    - LeagueArmorCenter
+    currencyWhitelist:
+    - ImperCoin
+    balance:
+      ImperCoin: 20
+

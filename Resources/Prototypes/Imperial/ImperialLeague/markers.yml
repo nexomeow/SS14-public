@@ -1,0 +1,259 @@
+- type: entity
+  id: LeagueRespawnPointRed
+  parent: MarkerBase
+  name: league red spawn point
+  components:
+    - type: Sprite
+      netsync: false
+      sprite: Markers/jobs.rsi
+      state: ertleadereva
+#    - type: LeagueRespawnPoint
+#      team: red
+
+- type: entity
+  id: LeagueRespawnPointGreen
+  parent: MarkerBase
+  name: league green spawn point
+  components:
+    - type: Sprite
+      netsync: false
+      sprite: Markers/jobs.rsi
+      state: ertleadereva
+#    - type: LeagueRespawnPoint
+#      team: violet
+
+- type: entity
+  id: LeagueRespawnPointBlue
+  parent: MarkerBase
+  name: league blue spawn point
+  components:
+    - type: Sprite
+      netsync: false
+      sprite: Markers/jobs.rsi
+      state: ertleadereva
+#    - type: LeagueRespawnPoint
+#      team: blue
+
+- type: entity
+  id: LeagueRespawnPointYellow
+  parent: MarkerBase
+  name: league yellow spawn point
+  components:
+    - type: Sprite
+      netsync: false
+      sprite: Markers/jobs.rsi
+      state: ertleadereva
+#    - type: LeagueRespawnPoint
+#      team: yellow
+
+- type: entity
+  id: LeagueFlagPointRed
+  parent: MarkerBase
+  name: league red spawn point
+  components:
+    - type: Sprite
+      netsync: false
+      sprite: Markers/jobs.rsi
+      state: ertleadereva
+#    - type: LeagueFlagPoint
+#      team: red
+#      warningFlagStolen: league-flag-stolen-red
+#      warningFlagReturn: league-flag-return-red
+
+- type: entity
+  id: LeagueFlagPointGreen
+  parent: MarkerBase
+  name: league green spawn point
+  components:
+    - type: Sprite
+      netsync: false
+      sprite: Markers/jobs.rsi
+      state: ertleadereva
+#    - type: LeagueFlagPoint
+#      team: violet
+#      warningFlagStolen: league-flag-stolen-violet
+#      warningFlagReturn: league-flag-return-violet
+
+- type: entity
+  id: LeagueFlagPointBlue
+  parent: MarkerBase
+  name: league blue spawn point
+  components:
+    - type: Sprite
+      netsync: false
+      sprite: Markers/jobs.rsi
+      state: ertleadereva
+#    - type: LeagueFlagPoint
+#      team: blue
+#      warningFlagStolen: league-flag-stolen-blue
+#      warningFlagReturn: league-flag-return-blue
+
+- type: entity
+  id: LeagueFlagPointYellow
+  parent: MarkerBase
+  name: league yellow spawn point
+  components:
+    - type: Sprite
+      netsync: false
+      sprite: Markers/jobs.rsi
+      state: ertleadereva
+#    - type: LeagueFlagPoint
+#      team: yellow
+#      warningFlagStolen: league-flag-stolen-yellow
+#      warningFlagReturn: league-flag-return-yellow
+# red
+- type: entity
+  id: LeagueFlagTrackerRedBlue
+  parent: MarkerBase
+  name: monkey
+  components:
+    - type: Sprite
+      netsync: false
+      sprite: Markers/jobs.rsi
+      state: ertleadereva
+#    - type: LeagueFlagTracker
+#      team: red
+#      stolenFlag: blue
+
+- type: entity
+  id: LeagueFlagTrackerRedYellow
+  parent: MarkerBase
+  name: monkey
+  components:
+    - type: Sprite
+      netsync: false
+      sprite: Markers/jobs.rsi
+      state: ertleadereva
+#    - type: LeagueFlagTracker
+#      team: red
+#      stolenFlag: yellow
+
+- type: entity
+  id: LeagueFlagTrackerRedViolet
+  parent: MarkerBase
+  name: monkey
+  components:
+    - type: Sprite
+      netsync: false
+      sprite: Markers/jobs.rsi
+      state: ertleadereva
+#    - type: LeagueFlagTracker
+#      team: violet
+#      stolenFlag: violet
+# blue
+- type: entity
+  id: LeagueFlagTrackerBlueRed
+  parent: MarkerBase
+  name: monkey
+  components:
+    - type: Sprite
+      netsync: false
+      sprite: Markers/jobs.rsi
+      state: ertleadereva
+#    - type: LeagueFlagTracker
+#      team: blue
+#      stolenFlag: red
+
+- type: entity
+  id: LeagueFlagTrackerBlueYellow
+  parent: MarkerBase
+  name: monkey
+  components:
+    - type: Sprite
+      netsync: false
+      sprite: Markers/jobs.rsi
+      state: ertleadereva
+#    - type: LeagueFlagTracker
+#      team: blue
+#      stolenFlag: yellow
+
+- type: entity
+  id: LeagueFlagTrackerBlueViolet
+  parent: MarkerBase
+  name: monkey
+  components:
+    - type: Sprite
+      netsync: false
+      sprite: Markers/jobs.rsi
+      state: ertleadereva
+#    - type: LeagueFlagTracker
+#      team: blue
+#      stolenFlag: violet
+# yellow
+- type: entity
+  id: LeagueFlagTrackerYellowRed
+  parent: MarkerBase
+  name: monkey
+  components:
+    - type: Sprite
+      netsync: false
+      sprite: Markers/jobs.rsi
+      state: ertleadereva
+#    - type: LeagueFlagTracker
+#      team: yellow
+#      stolenFlag: red
+
+- type: entity
+  id: LeagueFlagTrackerYellowBlue
+  parent: MarkerBase
+  name: monkey
+  components:
+    - type: Sprite
+      netsync: false
+      sprite: Markers/jobs.rsi
+      state: ertleadereva
+#    - type: LeagueFlagTracker
+#      team: yellow
+#      stolenFlag: blue
+
+- type: entity
+  id: LeagueFlagTrackerYellowViolet
+  parent: MarkerBase
+  name: monkey
+  components:
+    - type: Sprite
+      netsync: false
+      sprite: Markers/jobs.rsi
+      state: ertleadereva
+#    - type: LeagueFlagTracker
+#      team: yellow
+#      stolenFlag: violet
+# violet
+- type: entity
+  id: LeagueFlagTrackerVioletRed
+  parent: MarkerBase
+  name: monkey
+  components:
+    - type: Sprite
+      netsync: false
+      sprite: Markers/jobs.rsi
+      state: ertleadereva
+#    - type: LeagueFlagTracker
+#      team: violet
+#      stolenFlag: red
+
+- type: entity
+  id: LeagueFlagTrackerVioletBlue
+  parent: MarkerBase
+  name: monkey
+  components:
+    - type: Sprite
+      netsync: false
+      sprite: Markers/jobs.rsi
+      state: ertleadereva
+#    - type: LeagueFlagTracker
+#      team: violet
+#      stolenFlag: blue
+
+- type: entity
+  id: LeagueFlagTrackerVioletYellow
+  parent: MarkerBase
+  name: monkey
+  components:
+    - type: Sprite
+      netsync: false
+      sprite: Markers/jobs.rsi
+      state: ertleadereva
+#    - type: LeagueFlagTracker
+#      team: violet
+#      stolenFlag: yellow

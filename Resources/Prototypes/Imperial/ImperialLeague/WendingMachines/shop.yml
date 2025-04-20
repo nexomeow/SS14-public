@@ -1,0 +1,58 @@
+- type: entity
+  name: Imperial coin
+  parent: BaseItem
+  id: ImperCoin
+  suffix: 20 coin
+  description: Capitalism ticket
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/CorporateMerchandise/coin.rsi
+    state: icon
+  - type: Item
+    sprite: Imperial/ImperialLeague/CorporateMerchandise/coin.rsi
+  - type: Stack
+    count: 20
+    stackType: BlueSpaceCube
+  - type: StaticPrice
+    price: 0
+  - type: StackPrice
+    price: 200
+  - type: Currency
+    price:
+      ImperCoin: 1
+
+- type: currency
+  id: ImperCoin
+  displayName: store-currency-display-impercoin
+  cash:
+    1: ImperCoin1
+  canWithdraw: true
+
+- type: stack
+  id: ImperCoin
+  name: ImperialCoin
+  icon: Imperial/ImperialLeague/CorporateMerchandise/coin.rsi
+  spawn: ImperCoin1
+
+- type: entity
+  parent: ImperCoin
+  id: ImperCoin1
+  suffix: 1 coin
+  components:
+  - type: Stack
+    count: 1
+
+- type: Tag
+  id: ImperCoin
+
+#- type: entity
+#  parent: ImperCoinShopBase
+#  id: ImperCoinShopCenter
+#  name: SyndieDrobe
+#  description: Wardrobe machine encoded by the syndicate, contains elite outfits for various operations.
+#  components:
+#  - type: Store
+#    preset: ImperCoinShopCenter
+#  - type: Sprite
+#    sprite: Imperial/League/center.rsi
+#  - type: LeagueGlobalSound

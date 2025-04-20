@@ -1,0 +1,215 @@
+- type: listing
+  id: LeagueClothingOuterHardsuitLeagueLightBlue
+  productEntity: ClothingOuterHardsuitLeagueLightBlue
+  cost:
+    ImperCoin: 75
+  categories:
+  - LeagueArmorBlue
+
+- type: listing
+  id: LeagueClothingOuterHardsuitLeagueHeavyBlue
+  productEntity: ClothingOuterHardsuitLeagueHeavyBlue
+  cost:
+    ImperCoin: 200
+  categories:
+  - LeagueArmorBlue
+
+- type: listing
+  id: LeagueClothingOuterHardsuitLeagueLightRed
+  productEntity: ClothingOuterHardsuitLeagueLightRed
+  cost:
+    ImperCoin: 75
+  categories:
+  - LeagueArmorRed
+
+- type: listing
+  id: LeagueClothingOuterHardsuitLeagueHeavyRed
+  productEntity: ClothingOuterHardsuitLeagueHeavyRed
+  cost:
+    ImperCoin: 200
+  categories:
+  - LeagueArmorRed
+
+- type: listing
+  id: LeagueClothingOuterHardsuitLeagueLightYellow
+  productEntity: ClothingOuterHardsuitLeagueLightYellow
+  cost:
+    ImperCoin: 75
+  categories:
+  - LeagueArmorYellow
+
+- type: listing
+  id: LeagueClothingOuterHardsuitLeagueHeavyYellow
+  productEntity: ClothingOuterHardsuitLeagueHeavyYellow
+  cost:
+    ImperCoin: 200
+  categories:
+  - LeagueArmorYellow
+
+- type: listing
+  id: LeagueClothingOuterHardsuitLeagueLightViolet
+  productEntity: ClothingOuterHardsuitLeagueLightViolet
+  cost:
+    ImperCoin: 75
+  categories:
+  - LeagueArmorViolet
+
+- type: listing
+  id: LeagueClothingOuterHardsuitLeagueHeavyViolet
+  productEntity: ClothingOuterHardsuitLeagueHeavyViolet
+  cost:
+    ImperCoin: 200
+  categories:
+  - LeagueArmorViolet
+
+- type: listing
+  id: LeagueMedicatedSutureLeague
+  productEntity: MedicatedSutureLeague
+  cost:
+    ImperCoin: 3
+  categories:
+  - LeagueMedicine
+
+- type: listing
+  id: LeagueCSWeaponGlock-18League
+  productEntity: CSWeaponGlock-18League
+  cost:
+    ImperCoin: 9
+  categories:
+  - LeagueWeapon
+
+- type: listing
+  id: LeagueEnergySwordLeague
+  productEntity: EnergySwordLeague
+  cost:
+    ImperCoin: 26
+  categories:
+  - LeagueWeapon
+
+- type: listing
+  id: LeagueGlock18MagazinePistolLeague
+  productEntity: Glock18MagazinePistolLeague
+  cost:
+    ImperCoin: 1
+  categories:
+  - LeagueAmmo
+
+- type: listing
+  id: LeagueWeaponShotgunDoubleBarreledLeague
+  productEntity: WeaponShotgunDoubleBarreledLeague
+  cost:
+    ImperCoin: 18
+  categories:
+  - LeagueWeapon
+
+- type: listing
+  id: LeagueCSWeaponUSP-SLeague
+  productEntity: CSWeaponUSP-SLeague
+  cost:
+    ImperCoin: 14
+  categories:
+  - LeagueWeapon
+
+- type: listing
+  id: LeagueCombatKnife
+  productEntity: CombatKnife
+  cost:
+    ImperCoin: 2
+  categories:
+  - LeagueWeapon
+
+- type: listing
+  id: LeagueMagazinePistolCaselessRifleLeague
+  productEntity: MagazinePistolCaselessRifleLeague
+  cost:
+    ImperCoin: 1
+  categories:
+  - LeagueAmmo
+
+- type: listing
+  id: LeagueWeaponLaserSvalinnLeague
+  productEntity: WeaponLaserSvalinnLeague
+  cost:
+    ImperCoin: 10
+  categories:
+  - LeagueWeapon
+
+- type: listing
+  id: LeaguePowerCellMediumLeague
+  productEntity: PowerCellMediumLeague
+  cost:
+    ImperCoin: 1
+  categories:
+  - LeagueAmmo
+
+- type: listing
+  id: LeagueCSWeaponMP5League
+  productEntity: CSWeaponMP5League
+  cost:
+    ImperCoin: 36
+  categories:
+  - LeagueWeapon
+
+- type: listing
+  id: Leaguemp5-MagazineLeague
+  productEntity: mp5-MagazineLeague
+  cost:
+    ImperCoin: 2
+  categories:
+  - LeagueAmmo
+
+- type: listing
+  id: LeagueWeaponShotgunStormTrooperTGMCSBLeague
+  productEntity: WeaponShotgunStormTrooperTGMCSBLeague
+  cost:
+    ImperCoin: 44
+  categories:
+  - LeagueWeapon
+
+- type: listing
+  id: LeagueBaseMagazineShotgunStormTrooperTGMCLeague
+  productEntity: BaseMagazineShotgunStormTrooperTGMCLeague
+  cost:
+    ImperCoin: 2
+  categories:
+  - LeagueAmmo
+
+- type: listing
+  id: LeagueGrenadeShrapnelLeague
+  productEntity: GrenadeShrapnelLeague
+  cost:
+    ImperCoin: 10
+  categories:
+  - LeagueWeapon
+
+- type: listing
+  id: LeagueWeaponRifleAkLeague
+  productEntity: WeaponRifleAkLeague
+  cost:
+    ImperCoin: 64
+  categories:
+  - LeagueWeapon
+
+- type: listing
+  id: LeagueMagazineLightRifleCaseless
+  productEntity: MagazineLightRifleCaseless
+  cost:
+    ImperCoin: 3
+  categories:
+  - LeagueAmmo
+
+- type: listing
+  id: LeagueWeaponSniperHristovLeague
+  productEntity: WeaponSniperHristovLeague
+  cost:
+    ImperCoin: 76
+  categories:
+  - LeagueWeapon
+
+- type: listing
+  id: LeagueCartridgeAntiMaterielLeague
+  productEntity: CartridgeAntiMaterielLeague
+  cost:
+    ImperCoin: 1
+  categories:
+  - LeagueAmmo

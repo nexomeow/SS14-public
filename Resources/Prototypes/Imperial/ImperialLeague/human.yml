@@ -1,0 +1,246 @@
+- type: entity
+  name: league_base
+  parent: MobHuman
+  id: MobHumanLeagueBase
+  components:
+  - type: Loadout
+    prototypes: [LeagueBase]
+  - type: Tag
+    tags:
+      - CannotSuicide
+      - CanPilot
+      - FootstepSound
+      - DoorBumpOpener
+
+- type: npcFaction
+  id: LeagueRed
+  hostile:
+  - LeagueBlue
+  - LeagueYellow
+  - LeagueViolet
+
+- type: npcFaction
+  id: LeagueBlue
+  hostile:
+  - LeagueRed
+  - LeagueYellow
+  - LeagueViolet
+
+- type: npcFaction
+  id: LeagueYellow
+  hostile:
+  - LeagueRed
+  - LeagueBlue
+  - LeagueViolet
+
+- type: npcFaction
+  id: LeagueViolet
+  hostile:
+  - LeagueRed
+  - LeagueBlue
+  - LeagueYellow
+
+- type: startingGear
+  id: LeagueBase
+  equipment:
+    shoes: ClothingShoesBootsCombatFilledLeague
+    #outerClothing: АЙДИ_БРОНЬ
+    jumpsuit: ClothingUniformJumpsuitOperativeLeague
+    back: ClothingBackpackSatchelLeague
+    #pocket1: АЙДИ_КАРМАН_1
+    #pocket2: АЙДИ_КАРМАН_2
+    belt: ClothingBeltSonaLeague
+    #neck: АЙДИ_ГАЛСТУК/ПЛАЩ
+    #mask: АЙДИ_МАСКА
+    gloves: ClothingHandsGlovesCombatLeague
+    #head: АЙДИ_ШЛЕМ
+    #eyes: АЙДИ_ОЧКИ
+    #ears: АЙДИ_НАУШНИКИ
+
+- type: startingGear
+  id: LeagueBlue
+  equipment:
+    shoes: ClothingShoesBootsCombatFilledLeague
+    #outerClothing: АЙДИ_БРОНЬ
+    jumpsuit: ClothingUniformJumpsuitLeagueBlue
+    back: ClothingBackpackSatchelLeague
+    #pocket1: АЙДИ_КАРМАН_1
+    #pocket2: АЙДИ_КАРМАН_2
+    belt: ClothingBeltSonaLeague
+    #neck: АЙДИ_ГАЛСТУК/ПЛАЩ
+    #mask: АЙДИ_МАСКА
+    gloves: ClothingHandsGlovesCombatLeague
+    #head: АЙДИ_ШЛЕМ
+    #eyes: АЙДИ_ОЧКИ
+    #ears: АЙДИ_НАУШНИКИ
+
+- type: startingGear
+  id: LeagueRed
+  equipment:
+    shoes: ClothingShoesBootsCombatFilledLeague
+    jumpsuit: ClothingUniformJumpsuitLeagueRed
+    back: ClothingBackpackSatchelLeague
+    belt: ClothingBeltSonaLeague
+    gloves: ClothingHandsGlovesCombatLeague
+
+- type: startingGear
+  id: LeagueYellow
+  equipment:
+    shoes: ClothingShoesBootsCombatFilledLeague
+    jumpsuit: ClothingUniformJumpsuitLeagueYellow
+    back: ClothingBackpackSatchelLeague
+    belt: ClothingBeltSonaLeague
+    gloves: ClothingHandsGlovesCombatLeague
+
+- type: startingGear
+  id: LeagueViolet
+  equipment:
+    shoes: ClothingShoesBootsCombatFilledLeague
+    jumpsuit: ClothingUniformJumpsuitLeagueViolet
+    back: ClothingBackpackSatchelLeague
+    belt: ClothingBeltSonaLeague
+    gloves: ClothingHandsGlovesCombatLeague
+
+- type: entity
+  name: league_red
+  parent: MobHumanLeagueBase
+  id: MobHumanLeagueRed
+  components:
+#  #- type: LeagueRed
+#  - type: LeagueRespawn
+#    team: red
+  - type: Loadout
+    prototypes: [LeagueRed]
+  - type: NpcFactionMember
+    factions:
+    - LeagueRed
+  - type: Access
+    tags:
+    - Maintenance
+
+- type: entity
+  name: league_violet
+  parent: MobHumanLeagueBase
+  id: MobHumanLeagueViolet
+  components:
+#  #- type: LeagueGreen
+#  - type: LeagueRespawn
+#    team: violet
+  - type: Loadout
+    prototypes: [LeagueViolet]
+  - type: NpcFactionMember
+    factions:
+    - LeagueViolet
+  - type: Access
+    tags:
+    - CentralCommand
+
+- type: entity
+  name: league_blue
+  parent: MobHumanLeagueBase
+  id: MobHumanLeagueBlue
+  components:
+#  #- type: LeagueBlue
+#  - type: LeagueRespawn
+#    team: blue
+  - type: Loadout
+    prototypes: [LeagueBlue]
+  - type: NpcFactionMember
+    factions:
+    - LeagueBlue
+  - type: Access
+    tags:
+    - SyndicateAgent
+
+- type: entity
+  name: league_yellow
+  parent: MobHumanLeagueBase
+  id: MobHumanLeagueYellow
+  components:
+#  #- type: LeagueYellow
+#  - type: LeagueRespawn
+#    team: yellow
+  - type: Loadout
+    prototypes: [LeagueYellow]
+  - type: NpcFactionMember
+    factions:
+    - LeagueYellow
+  - type: Access
+    tags:
+    - NuclearOperative
+
+- type: entity
+  id: SpawnPointGhostLeagueRed
+  name: ghost role spawn point tdm red
+  suffix: space ninja
+  parent: MarkerBase
+  components:
+  - type: GhostRole
+    name: Красный участник
+    description: IS
+    rules: Ни в коем случае не пользуйтесь командой suicide, ghost, респавн автоматический. Собирайте имперкоины по карте, захватите вражеские флаги и сохраните свой!
+  - type: GhostRoleMobSpawner
+    prototype: MobHumanLeagueRed
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: Objects/Weapons/Melee/energykatana.rsi
+      state: icon
+
+- type: entity
+  id: SpawnPointGhostLeagueBlue
+  name: ghost role spawn point tdm red
+  suffix: space ninja
+  parent: MarkerBase
+  components:
+  - type: GhostRole
+    name: Синий участник
+    description: IS
+    rules: Ни в коем случае не пользуйтесь командой suicide, ghost, респавн автоматический. Собирайте имперкоины по карте, захватите вражеские флаги и сохраните свой!
+  - type: GhostRoleMobSpawner
+    prototype: MobHumanLeagueBlue
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: Objects/Weapons/Melee/energykatana.rsi
+      state: icon
+
+- type: entity
+  id: SpawnPointGhostLeagueYellow
+  name: ghost role spawn point tdm red
+  suffix: space ninja
+  parent: MarkerBase
+  components:
+  - type: GhostRole
+    name: Желтый участник
+    description: IS
+    rules: Ни в коем случае не пользуйтесь командой suicide, ghost, респавн автоматический. Собирайте имперкоины по карте, захватите вражеские флаги и сохраните свой!
+  - type: GhostRoleMobSpawner
+    prototype: MobHumanLeagueYellow
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: Objects/Weapons/Melee/energykatana.rsi
+      state: icon
+
+- type: entity
+  id: SpawnPointGhostLeagueViolet
+  name: ghost role spawn point tdm red
+  suffix: space ninja
+  parent: MarkerBase
+  components:
+  - type: GhostRole
+    name: Фиолетовый участник
+    description: IS
+    rules: Ни в коем случае не пользуйтесь командой suicide, ghost, респавн автоматический. Собирайте имперкоины по карте, захватите вражеские флаги и сохраните свой!
+  - type: GhostRoleMobSpawner
+    prototype: MobHumanLeagueViolet
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: Objects/Weapons/Melee/energykatana.rsi
+      state: icon

@@ -1,0 +1,16 @@
+#- type: gamePreset
+#  id: LeagueBingo
+#  alias:
+#    - leaguebingo
+#  name: league-bingo-title
+#  description: league-bingo-description
+#  showInVote: false
+#  rules:
+#    - LeagueBingoRule
+
+#- type: entity
+#  id: LeagueBingoRule
+#  parent: BaseGameRule
+#  noSpawn: true
+#  components:
+#  - type: LeagueBingoRule

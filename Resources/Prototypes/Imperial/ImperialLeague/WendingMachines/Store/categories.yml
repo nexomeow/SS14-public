@@ -1,0 +1,40 @@
+- type: storeCategory
+  id: LeagueCenter
+  name: store-category-league-weaapon
+
+- type: storeCategory
+  id: LeagueWeapon
+  name: store-category-league-weaapon
+
+- type: storeCategory
+  id: LeagueClothing
+  name: store-category-league-customisation
+
+- type: storeCategory
+  id: LeagueMedicine
+  name: store-category-league-medicine
+
+- type: storeCategory
+  id: LeagueAmmo
+  name: store-category-league-ammo
+
+- type: storeCategory
+  id: LeagueArmorBase
+  name: store-category-league-armmor-base
+
+- type: storeCategory
+  id: LeagueArmorBlue
+  name: store-category-league-armmor-base
+
+- type: storeCategory
+  id: LeagueArmorRed
+  name: store-category-league-armmor-base
+
+- type: storeCategory
+  id: LeagueArmorYellow
+  name: store-category-league-armmor-base
+
+- type: storeCategory
+  id: LeagueArmorViolet
+  name: store-category-league-armmor-base
+

@@ -1,0 +1,26 @@
+{
+  "license": "CC-BY-SA-3.0",
+  "copyright": "for imperial space by mcdonaldsobamaburger",
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "red"
+    },
+    {
+      "name": "none"
+    },
+    {
+      "name": "yellow"
+    },
+    {
+      "name": "green"
+    },
+    {
+      "name": "blue"
+    }
+  ]
+}

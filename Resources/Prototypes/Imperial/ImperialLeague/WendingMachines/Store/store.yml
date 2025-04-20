@@ -1,0 +1,95 @@
+- type: entity
+  id: ImperCoinShopBase
+  abstract: true
+  components:
+  - type: Store
+    categories:
+  - LeagueWeapon
+  - LeagueClothing
+  - LeagueMedicine
+  - LeagueAmmo
+  - LeagueArmorBase
+  currencyWhitelist:
+    - ImperCoin
+  balance:
+      ImperCoin: 0
+
+- type: entity
+  id: ImperCoinShopViolet
+  abstract: true
+  components:
+  - type: Store
+    categories:
+  - LeagueWeapon
+  - LeagueClothing
+  - LeagueMedicine
+  - LeagueAmmo
+  - LeagueArmorViolet
+  currencyWhitelist:
+    - ImperCoin
+  balance:
+      ImperCoin: 0
+
+- type: entity
+  id: ImperCoinShopYellow
+  abstract: true
+  components:
+  - type: Store
+    categories:
+  - LeagueWeapon
+  - LeagueClothing
+  - LeagueMedicine
+  - LeagueAmmo
+  - LeagueArmorYellow
+  currencyWhitelist:
+    - ImperCoin
+  balance:
+      ImperCoin: 0
+
+- type: entity
+  id: ImperCoinShopRed
+  abstract: true
+  components:
+  - type: Store
+    categories:
+  - LeagueWeapon
+  - LeagueClothing
+  - LeagueMedicine
+  - LeagueAmmo
+  - LeagueArmorRed
+  currencyWhitelist:
+    - ImperCoin
+  balance:
+      ImperCoin: 0
+
+- type: entity
+  id: ImperCoinShopBlue
+  abstract: true
+  components:
+  - type: Store
+    categories:
+  - LeagueWeapon
+  - LeagueClothing
+  - LeagueMedicine
+  - LeagueAmmo
+  - LeagueArmorBlue
+  currencyWhitelist:
+    - ImperCoin
+  balance:
+      ImperCoin: 0
+
+- type: entity
+  id: ImperCoinShopCenter
+  abstract: true
+  components:
+  - type: Store
+    categories:
+  - LeagueWeapon
+  - LeagueClothing
+  - LeagueMedicine
+  - LeagueAmmo
+  - LeagueArmorCenter
+  currencyWhitelist:
+    - ImperCoin
+  balance:
+      ImperCoin: 0

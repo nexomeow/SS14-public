@@ -1,0 +1,163 @@
+- type: entity
+  id: LeagueFlagRed
+  parent: LeagueFlagRedTracker
+  name: league red spawn point
+  components:
+#  - type: LeagueFlag
+#    team: red
+  - type: PointLight
+    color: red
+    energy: 15
+    radius: 15
+    castShadows: false
+
+- type: entity
+  id: LeagueFlagBlue
+  parent: LeagueFlagBlueTracker
+  name: league blue spawn point
+  components:
+#  - type: LeagueFlag
+#    team: blue
+  - type: PointLight
+    color: blue
+    energy: 15
+    radius: 15
+    castShadows: false
+
+- type: entity
+  id: LeagueFlagYellow
+  parent: LeagueFlagYellowTracker
+  name: league yellow spawn point
+  components:
+#  - type: LeagueFlag
+#    team: yellow
+  - type: PointLight
+    color: yellow
+    energy: 15
+    radius: 15
+    castShadows: false
+
+- type: entity
+  id: LeagueFlagViolet
+  parent: LeagueFlagVioletTracker
+  name: league red spawn point
+  components:
+#  - type: LeagueFlag
+#    team: violet
+  - type: PointLight
+    color: purple
+    energy: 15
+    radius: 15
+    castShadows: false
+
+- type: entity
+  id: LeagueFlagRedTracker
+  parent: BannerRed
+  name: league red spawn point
+  components:
+  - type: PointLight
+    color: red
+    energy: 5
+    radius: 5
+    castShadows: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 900
+        mask:
+        - MachineMask
+        layer:
+        - Opaque
+        - MidImpassable
+        - HighImpassable
+        - BulletImpassable
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/CorporateMerchandise/decor.rsi
+    state: banner_red
+
+- type: entity
+  id: LeagueFlagBlueTracker
+  parent: BannerBlue
+  name: league blue spawn point
+  components:
+  - type: PointLight
+    color: blue
+    energy: 5
+    radius: 5
+    castShadows: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 900
+        mask:
+        - MachineMask
+        layer:
+        - Opaque
+        - MidImpassable
+        - HighImpassable
+        - BulletImpassable
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/CorporateMerchandise/decor.rsi
+    state: banner_blue
+
+- type: entity
+  id: LeagueFlagYellowTracker
+  parent: BannerYellow
+  name: league yellow spawn point
+  components:
+  - type: PointLight
+    color: yellow
+    energy: 5
+    radius: 5
+    castShadows: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 900
+        mask:
+        - MachineMask
+        layer:
+        - Opaque
+        - MidImpassable
+        - HighImpassable
+        - BulletImpassable
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/CorporateMerchandise/decor.rsi
+    state: banner_yellow
+
+- type: entity
+  id: LeagueFlagVioletTracker
+  parent: BannerScience
+  name: league violet spawn point
+  components:
+  - type: PointLight
+    color: purple
+    energy: 5
+    radius: 5
+    castShadows: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 900
+        mask:
+        - MachineMask
+        layer:
+        - Opaque
+        - MidImpassable
+        - HighImpassable
+        - BulletImpassable
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/CorporateMerchandise/decor.rsi
+    state: banner_violet
