@@ -50,7 +50,13 @@
 
 #Imperial Space title screens
 
-- type: lobbyBackground
-  id: ImperialDefault
-  background: /Textures/Imperial/LobbyScreens/imperialDefault.jpg
+#- type: lobbyBackground
+#  id: ImperialDefault
+#  background: /Textures/Imperial/LobbyScreens/imperialDefault.jpg
 # imperial add-on end
+
+#Imperial League title screen
+
+- type: lobbyBackground
+  id: ImperialLeague
+  background: /Textures/Imperial/LobbyScreens/imperialLeague.jpg
