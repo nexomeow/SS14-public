@@ -1,0 +1,17 @@
+- type: soundCollection
+  id: TanksDamage
+  files:
+    - /Audio/Imperial/ImperialLeague/LeagueTanks/Damage/hit1.ogg
+    - /Audio/Imperial/ImperialLeague/LeagueTanks/Damage/hit2.ogg
+    - /Audio/Imperial/ImperialLeague/LeagueTanks/Damage/hit3.ogg
+    - /Audio/Imperial/ImperialLeague/LeagueTanks/Damage/hit4.ogg
+
+- type: soundCollection
+  id: TanksTracksLight
+  files:
+    - /Audio/Imperial/ImperialLeague/LeagueTanks/Tracks/tracks_light.ogg
+
+- type: soundCollection
+  id: TanksTracksHeavy
+  files:
+    - /Audio/Imperial/ImperialLeague/LeagueTanks/Tracks/tracks_heavy.ogg

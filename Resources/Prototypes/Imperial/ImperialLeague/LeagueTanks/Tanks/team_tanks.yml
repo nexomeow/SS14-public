@@ -1,0 +1,211 @@
+# team LT
+- type: entity
+  parent: LeagueLightTank
+  id: LeagueLightTankRed
+  name: LTTB-L
+  suffix: LeagueTanks, LT
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/Tanks/lttb_l.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+      color: red
+
+- type: entity
+  parent: LeagueLightTank
+  id: LeagueLightTankViolet
+  name: LTTB-L
+  suffix: LeagueTanks, LT
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/Tanks/lttb_l.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+      color: DarkViolet
+
+- type: entity
+  parent: LeagueLightTank
+  id: LeagueLightTankYellow
+  name: LTTB-L
+  suffix: LeagueTanks, LT
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/Tanks/lttb_l.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+      color: yellow
+
+- type: entity
+  parent: LeagueLightTank
+  id: LeagueLightTankBlue
+  name: LTTB-L
+  suffix: LeagueTanks, LT
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/Tanks/lttb_l.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+      color: blue
+
+# team MT
+- type: entity
+  parent: LeagueMiddleTank
+  id: LeagueMiddleTankRed
+  name: T-L
+  suffix: LeagueTanks, MT
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/Tanks/t_l.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+      color: red
+
+- type: entity
+  parent: LeagueMiddleTank
+  id: LeagueMiddleTankViolet
+  name: T-L
+  suffix: LeagueTanks, MT
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/Tanks/t_l.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+      color: DarkViolet
+
+- type: entity
+  parent: LeagueMiddleTank
+  id: LeagueMiddleTankYellow
+  name: T-L
+  suffix: LeagueTanks, MT
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/Tanks/t_l.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+      color: yellow
+
+- type: entity
+  parent: LeagueMiddleTank
+  id: LeagueMiddleTankBlue
+  name: T-L
+  suffix: LeagueTanks, MT
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/Tanks/t_l.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+      color: blue
+
+# team HT
+- type: entity
+  parent: LeagueHeavyTank
+  id: LeagueHeavyTankRed
+  name: IS-L
+  suffix: LeagueTanks, HT
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/Tanks/is_l.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+      color: red
+
+- type: entity
+  parent: LeagueHeavyTank
+  id: LeagueHeavyTankViolet
+  name: IS-L
+  suffix: LeagueTanks, HT
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/Tanks/is_l.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+      color: DarkViolet
+
+- type: entity
+  parent: LeagueHeavyTank
+  id: LeagueHeavyTankYellow
+  name: IS-L
+  suffix: LeagueTanks, HT
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/Tanks/is_l.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+      color: yellow
+
+- type: entity
+  parent: LeagueHeavyTank
+  id: LeagueHeavyTankBlue
+  name: IS-L
+  suffix: LeagueTanks, HT
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/Tanks/is_l.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+      color: blue
+
+# team AT
+- type: entity
+  parent: LeagueAntiTank
+  id: LeagueAntiTankRed
+  name: ISU-L
+  suffix: LeagueTanks, AT
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/Tanks/isu_l.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+      color: red
+
+- type: entity
+  parent: LeagueAntiTank
+  id: LeagueAntiTankViolet
+  name: ISU-L
+  suffix: LeagueTanks, AT
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/Tanks/isu_l.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+      color: DarkViolet
+
+- type: entity
+  parent: LeagueAntiTank
+  id: LeagueAntiTankYellow
+  name: ISU-L
+  suffix: LeagueTanks, AT
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/Tanks/isu_l.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+      color: yellow
+
+- type: entity
+  parent: LeagueAntiTank
+  id: LeagueAntiTankBlue
+  name: ISU-L
+  suffix: LeagueTanks, AT
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/Tanks/isu_l.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+      color: blue

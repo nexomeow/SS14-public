@@ -1,0 +1,75 @@
+- type: entity
+  id: TonkProjectileLT
+  name: boom
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Tag
+    tags:
+      - TonkProjectiles
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+    - state: piercing
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 210
+
+- type: entity
+  id: TonkProjectileMT
+  name: boom
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Tag
+    tags:
+      - TonkProjectiles
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+    - state: piercing
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 330
+
+- type: entity
+  id: TonkProjectileHT
+  name: boom
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Tag
+    tags:
+      - TonkProjectiles
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+    - state: piercing
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 420
+
+- type: entity
+  id: TonkProjectileAT
+  name: boom
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Tag
+    tags:
+      - TonkProjectiles
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+    - state: piercing
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 650
+    ignoreResistances: true
+
+- type: Tag
+  id: TonkProjectiles

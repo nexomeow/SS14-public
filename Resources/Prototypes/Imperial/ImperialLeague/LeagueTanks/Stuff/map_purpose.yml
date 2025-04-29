@@ -1,0 +1,38 @@
+- type: entity
+  id: BaseBushLeague
+  parent: BaseStructureDynamic
+  name: bush
+  description: Tank destroyers especially like to hide here.
+  abstract: true
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: SpriteFade
+  - type: Transform
+    noRot: true
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Dynamic
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.1
+        density: 190
+        mask:
+        - HighImpassable
+  - type: Sprite
+    drawdepth: Overdoors
+    offset: "0.0,0.3"
+    sprite: Imperial/ImperialLeague/Tanks/Staff/bush.rsi
+    noRot: true
+
+- type: entity
+  id: BushLeague0
+  parent: BaseBushLeague
+  components:
+  - type: Sprite
+    state: bush0

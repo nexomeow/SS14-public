@@ -1,0 +1,209 @@
+- type: entity
+  parent: [BaseTank, TankCombat, TankDamageable, InventoryTankBase]
+  id: LeagueTank
+  name: tonk
+  description: Steel and lead.
+  abstract: true
+  components:
+  - type: Gun
+    projectileSpeed: 30
+    fireRate: 0.5
+    angleDecay: 45
+    minAngle: 0
+    maxAngle: 5
+    soundGunshot:
+      path: /Audio/Imperial/ImperialLeague/LeagueTanks/Shots/middle_tank.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/empty.ogg
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - TonkProjectiles
+    capacity: 100
+    proto: TonkProjectileMT
+
+- type: entity
+  parent: LeagueTank
+  id: LeagueLightTank
+  name: LTTB-L
+  suffix: LeagueTanks, LT
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/Tanks/lttb_l.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+  - type: Gun
+    projectileSpeed: 20
+    fireRate: 0.42
+    angleDecay: 45
+    minAngle: 2
+    maxAngle: 12
+    soundGunshot:
+      path: /Audio/Imperial/ImperialLeague/LeagueTanks/Shots/light_tank.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/empty.ogg
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - TonkProjectiles
+    capacity: 50
+    proto: TonkProjectileLT
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 3
+    baseSprintSpeed : 3
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      1150: Dead
+#  - type: Reflect
+#    reflectProb: .05
+#    spread: 120
+  - type: EyeCursorOffset
+    maxOffset: 2
+    pvsIncrease: 0.8
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: TanksTracksLight
+      params:
+        volume: -12
+#  - type: Loadout
+#    prototypes: [ LightTank ]
+
+- type: entity
+  parent: LeagueTank
+  id: LeagueMiddleTank
+  name: T-L
+  suffix: LeagueTanks, MT
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/Tanks/t_l.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+  - type: Gun
+    projectileSpeed: 28
+    fireRate: 0.25
+    angleDecay: 45
+    minAngle: 2
+    maxAngle: 10
+    soundGunshot:
+      path: /Audio/Imperial/ImperialLeague/LeagueTanks/Shots/middle_tank.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/empty.ogg
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - TonkProjectiles
+    capacity: 42
+    proto: TonkProjectileMT
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 2.2
+    baseSprintSpeed : 2.2
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      1700: Dead
+  - type: Reflect
+    reflectProb: .10
+    spread: 120
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: TanksTracksLight
+      params:
+        volume: -12
+  - type: Loadout
+    prototypes: [ MiddleTank ]
+
+- type: entity
+  parent: LeagueTank
+  id: LeagueHeavyTank
+  name: IS-L
+  suffix: LeagueTanks, HT
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/Tanks/is_l.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+  - type: Gun
+    projectileSpeed: 25
+    fireRate: 0.21
+    angleDecay: 45
+    minAngle: 2
+    maxAngle: 10
+    soundGunshot:
+      path: /Audio/Imperial/ImperialLeague/LeagueTanks/Shots/heavy_tank.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/empty.ogg
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - TonkProjectiles
+    capacity: 35
+    proto: TonkProjectileHT
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 1.4
+    baseSprintSpeed : 1.4
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      2150: Dead
+  - type: Reflect
+    reflectProb: .35
+    spread: 120
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: TanksTracksHeavy
+      params:
+        volume: -12
+  - type: Loadout
+    prototypes: [ HeavyTank ]
+
+- type: entity
+  parent: LeagueTank
+  id: LeagueAntiTank
+  name: ISU-L
+  suffix: LeagueTanks, AT
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/Tanks/isu_l.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+  - type: Gun
+    projectileSpeed: 40
+    fireRate: 0.1
+    angleDecay: 45
+    minAngle: 2
+    maxAngle: 10
+    soundGunshot:
+      path: /Audio/Imperial/ImperialLeague/LeagueTanks/Shots/anti_tank.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/empty.ogg
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - TonkProjectiles
+    capacity: 20
+    proto: TonkProjectileAT
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 1.5
+    baseSprintSpeed : 1.5
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      1050: Dead
+#  - type: Reflect
+#    reflectProb: .10
+#    spread: 120
+  - type: EyeCursorOffset
+    maxOffset: 5
+    pvsIncrease: 0.6
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: TanksTracksHeavy
+      params:
+        volume: -12
+#  - type: Loadout
+#    prototypes: [ AntiTank ]

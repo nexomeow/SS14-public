@@ -1,0 +1,200 @@
+- type: entity
+  save: false
+  id: BaseTank
+  abstract: true
+  components:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+  - type: MobCollision
+  - type: Physics
+    bodyType: KinematicController
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 50
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Clickable
+  - type: InteractionOutline
+  - type: InputMover
+  - type: Input
+    context: "human"
+  - type: LagCompensation
+  - type: MobMover
+  - type: Actions
+  - type: Alerts
+  - type: Appearance
+  - type: RotationVisuals
+    defaultRotation: 0
+    horizontalRotation: 0
+  - type: DoAfter
+  - type: Examiner
+  - type: Eye
+  - type: ContentEye
+  - type: CameraRecoil
+  - type: MindContainer
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 0
+    baseSprintSpeed : 0
+  - type: RequireProjectileTarget
+    active: False
+  - type: NpcFactionMember
+    factions:
+    - SimpleNeutral
+  - type: StatusEffects
+    allowed:
+    - SlowedDown
+    - PressureImmunity
+    - Pacified
+    - RadiationProtection
+  - type: SSDIndicator
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: TanksTracksLight
+  - type: ShowHealthBars
+    damageContainers:
+    - Inorganic
+    - Silicon
+  - type: NoSlip
+  - type: ZombieImmune
+  - type: TypingIndicator
+    proto: robot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Pai
+  - type: Vocal
+    sounds:
+      Unsexed: UnisexSilicon
+    screamAction: null
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - FootstepSound
+  - type: MovementIgnoreGravity
+
+- type: entity
+  save: false
+  id: TankDamageable
+  abstract: true
+  components:
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      1500: Dead
+    stateAlertDict:
+      Alive: BorgHealth
+      Dead: BorgDead
+    showOverlays: false
+    allowRevives: true
+  - type: HealthExaminable
+    examinableTypes:
+    - Piercing
+    - Heat
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: alive
+      Dead:
+        Base: dead
+  - type: RangedDamageSound
+    soundGroups:
+      Brute:
+        collection:
+          TanksDamage
+    soundTypes:
+      Heat:
+        collection:
+          TanksDamage
+
+- type: entity
+  save: false
+  id: TankCombat
+  abstract: true
+  components:
+  - type: CombatMode
+
+- type: entity
+  abstract: true
+  id: InventoryTankBase
+  components:
+    - type: Inventory
+      templateId: tonk
+    - type: InventorySlots
+
+- type: inventoryTemplate
+  id: tonk #tank inventory.. LOL
+  slots:
+    - name: neck
+      slotTexture: neck
+      slotFlags: NECK
+      uiWindowPos: 0,2
+      strippingWindowPos: 0,1
+      displayName: Neck
+    - name: back
+      slotTexture: back
+      fullTextureName: template_small
+      slotFlags: BACK
+      slotGroup: SecondHotbar
+      stripTime: 0
+      uiWindowPos: 3,0
+      strippingWindowPos: 0,5
+      displayName: Back
+
+#Tanks quirks
+
+- type: entity
+  parent: ClothingNeckBase
+  id: TanksQuirkArmorMiddle
+  name: middle armor
+  description: You have an average defense against enemy attacks. Does not work against tank destroyers.
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/Tanks/Staff/tanks_armor.rsi
+    state: middle-shield
+  - type: Unremoveable
+  - type: Armor
+    modifiers:
+      coefficients:
+        Piercing: 0.9
+        Heat: 0.9
+  - type: ExplosionResistance
+    damageCoefficient: 0.6
+
+- type: entity
+  parent: ClothingNeckBase
+  id: TanksQuirkArmorHeavy
+  name: heavy armor
+  description: You have a high defense against enemy attacks. Does not work against tank destroyers.
+  components:
+  - type: Sprite
+    sprite: Imperial/ImperialLeague/Tanks/Staff/tanks_armor.rsi
+    state: heavy-shield
+  - type: Unremoveable
+  - type: Armor
+    modifiers:
+      coefficients:
+        Piercing: 0.65
+        Heat: 0.65
+  - type: ExplosionResistance
+    damageCoefficient: 0.3
+
+#Tanks lodout
+
+- type: startingGear #gear
+  id: MiddleTank
+  equipment:
+    neck: TanksQuirkArmorMiddle
+
+- type: startingGear #gear
+  id: HeavyTank
+  equipment:
+    neck: TanksQuirkArmorHeavy
