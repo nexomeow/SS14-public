@@ -1,0 +1,40 @@
+- type: body
+  id: Overlord
+  name: "overlord"
+  root: torso
+  slots:
+    head:
+      part: HeadOverlord
+      connections:
+      - torso
+    torso:
+      part: TorsoOverlord
+      connections:
+      - right_arm
+      - left_arm
+      - right_leg
+      - left_leg
+    right_arm:
+      part: RightArmOverlord
+      connections:
+      - right_hand
+    left_arm:
+      part: LeftArmOverlord
+      connections:
+      - left_hand
+    right_hand:
+      part: RightHandOverlord
+    left_hand:
+      part: LeftHandOverlord
+    right_leg:
+      part: RightLegOverlord
+      connections:
+      - right_foot
+    left_leg:
+      part: LeftLegOverlord
+      connections:
+      - left_foot
+    right_foot:
+      part: RightFootOverlord
+    left_foot:
+      part: LeftFootOverlord

@@ -1,0 +1,95 @@
+- type: entity
+  id: PartOverlord
+  parent: [BaseItem, BasePart]
+  name: "human body part"
+  abstract: true
+
+- type: entity
+  id: TorsoOverlord
+  name: "overlord torso"
+  parent: [PartOverlord, BaseTorso]
+  components:
+  - type: Sprite
+    sprite: Imperial/Overlord/Agent/Parts.rsi
+    state: "torso"
+
+- type: entity
+  id: HeadOverlord
+  name: "overlord head"
+  parent: [PartOverlord, BaseHead]
+  components:
+  - type: Sprite
+    sprite: Imperial/Overlord/Agent/Parts.rsi
+    state: "head"
+
+- type: entity
+  id: LeftArmOverlord
+  name: "left overlord arm"
+  parent: [PartOverlord, BaseLeftArm]
+  components:
+  - type: Sprite
+    sprite: Imperial/Overlord/Agent/Parts.rsi
+    state: "l_arm"
+
+- type: entity
+  id: RightArmOverlord
+  name: "right overlord arm"
+  parent: [PartOverlord, BaseRightArm]
+  components:
+  - type: Sprite
+    sprite: Imperial/Overlord/Agent/Parts.rsi
+    state: "r_arm"
+
+- type: entity
+  id: LeftHandOverlord
+  name: "left overlord hand"
+  parent: [PartOverlord, BaseLeftHand]
+  components:
+  - type: Sprite
+    sprite: Imperial/Overlord/Agent/Parts.rsi
+    state: "l_hand"
+
+- type: entity
+  id: RightHandOverlord
+  name: "right overlord hand"
+  parent: [PartOverlord, BaseRightHand]
+  components:
+  - type: Sprite
+    sprite: Imperial/Overlord/Agent/Parts.rsi
+    state: "r_hand"
+
+- type: entity
+  id: LeftLegOverlord
+  name: "left overlord leg"
+  parent: [PartOverlord, BaseLeftLeg]
+  components:
+  - type: Sprite
+    sprite: Imperial/Overlord/Agent/Parts.rsi
+    state: "l_leg"
+
+- type: entity
+  id: RightLegOverlord
+  name: "right overlord leg"
+  parent: [PartOverlord, BaseRightLeg]
+  components:
+  - type: Sprite
+    sprite: Imperial/Overlord/Agent/Parts.rsi
+    state: "r_leg"
+
+- type: entity
+  id: LeftFootOverlord
+  name: "left overlord foot"
+  parent: [PartOverlord, BaseLeftFoot]
+  components:
+  - type: Sprite
+    sprite: Imperial/Overlord/Agent/Parts.rsi
+    state: "l_foot"
+
+- type: entity
+  id: RightFootOverlord
+  name: "right overlord foot"
+  parent: [PartOverlord, BaseRightFoot]
+  components:
+  - type: Sprite
+    sprite: Imperial/Overlord/Agent/Parts.rsi
+    state: "r_foot"

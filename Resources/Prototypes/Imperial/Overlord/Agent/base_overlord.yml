@@ -1,0 +1,234 @@
+- type: entity
+  save: false
+  id: MobDamageableOverlord
+  abstract: true
+  components:
+  - type: Damageable
+    damageContainer: Silicon
+  - type: MobState
+    allowedStates:
+    - Alive
+    - Critical
+    - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      1900: Critical
+      2000: Dead
+  - type: HealthExaminable
+    examinableTypes:
+    - Blunt
+    - Slash
+    - Piercing
+    - Heat
+    - Shock
+  - type: Pullable
+  - type: FTLSmashImmune
+
+- type: entity
+  save: false
+  parent:
+  - BaseMob
+  - MobDamageableOverlord
+  - MobCombat
+  - StripableInventoryBase
+  id: BaseMobSpeciesOverlord
+  abstract: true
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.HumanoidVisualLayers.Chest" ]
+      sprite: Imperial/Overlord/Agent/Parts.rsi
+      state: torso
+    - map: [ "enum.HumanoidVisualLayers.Head" ]
+      sprite: Imperial/Overlord/Agent/Parts.rsi
+      state: head
+    - map: [ "enum.HumanoidVisualLayers.Snout" ]
+    - map: [ "enum.HumanoidVisualLayers.Eyes" ]
+      sprite: Imperial/Overlord/Agent/Parts.rsi
+      state: eyes
+      shader: unshaded
+    - map: [ "enum.HumanoidVisualLayers.RArm" ]
+      sprite: Imperial/Overlord/Agent/Parts.rsi
+      state: r_arm
+    - map: [ "enum.HumanoidVisualLayers.LArm" ]
+      sprite: Imperial/Overlord/Agent/Parts.rsi
+      state: l_arm
+    - map: [ "enum.HumanoidVisualLayers.RLeg" ]
+      sprite: Imperial/Overlord/Agent/Parts.rsi
+      state: r_leg
+    - map: [ "enum.HumanoidVisualLayers.LLeg" ]
+      sprite: Imperial/Overlord/Agent/Parts.rsi
+      state: l_leg
+    - map: [ "enum.HumanoidVisualLayers.UndergarmentBottom" ]
+    - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
+    - map: ["jumpsuit"]
+    - map: ["enum.HumanoidVisualLayers.LFoot"]
+      sprite: Imperial/Overlord/Agent/Parts.rsi
+      state: l_foot
+    - map: ["enum.HumanoidVisualLayers.RFoot"]
+      sprite: Imperial/Overlord/Agent/Parts.rsi
+      state: r_foot
+    - map: ["enum.HumanoidVisualLayers.LHand"]
+      sprite: Imperial/Overlord/Agent/Parts.rsi
+      state: l_hand
+    - map: ["enum.HumanoidVisualLayers.RHand"]
+      sprite: Imperial/Overlord/Agent/Parts.rsi
+      state: r_hand
+    - map: [ "gloves" ]
+    - map: [ "shoes" ]
+    - map: [ "ears" ]
+    - map: [ "outerClothing" ]
+    - map: [ "eyes" ]
+    - map: [ "belt" ]
+    - map: [ "id" ]
+    - map: [ "back" ]
+    - map: [ "neck" ]
+    - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
+    - map: [ "enum.HumanoidVisualLayers.Hair" ]
+      sprite: Imperial/Overlord/Agent/Parts.rsi
+      state: hair
+    - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
+    - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
+    - map: [ "enum.HumanoidVisualLayers.Tail" ]
+    - map: [ "mask" ]
+    - map: [ "head" ]
+    - map: [ "pocket1" ]
+    - map: [ "pocket2" ]
+  - type: StatusIcon
+    bounds: -0.5,-0.5,0.5,0.5
+  - type: RotationVisuals
+    defaultRotation: 90
+    horizontalRotation: 90
+#  - type: HumanoidAppearance
+#    species: Human
+#  - type: SlowOnDamage
+#    speedModifierThresholds:
+#      60: 0.7
+#      80: 0.5
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 185
+        restitution: 0.0
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: FloorOcclusion
+  - type: NoSlip
+  - type: Reactive
+    groups:
+      Flammable: [ Touch ]
+      Extinguish: [ Touch ]
+  - type: StatusEffects
+    allowed:
+    - PressureImmunity
+    - Pacified
+    - RadiationProtection
+  - type: Body
+    prototype: Overlord
+    requiredLegs: 2
+  - type: Identity
+  - type: IdExaminable
+  - type: Hands
+  - type: ComplexInteraction
+  - type: Internals
+  - type: Climbing
+  - type: Ensnareable
+    sprite: Objects/Misc/ensnare.rsi
+    state: icon
+  - type: AnimationPlayer
+  - type: Buckle
+  - type: CombatMode
+    canDisarm: true
+  - type: MeleeWeapon
+    soundHit:
+      collection: Punch
+    angle: 30
+    animation: WeaponArcFist
+    attackRate: 1
+    damage:
+      types:
+        Blunt: 40
+  - type: SSDIndicator
+  - type: StandingState
+  - type: MindContainer
+    showExamineInfo: true
+  - type: CanEnterCryostorage
+  - type: InteractionPopup
+    successChance: 1
+    interactSuccessString: hugging-success-generic
+    interactSuccessSound: /Audio/Effects/thudswoosh.ogg
+    messagePerceivedByOthers: hugging-success-generic-others
+#  - type: CanHostGuardian
+  - type: NpcFactionMember
+    factions:
+    - DeathSquad
+  - type: Stripping
+  - type: UserInterface
+    interfaces:
+      enum.HumanoidMarkingModifierKey.Key:
+        type: HumanoidMarkingModifierBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
+  - type: Puller
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Borg
+  - type: TypingIndicator
+    proto: robot
+  - type: Vocal
+    sounds:
+      Male: MaleHuman
+      Female: FemaleHuman
+      Unsexed: MaleHuman
+  - type: Emoting
+  - type: BodyEmotes
+    soundsId: GeneralBodyEmotes
+  - type: Grammar
+    attributes:
+      proper: true
+  - type: MobPrice
+    price: 15000000
+    deathPenalty: 0.01
+  - type: Tag
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - Unimplantable
+  - type: FireVisuals
+    alternateState: Standing
+  - type: ZombieImmune
+  - type: Repairable
+    doAfterDelay: 1
+    allowSelfRepair: true
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+    fitsInCharger: true
+  - type: PowerCellDraw
+    drawRate: 0
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot { }
+      borg_module: !type:Container { }
+#Связь
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+    - Common
+    - Science
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+    - Science

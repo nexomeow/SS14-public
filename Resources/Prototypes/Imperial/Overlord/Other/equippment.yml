@@ -1,0 +1,75 @@
+- type: entity
+  id: OverlordModuleCombat
+  parent: [ BaseBorgModule, BaseProviderBorgModule ]
+  name: overlord combat module
+  description: A universal cyborg module which allows the unit to install and manipulate electrical systems.
+  components:
+  - type: Sprite
+    layers:
+    - state: generic
+    - state: icon-cables
+  - type: ItemBorgModule
+    items:
+    - WeaponOverlordPlasmaCannon
+    - EnergySword
+  - type: BorgModuleIcon
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: wire-module }
+
+- type: entity
+  name: overlord plasma cannon
+  parent: BaseWeaponBattery
+  id: WeaponOverlordPlasmaCannon
+  description: Pew-pew
+  components:
+  - type: Sprite
+    sprite: Imperial/Overlord/Equippment/plasma_cannon.rsi
+    state: icon
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,3,1
+    sprite: Imperial/Overlord/Equippment/plasma_cannon.rsi
+  - type: Appearance
+  - type: Gun
+    fireRate: 1
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletLaserSpread
+    fireCost: 1
+  - type: BatteryWeaponFireModes
+    fireModes:
+    - proto: BulletLaserSpread
+      fireCost: 1
+    - proto: BulletLaserSpreadNarrow
+      fireCost: 2
+    - proto: BulletDisablerSmgSpread
+      fireCost: 3
+  - type: Battery
+    maxCharge: 1200
+    startingCharge: 1200
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 200
+
+#Ядро
+- type: entity
+  parent: BasePowerCell
+  id: OverlordCoreBattery
+  name: Reactor core of Overlord
+  description: ...
+  suffix: Overlord
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.PowerCellVisualLayers.Base" ]
+      state: microreactor
+    - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
+      state: o2
+      shader: unshaded
+  - type: Battery
+    maxCharge: 120000
+    startingCharge: 120000
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 120000 # takes 1 minute to charge itself back to full
