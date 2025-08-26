@@ -1,0 +1,54 @@
+- type: entity
+  parent: BaseSupremeMachine
+  id: SupremeMachineVer1
+  name: Supreme Machine V1
+  description: V1 what?
+  suffix: SM, V1
+  components:
+  - type: Sprite
+    sprite: Imperial/SupremeMachines/Machines.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: supreme_machine1
+    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+      state: wings_unshaded
+      shader: unshaded
+  - type: AutoImplant
+    implants:
+    - SupremeMachineAbilityFeedbackImplant
+    - MindShieldImplant
+## Регенерация благодаря крови.
+  - type: Reactive
+    groups:
+      Flammable: [ Touch ]
+      Extinguish: [ Touch ]
+    reactions:
+    - reagents: [ Blood, CopperBlood, InsectBlood, ZombieBlood ]
+      methods: [ Touch ]
+      effects:
+      - !type:HealthChange
+        scaleByQuantity: true
+        damage:
+          groups:
+            Burn: -20
+            Brute: -20
+
+- type: entity
+  parent: BaseSupremeMachine
+  id: SupremeMachineVer2
+  name: Supreme Machine V2
+  description: V2 what?
+  suffix: SM, V2
+  components:
+  - type: Sprite
+    sprite: Imperial/SupremeMachines/Machines.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: supreme_machine2
+    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+      state: wings_unshaded
+      shader: unshaded
+  - type: AutoImplant
+    implants:
+##    - SupremeMachineAbilityFeedbackImplant
+    - MindShieldImplant

@@ -1,0 +1,73 @@
+- type: entity
+  name: BaseWeaponRevolver
+  parent: BaseItem
+  id: BaseWeaponSupremeMachineRevolver
+  description: A rooty tooty point and shooty.
+  abstract: true
+  components:
+  - type: Sprite
+    state: icon
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,0
+    - 0,1,0,1
+  - type: Tag
+    tags:
+    - Sidearm
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Revolvers/deckard.rsi
+    quickEquip: false
+    slots:
+    - suitStorage
+    - Belt
+  - type: AmmoCounter
+  - type: Gun
+    selectedMode: SemiAuto
+    fireRate: 1.8
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/revolver.ogg
+  - type: HitscanBatteryAmmoProvider
+    proto: RevolverScan
+    fireCost: 1
+  - type: Battery
+    maxCharge: 3
+    startingCharge: 3
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 1
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  name: supreme revolver
+  parent: BaseWeaponSupremeMachineRevolver
+  id: WeaponSupremeMachineRevolver
+  description: Revolver of marksman.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Revolvers/mateba.rsi
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Revolvers/mateba.rsi
+  - type: Gun
+    fireRate: 1.8
+    soundGunshot:
+      path: /Audio/Imperial/SupremeMachines/revolver_shoot.ogg
+
+- type: hitscan
+  id: RevolverScan
+  damage:
+    types:
+      Piercing: 20
+      Structural: 10
+  muzzleFlash:
+    sprite: Imperial/SupremeMachines/Projectiles.rsi
+    state: revolver_scan
+  travelFlash:
+    sprite: Imperial/SupremeMachines/Projectiles.rsi
+    state: revolver_scan
+  impactFlash:
+    sprite: Imperial/SupremeMachines/Projectiles.rsi
+    state: revolver_scan

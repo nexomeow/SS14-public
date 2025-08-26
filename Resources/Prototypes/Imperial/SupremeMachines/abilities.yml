@@ -1,0 +1,110 @@
+## Feedbacker
+- type: entity
+  parent: BaseSubdermalImplant
+  id: SupremeMachineAbilityFeedbackImplant ## Костыльная х....
+  name: Feedback
+  components:
+    - type: SubdermalImplant
+      implantAction: SupremeMachineAbilityFeedback
+    - type: Tag
+      tags:
+        - SubdermalImplant
+        - HideContextMenu
+        - Flashlight
+
+- type: entity
+  id: BaseSupremeMachineAbilityFeedback
+  name: nope-massage
+  description: nope-massage
+  components:
+  - type: MedievalTargetSpell
+  - type: Action
+    useDelay: 60
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Imperial/Medieval/blackhole_cast.ogg
+    icon:
+      sprite: Imperial/Medieval/Gun/Charmer/blood.rsi
+      state: 1
+
+- type: entity
+  id: SupremeMachineAbilityFeedback
+  parent: BaseSupremeMachineAbilityFeedback
+  name: feedback-ability-name
+  description: feedback-ability-desc
+  components:
+  - type: MedievalTargetSpell
+  - type: Action
+    useDelay: 0.5
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Imperial/SupremeMachines/feedback.ogg
+    icon:
+      sprite: Imperial/SupremeMachines/Skills.rsi
+      state: feedback_icon
+  - type: TargetAction
+    checkCanAccess: false
+    range: 60
+  - type: WorldTargetAction
+    event: !type:ProjectileSpellEvent
+      prototype: FeedbackerParryBullet
+      projectileSpeed: 10
+
+#      speechPoints:
+#        0:
+#          speech:
+#          color:
+#          hideChat: true
+#        0.5:
+#          speech:
+#          color:
+#          hideChat: true
+
+- type: entity
+  id: FeedbackerParryBullet
+  parent: BaseBullet
+  name: Parry
+  description: PARRY
+  components:
+  - type: Sprite
+    sprite: Imperial/SupremeMachines/Skills.rsi
+    layers:
+    - state: steelfist
+  - type: Projectile
+    deleteOnCollide: false
+#  - type: Fixtures
+#    fixtures:
+#      fix1:
+#        shape:
+#          !type:PhysShapeAabb
+#          bounds: "-0.25,-0.25,0.25,0.25"
+#        density: 20
+#        mask:
+#        - ItemMask
+#        restitution: 0.3
+#        friction: 3.2
+#      blackHoleExplode:
+#        shape:
+#          !type:PhysShapeAabb
+#          bounds: "-0.26,-0.26,0.26,0.26"
+#        density: 20
+#        mask:
+#        - Impassable
+#        hard: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 50
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Reflect
+    reflectProb: 1
+    spread: 1
+  - type: TimedDespawn
+    lifetime: 0.1
+## Feedbacker end

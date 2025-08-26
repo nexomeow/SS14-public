@@ -1,0 +1,250 @@
+- type: entity
+  save: false
+  parent:
+  - BaseMob
+  - MobDamageableSupremeMachine
+  - MobCombat
+  - StripableInventoryBase
+  id: BaseSupremeMachine
+  abstract: true
+  components:
+  - type: Sprite
+  - type: StatusIcon
+    bounds: -0.5,-0.5,0.5,0.5
+  - type: ZombieImmune
+  - type: RotationVisuals
+    defaultRotation: 90
+    horizontalRotation: 90
+  - type: Fixtures
+    fixtures: # TODO: This needs a second fixture just for mob collisions.
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 185
+        restitution: 0.0
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: FloorOcclusion
+#  - type: Mana
+  - type: RangedDamageSound
+    soundGroups:
+      Brute:
+        collection:
+          MeatBulletImpact
+    soundTypes:
+      Heat:
+        collection:
+          MeatLaserImpact
+  - type: StatusEffects
+    allowed:
+    - PressureImmunity
+    - Pacified
+    - RadiationProtection
+  - type: Body
+    prototype: Aghost
+    requiredLegs: 2
+  - type: Identity
+  - type: Inventory
+    templateId: suprememachine
+    speciesId: human
+  - type: IdExaminable
+  - type: Hands
+  - type: ComplexInteraction
+  - type: Internals
+  - type: Climbing
+  - type: Ensnareable
+    sprite: Objects/Misc/ensnare.rsi
+    state: icon
+  - type: AnimationPlayer
+  - type: NoSlip
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+    - Common
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+  - type: Buckle
+  - type: CombatMode
+    canDisarm: true
+  - type: MeleeWeapon
+    soundHit:
+      collection: Punch
+    angle: 30
+    animation: WeaponArcFist
+    attackRate: 1
+    damage:
+      types:
+        Blunt: 10
+  - type: SleepEmitSound
+  - type: SSDIndicator
+  - type: StandingState
+  - type: MindContainer
+    showExamineInfo: true
+  - type: InteractionPopup
+    successChance: 1
+    interactSuccessString: hugging-success-generic
+    interactSuccessSound: /Audio/Effects/thudswoosh.ogg
+    messagePerceivedByOthers: hugging-success-generic-others
+  - type: NpcFactionMember
+    factions:
+    - SimpleHostile
+  - type: Stripping
+  - type: UserInterface
+    interfaces:
+      enum.HumanoidMarkingModifierKey.Key:
+        type: HumanoidMarkingModifierBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
+  - type: Puller
+  - type: Speech
+    speechSounds: Alto
+  - type: DamageForceSay
+  - type: Vocal
+    sounds:
+      Unsexed: UnisexSilicon
+    wilhelmProbability: 0
+  - type: Emoting
+  - type: BodyEmotes
+    soundsId: GeneralBodyEmotes
+  - type: Grammar
+    attributes:
+      proper: true
+  - type: MobPrice
+    price: 150000
+    deathPenalty: 0.01 #
+  - type: Tag
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - SiliconEmotes
+    - Unimplantable
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 8
+    baseSprintSpeed : 5
+  - type: ProtectedFromStepTriggers
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepSecurityCyborg
+#  - type: Repairable ## Только для V2
+#    doAfterDelay: 10
+#    allowSelfRepair: true
+
+- type: entity
+  save: false
+  id: MobDamageableSupremeMachine
+  abstract: true
+  components:
+  - type: Damageable
+    damageContainer: Silicon
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 600
+      behaviors:
+      - !type:GibBehavior { }
+  - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      200: Critical
+      250: Dead
+    stateAlertDict:
+      Alive: SupremeMachineHealth
+      Critical: BorgCrit
+      Dead: SupremeMachineDead
+  - type: MobStateActions
+    actions:
+      Critical:
+      - ActionCritSuccumb
+  - type: HealthExaminable
+    examinableTypes:
+    - Blunt
+    - Slash
+    - Piercing
+    - Heat
+  - type: Pullable
+  - type: LightningTarget
+    priority: 2
+    lightningExplode: false
+
+- type: alert
+  id: SupremeMachineHealth
+  category: Health
+  icons:
+  - sprite: /Textures/Imperial/SupremeMachines/machine_alive.rsi
+    state: health0
+  - sprite: /Textures/Imperial/SupremeMachines/machine_alive.rsi
+    state: health1
+  - sprite: /Textures/Imperial/SupremeMachines/machine_alive.rsi
+    state: health2
+  - sprite: /Textures/Imperial/SupremeMachines/machine_alive.rsi
+    state: health3
+  - sprite: /Textures/Imperial/SupremeMachines/machine_alive.rsi
+    state: health4
+  name: alerts-health-name
+  description: alerts-health-desc
+  minSeverity: 0
+  maxSeverity: 4
+
+- type: alert
+  id: SupremeMachineDead
+  category: Health
+  icons:
+  - sprite: /Textures/Imperial/SupremeMachines/machine_dead.rsi
+    state: dead
+  name: alerts-dead-name
+  description: alerts-dead-desc
+
+## Инвентарь высших машин
+- type: inventoryTemplate
+  id: suprememachine
+  slots:
+    - name: neck
+      slotTexture: neck
+      slotFlags: NECK
+      uiWindowPos: 0,2
+      strippingWindowPos: 0,1
+      displayName: Neck
+    - name: pocket1
+      slotTexture: pocket
+      fullTextureName: template_small
+      slotFlags: POCKET
+      slotGroup: MainHotbar
+      stripTime: 3
+      uiWindowPos: 0,3
+      strippingWindowPos: 0,4
+##      dependsOn: jumpsuit
+      displayName: Pocket 1
+      stripHidden: true
+    - name: pocket2
+      slotTexture: pocket
+      fullTextureName: template_small
+      slotFlags: POCKET
+      slotGroup: MainHotbar
+      stripTime: 3
+      uiWindowPos: 2,3
+      strippingWindowPos: 1,4
+##      dependsOn: jumpsuit
+      displayName: Pocket 2
+      stripHidden: true
+    - name: back
+      slotTexture: back
+      fullTextureName: template_small
+      slotFlags: BACK
+      slotGroup: SecondHotbar
+      stripTime: 6
+      uiWindowPos: 3,0
+      strippingWindowPos: 0,5
+      displayName: Back
+      blacklist:
+        tags:
+        - PetOnly
