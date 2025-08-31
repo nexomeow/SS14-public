@@ -88,7 +88,7 @@
       whitelist:
         components:
         - NukeDisk
-    alertLevelOnActivate: delta
+    alertLevelOnActivate: black ## Imperial Space code black
     alertLevelOnDeactivate: green
   - type: InteractionOutline
   - type: ActivatableUI

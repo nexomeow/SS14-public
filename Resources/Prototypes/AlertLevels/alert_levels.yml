@@ -71,3 +71,17 @@
       emergencyLightColor: DarkViolet
       forceEnableEmergencyLights: true
       shuttleTime: 1200
+## Imperial Space code black start
+    black:
+      announcement: alert-level-black-announcement
+      selectable: false
+      sound:
+        path: /Audio/Imperial/ImperialCodes/black.ogg
+        params:
+          volume: -2
+      disableSelection: true
+      color: Black
+      emergencyLightColor: DarkRed
+      forceEnableEmergencyLights: true
+      shuttleTime: 180
+## Imperial Space code black end
