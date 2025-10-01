@@ -1,0 +1,67 @@
+- type: entity
+  parent: MobHuman
+  id: BaseCustomCharacter
+  components:
+  - type: CustomHumanoidAppearance
+    name: Base Character # Имя. Перезаписывает имя сущности на указанное.
+    sex: Unsexed # Пол
+    gender: Male # Гедер
+    age: 18 # Даже не думайте указать возраст меньше 18.
+    eyeColor: "#82210e" # Цвет глаз
+    skinColor: "#1a9e76" # Цвет кожи
+
+- type: entity
+  parent: MobHuman
+  name: male test
+  id: BaseCustomCharacterMale
+  components:
+  - type: CustomHumanoidAppearance
+    name: Test
+    sex: Male
+    gender: Male
+    age: 35
+    eyeColor: "#0019be"
+    skinColor: "#e2cf00"
+
+- type: entity
+  parent: MobHuman
+  name: fem test
+  id: BaseCustomCharacterFemale
+  components:
+  - type: CustomHumanoidAppearance
+    name: Test
+    sex: Female
+    gender: Female
+    age: 22
+    eyeColor: "#ff0000"
+    skinColor: "#db0000"
+
+- type: entity
+  parent: MobHuman
+  name: age test
+  id: BaseCustomCharacterAge
+  components:
+  - type: CustomHumanoidAppearance
+    name: Test
+    sex: Male
+    gender: Male
+    age: 17
+    eyeColor: "#443d00"
+    skinColor: "#308148"
+
+- type: entity
+  parent: MobHuman
+  name: marking test
+  id: BaseCustomCharacterMarkings
+  components:
+  - type: CustomHumanoidAppearance
+    name: Test
+    sex: Male
+    gender: Male
+    age: 19
+    eyeColor: "#00ff15"
+    skinColor: "#308148"
+    hair: HumanHairLongBedheadOld
+    hairColor:
+    - "#ff00e1"
+    - "#ff00e1"

@@ -1,0 +1,6 @@
+#- type: customCharacterProfile
+#  id: BaseCharacterProfile
+#  name: Character
+#  age: 18
+#  eyeColor: "#000000"
+#  skinColor: "#ead0d0"
