@@ -1,0 +1,183 @@
+# AP - Бронебойный. Базовый снаряд.
+# Sub и Cumulative - Подкалибреный и кумулятивный соответственно. Улучшенные снаряды. Игнорят броню, но у них пониженный урон.
+# HE - Осколочно-фугасный. Огромный урон, но только по слабо бронированным целям.
+
+#Light-Tank
+
+- type: entity
+  id: TonkProjectileLT
+  name: AP
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+    - state: piercing
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 210
+
+- type: entity
+  id: TonkProjectileLTS
+  name: Sub
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+    - state: rubber
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 175
+    ignoreResistances: true
+
+#Middle-Tank
+
+- type: entity
+  id: TonkProjectileMT
+  name: AP
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+    - state: piercing
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 330
+
+- type: entity
+  id: TonkProjectileMTS
+  name: Sub
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+    - state: rubber
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 280
+    ignoreResistances: true
+
+#Heavy-Tank
+
+- type: entity
+  id: TonkProjectileHT
+  name: AP
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+    - state: piercing
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 420
+
+- type: entity
+  id: TonkProjectileHTS
+  name: Sub
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+    - state: rubber
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 380
+    ignoreResistances: true
+
+- type: entity
+  id: TonkProjectileHTHE
+  name: HE
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+    - state: practice
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 510
+  - type: TriggerOnCollide
+    fixtureID: projectile
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 1
+    intensitySlope: 1
+    totalIntensity: 1
+    maxTileBreak: 0
+
+#Anti-Tank
+
+- type: entity
+  id: TonkProjectileAT
+  name: AP
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+    - state: piercing
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 650
+
+- type: entity
+  id: TonkProjectileATC
+  name: Cumulative
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+    - state: bullet
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 540
+    ignoreResistances: true
+
+- type: entity
+  id: TonkProjectileATHE
+  name: HE
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+    - state: practice
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 960
+  - type: TriggerOnCollide
+    fixtureID: projectile
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 1
+    intensitySlope: 1
+    totalIntensity: 1
+    maxTileBreak: 0

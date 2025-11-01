@@ -1,0 +1,9 @@
+- type: entity
+  parent: BaseGameRule
+  id: TonkCTFRule
+  components:
+  - type: CTFRule
+  - type: GameRule
+    minPlayers: 10
+  - type: DynamicRuleCost
+    cost: 200

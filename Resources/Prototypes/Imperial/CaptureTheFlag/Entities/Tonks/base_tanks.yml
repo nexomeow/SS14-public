@@ -1,0 +1,279 @@
+- type: entity
+  save: false
+  id: BaseTank
+  abstract: true
+  components:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+  - type: MobCollision
+  - type: Physics
+    bodyType: KinematicController
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 50
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Clickable
+  - type: InteractionOutline
+  - type: InputMover
+  - type: Input
+    context: "human"
+  - type: LagCompensation
+  - type: MobMover
+  - type: Actions
+  - type: Alerts
+  - type: Appearance
+  - type: RotationVisuals
+    defaultRotation: 0
+    horizontalRotation: 0
+  - type: DoAfter
+  - type: Examiner
+  - type: Eye
+  - type: ContentEye
+  - type: CameraRecoil
+  - type: MindContainer
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 0
+    baseSprintSpeed : 0
+  - type: RequireProjectileTarget
+    active: False
+  - type: NpcFactionMember
+    factions:
+    - SimpleNeutral
+  - type: StatusEffects
+    allowed:
+    - SlowedDown
+    - PressureImmunity
+    - Pacified
+    - RadiationProtection
+  - type: SSDIndicator
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: TanksTracksLight
+  - type: ShowHealthBars
+    damageContainers:
+    - Inorganic
+    - Silicon
+  - type: NoSlip
+  - type: ZombieImmune
+  - type: TypingIndicator
+    proto: robot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Pai
+  - type: Vocal
+    sounds:
+      Unsexed: UnisexSilicon
+    screamAction: null
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - FootstepSound
+  - type: MovementIgnoreGravity
+  - type: ComplexInteraction
+  - type: Hands
+  - type: Body
+    prototype: TonkBody
+#  - type: AmbientSound
+#    volume: -9
+#    range: 5
+#    sound:
+#      path:
+
+- type: entity
+  save: false
+  id: TankDamageable
+  abstract: true
+  components:
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      1500: Dead
+    stateAlertDict:
+      Alive: BorgHealth
+      Dead: BorgDead
+    showOverlays: false
+    allowRevives: true
+  - type: HealthExaminable
+    examinableTypes:
+    - Piercing
+    - Heat
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: alive
+      Dead:
+        Base: dead
+  - type: RangedDamageSound
+    soundGroups:
+      Brute:
+        collection:
+          TanksDamage
+    soundTypes:
+      Heat:
+        collection:
+          TanksDamage
+
+- type: entity
+  save: false
+  id: TankCombat
+  abstract: true
+  components:
+  - type: CombatMode
+    toggleMouseRotator: false
+  - type: MouseRotator
+    angleTolerance: 0
+    rotationSpeed: 90
+    simple4DirMode: true
+
+- type: entity
+  abstract: true
+  id: InventoryTankBase
+  components:
+    - type: Inventory
+      templateId: tonk
+    - type: InventorySlots
+
+- type: inventoryTemplate
+  id: tonk #tank inventory.. LOL
+  slots:
+    - name: neck
+      slotTexture: neck
+      slotFlags: NECK
+      uiWindowPos: 0,2
+      strippingWindowPos: 0,1
+      displayName: Neck
+
+#Tanks quirks
+
+#Base
+- type: entity
+  abstract: true
+  parent: Clothing
+  id: BaseTanksQuirk
+  components:
+  - type: Item
+    size: Small
+  - type: Clothing
+    quickEquip: true
+    slots:
+    - back
+  - type: Sprite
+    state: icon
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: MaterialCloth1
+      amount: 2
+  - type: Food
+    requiresSpecialDigestion: true
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 10
+
+- type: entity
+  parent: BaseTanksQuirk
+  id: TanksQuirkArmorLight
+  name: foil armor
+  description: Nothing more than foil...
+  components:
+  - type: Sprite
+    sprite: Imperial/CaptureTheFlag/Tanks/Staff/tanks_armor.rsi
+    state: foil-shield
+  - type: Unremoveable
+  - type: Armor
+    modifiers:
+      coefficients:
+        Piercing: 0.95
+  - type: ExplosionResistance
+    damageCoefficient: 0.2
+
+- type: entity
+  parent: BaseTanksQuirk
+  id: TanksQuirkArmorAnti
+  name: light armor
+  description: Cardboard and a drop of armor.
+  components:
+  - type: Sprite
+    sprite: Imperial/CaptureTheFlag/Tanks/Staff/tanks_armor.rsi
+    state: light-shield
+  - type: Unremoveable
+  - type: Armor
+    modifiers:
+      coefficients:
+        Piercing: 0.95
+        Blunt: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0
+
+- type: entity
+  parent: BaseTanksQuirk
+  id: TanksQuirkArmorMiddle
+  name: middle armor
+  description: You have an average defense against enemy attacks. Does not work against tank destroyers.
+  components:
+  - type: Sprite
+    sprite: Imperial/CaptureTheFlag/Tanks/Staff/tanks_armor.rsi
+    state: middle-shield
+  - type: Unremoveable
+  - type: Armor
+    modifiers:
+      coefficients:
+        Piercing: 0.9
+        Blunt: 0.5
+  - type: ExplosionResistance
+    damageCoefficient: 0
+
+- type: entity
+  parent: BaseTanksQuirk
+  id: TanksQuirkArmorHeavy
+  name: heavy armor
+  description: You have a high defense against enemy attacks. Does not work against tank destroyers.
+  components:
+  - type: Sprite
+    sprite: Imperial/CaptureTheFlag/Tanks/Staff/tanks_armor.rsi
+    state: heavy-shield
+  - type: Unremoveable
+  - type: Armor
+    modifiers:
+      coefficients:
+        Piercing: 0.65
+        Blunt: 0.2
+  - type: ExplosionResistance
+    damageCoefficient: 0
+
+#Tanks lodout
+
+- type: startingGear #gear
+  id: LightTank
+  equipment:
+    neck: TanksQuirkArmorLight
+
+- type: startingGear #gear
+  id: MiddleTank
+  equipment:
+    neck: TanksQuirkArmorMiddle
+
+- type: startingGear #gear
+  id: HeavyTank
+  equipment:
+    neck: TanksQuirkArmorHeavy
+
+- type: startingGear #gear
+  id: AntiTank
+  equipment:
+    neck: TanksQuirkArmorAnti

@@ -1,0 +1,105 @@
+# flags
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: BaseFlagTonkCTF
+  name: flag
+  description: desc
+  components:
+  - type: Sprite
+    sprite: Imperial/XxRaay/flags.rsi
+    state: white-flag
+  - type: CTFFlag
+    faction: SimpleNeutral
+
+- type: entity
+  parent: BaseFlagTonkCTF
+  id: FlagTonkCTFRed
+  name: red flag
+  description: desc
+  components:
+  - type: Sprite
+    state: red-flag
+  - type: CTFFlag
+    faction: TonkTeamRed
+  - type: Tag
+    tags:
+    - TonkRedTeam
+
+- type: entity
+  parent: BaseFlagTonkCTF
+  id: FlagTonkCTFBlue
+  name: blue flag
+  description: desc
+  components:
+  - type: Sprite
+    state: blue-flag
+  - type: CTFFlag
+    faction: TonkTeamBlue
+  - type: Tag
+    tags:
+    - TonkBlueTeam
+
+# flag receivers
+- type: entity
+  abstract: true
+  parent: Window
+  id: BaseFlagReceiver
+  name: flag receiver
+  description: desc
+  components:
+  - type: CTFFlagReceiver
+    team: Neutral
+
+- type: entity
+  parent: BaseFlagReceiver
+  id: FlagReceiverRed
+  name: flag receiver red
+  description: desc
+  components:
+  - type: CTFFlagReceiver
+    faction: TonkTeamRed
+    enemyFaction: TonkTeamBlue
+
+- type: entity
+  parent: BaseFlagReceiver
+  id: FlagReceiverBlue
+  name: flag receiver blue
+  description: desc
+  components:
+  - type: CTFFlagReceiver
+    faction: TonkTeamBlue
+    enemyFaction: TonkTeamRed
+
+# flag spawners
+- type: entity
+  abstract: true
+  parent: BaseStructure
+  id: BaseFlagSpawner
+  name: flag spawner
+  description: desc
+  components:
+  - type: CTFFlagSpawner
+    team: Neutral
+
+- type: entity
+  parent: BaseFlagSpawner
+  id: FlagSpawnerRed
+  name: flag spawner red
+  description: desc
+  components:
+  - type: CTFFlagSpawner
+    team: TonkTeamRed
+    flagProto:
+    - FlagTonkCTFRed
+
+- type: entity
+  parent: BaseFlagSpawner
+  id: FlagSpawnerBlue
+  name: flag spawner blue
+  description: desc
+  components:
+  - type: CTFFlagSpawner
+    team: TonkTeamBlue
+    flagProto:
+    - FlagTonkCTFBlue

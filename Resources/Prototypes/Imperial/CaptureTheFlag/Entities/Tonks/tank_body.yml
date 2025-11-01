@@ -1,0 +1,11 @@
+- type: body
+  id: TonkBody
+  name: "tonk"
+  root: torso
+  slots:
+    torso:
+      part: TorsoHuman
+      connections:
+      - left hand
+    left hand:
+      part: LeftHandHuman

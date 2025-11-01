@@ -1,0 +1,9 @@
+- type: npcFaction
+  id: TonkTeamRed
+  hostile:
+  - TonkTeamBlue
+
+- type: npcFaction
+  id: TonkTeamBlue
+  hostile:
+  - TonkTeamRed

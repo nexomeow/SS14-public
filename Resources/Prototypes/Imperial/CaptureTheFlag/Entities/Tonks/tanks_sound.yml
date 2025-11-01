@@ -1,0 +1,18 @@
+- type: soundCollection
+  id: TanksDamage
+  files:
+    - /Audio/Imperial/CaptureTheFlag/Tanks/Damage/hit1.ogg
+    - /Audio/Imperial/CaptureTheFlag/Tanks/Damage/hit2.ogg
+    - /Audio/Imperial/CaptureTheFlag/Tanks/Damage/hit3.ogg
+    - /Audio/Imperial/CaptureTheFlag/Tanks/Damage/hit4.ogg
+    - /Audio/Imperial/CaptureTheFlag/Tanks/Damage/hit5.ogg
+
+- type: soundCollection
+  id: TanksTracksLight
+  files:
+    - /Audio/Imperial/CaptureTheFlag/Tanks/Tracks/tracks_light.ogg
+
+- type: soundCollection
+  id: TanksTracksHeavy
+  files:
+    - /Audio/Imperial/CaptureTheFlag/Tanks/Tracks/tracks_heavy.ogg

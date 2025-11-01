@@ -1,0 +1,243 @@
+# team LT
+- type: entity
+  parent: CTFLightTank
+  id: CTFLightTankRed
+  name: LTTB-L
+  suffix: CTFTanks, LT, Tank
+  components:
+  - type: Sprite
+    sprite: Imperial/CaptureTheFlag/Tanks/lttb_l.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+      color: red
+# team
+  - type: NpcFactionMember
+    factions:
+    - TonkTeamRed
+
+- type: entity
+  parent: CTFLightTank
+  id: CTFLightTankViolet
+  name: LTTB-L
+  suffix: CTFTanks, LT, Tank
+  components:
+  - type: Sprite
+    sprite: Imperial/CaptureTheFlag/Tanks/lttb_l.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+      color: DarkViolet
+
+- type: entity
+  parent: CTFLightTank
+  id: CTFLightTankYellow
+  name: LTTB-L
+  suffix: CTFTanks, LT, Tank
+  components:
+  - type: Sprite
+    sprite: Imperial/CaptureTheFlag/Tanks/lttb_l.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+      color: yellow
+
+- type: entity
+  parent: CTFLightTank
+  id: CTFLightTankBlue
+  name: LTTB-L
+  suffix: CTFTanks, LT, Tank
+  components:
+  - type: Sprite
+    sprite: Imperial/CaptureTheFlag/Tanks/lttb_l.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+      color: blue
+# team
+  - type: NpcFactionMember
+    factions:
+    - TonkTeamBlue
+
+# team MT
+- type: entity
+  parent: CTFMiddleTank
+  id: CTFMiddleTankRed
+  name: T-L
+  suffix: CTFTanks, MT, Tank
+  components:
+  - type: Sprite
+    sprite: Imperial/CaptureTheFlag/Tanks/t_l.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+      color: red
+# team
+  - type: NpcFactionMember
+    factions:
+    - TonkTeamRed
+
+- type: entity
+  parent: CTFMiddleTank
+  id: CTFMiddleTankViolet
+  name: T-L
+  suffix: CTFTanks, MT, Tank
+  components:
+  - type: Sprite
+    sprite: Imperial/CaptureTheFlag/Tanks/t_l.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+      color: DarkViolet
+
+- type: entity
+  parent: CTFMiddleTank
+  id: CTFMiddleTankYellow
+  name: T-L
+  suffix: CTFTanks, MT, Tank
+  components:
+  - type: Sprite
+    sprite: Imperial/CaptureTheFlag/Tanks/t_l.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+      color: yellow
+
+- type: entity
+  parent: CTFMiddleTank
+  id: CTFMiddleTankBlue
+  name: T-L
+  suffix: CTFTanks, MT, Tank
+  components:
+  - type: Sprite
+    sprite: Imperial/CaptureTheFlag/Tanks/t_l.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+      color: blue
+# team
+  - type: NpcFactionMember
+    factions:
+    - TonkTeamBlue
+
+# team HT
+- type: entity
+  parent: CTFHeavyTank
+  id: CTFHeavyTankRed
+  name: IS-L
+  suffix: CTFTanks, HT, Tank
+  components:
+  - type: Sprite
+    sprite: Imperial/CaptureTheFlag/Tanks/is_l.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+      color: red
+# team
+  - type: NpcFactionMember
+    factions:
+    - TonkTeamRed
+
+- type: entity
+  parent: CTFHeavyTank
+  id: CTFHeavyTankViolet
+  name: IS-L
+  suffix: CTFTanks, HT, Tank
+  components:
+  - type: Sprite
+    sprite: Imperial/CaptureTheFlag/Tanks/is_l.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+      color: DarkViolet
+
+- type: entity
+  parent: CTFHeavyTank
+  id: CTFHeavyTankYellow
+  name: IS-L
+  suffix: CTFTanks, HT, Tank
+  components:
+  - type: Sprite
+    sprite: Imperial/CaptureTheFlag/Tanks/is_l.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+      color: yellow
+
+- type: entity
+  parent: CTFHeavyTank
+  id: CTFHeavyTankBlue
+  name: IS-L
+  suffix: CTFTanks, HT, Tank
+  components:
+  - type: Sprite
+    sprite: Imperial/CaptureTheFlag/Tanks/is_l.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+      color: blue
+# team
+  - type: NpcFactionMember
+    factions:
+    - TonkTeamBlue
+
+# team AT
+- type: entity
+  parent: CTFAntiTank
+  id: CTFAntiTankRed
+  name: ISU-L
+  suffix: CTFTanks, AT, Tank
+  components:
+  - type: Sprite
+    sprite: Imperial/CaptureTheFlag/Tanks/isu_l.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+      color: red
+# team
+  - type: NpcFactionMember
+    factions:
+    - TonkTeamRed
+
+- type: entity
+  parent: CTFAntiTank
+  id: CTFAntiTankViolet
+  name: ISU-L
+  suffix: CTFTanks, AT, Tank
+  components:
+  - type: Sprite
+    sprite: Imperial/CaptureTheFlag/Tanks/isu_l.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+      color: DarkViolet
+
+- type: entity
+  parent: CTFAntiTank
+  id: CTFAntiTankYellow
+  name: ISU-L
+  suffix: CTFTanks, AT, Tank
+  components:
+  - type: Sprite
+    sprite: Imperial/CaptureTheFlag/Tanks/isu_l.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+      color: yellow
+
+- type: entity
+  parent: CTFAntiTank
+  id: CTFAntiTankBlue
+  name: ISU-L
+  suffix: CTFTanks, AT, Tank
+  components:
+  - type: Sprite
+    sprite: Imperial/CaptureTheFlag/Tanks/isu_l.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+      color: blue
+# team
+  - type: NpcFactionMember
+    factions:
+    - TonkTeamBlue

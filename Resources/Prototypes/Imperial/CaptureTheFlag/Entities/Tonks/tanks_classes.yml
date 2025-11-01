@@ -1,0 +1,263 @@
+- type: entity
+  parent: [BaseTank, TankCombat, TankDamageable, InventoryTankBase]
+  id: PlayableTank
+  name: tonk
+  description: Steel and lead.
+  abstract: true
+  components:
+  - type: Gun
+    projectileSpeed: 30
+    fireRate: 0.5
+    angleDecay: 45
+    minAngle: 0
+    maxAngle: 5
+    soundGunshot:
+      path: /Audio/Imperial/CaptureTheFlag/Tanks/Shots/middle_tank.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/empty.ogg
+#  - type: BallisticAmmoProvider
+#    whitelist:
+#      tags:
+#      - TonkProjectiles
+#    capacity: 100
+#    proto: TonkProjectileMT
+
+- type: entity
+  parent: PlayableTank
+  id: CTFLightTank
+  name: LTTB-L
+  suffix: TonkCTF, LT, Tank
+  components:
+  - type: Sprite
+    sprite: Imperial/CaptureTheFlag/Tanks/lttb_l.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+  - type: Gun
+    projectileSpeed: 20
+    fireRate: 0.42
+    angleDecay: 45
+    minAngle: 2
+    maxAngle: 12
+    soundGunshot:
+      path: /Audio/Imperial/CaptureTheFlag/Tanks/Shots/light_tank.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/empty.ogg
+  - type: ProjectileBatteryAmmoProvider
+    proto: TonkProjectileLT
+    fireCost: 1
+  - type: BatteryWeaponFireModes
+    fireModes:
+    - proto: TonkProjectileLT #Бронебойный
+      fireCost: 1
+    - proto: TonkProjectileLTS #Подкалибер
+      fireCost: 1
+  - type: Battery
+    maxCharge: 50
+    startingCharge: 50
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 3
+    baseSprintSpeed : 3
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      1150: Critical
+      1151: Dead
+#  - type: Reflect
+#    reflectProb: .05
+#    spread: 120
+  - type: EyeCursorOffset
+    maxOffset: 2
+    pvsIncrease: 0.8
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: TanksTracksLight
+      params:
+        volume: -12
+  - type: Loadout
+    prototypes: [ LightTank ]
+  - type: MouseRotator
+    rotationSpeed: 110
+
+- type: entity
+  parent: PlayableTank
+  id: CTFMiddleTank
+  name: T-L
+  suffix: TonkCTF, MT, Tank
+  components:
+  - type: Sprite
+    sprite: Imperial/CaptureTheFlag/Tanks/t_l.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+  - type: Gun
+    projectileSpeed: 28
+    fireRate: 0.25
+    angleDecay: 45
+    minAngle: 2
+    maxAngle: 10
+    soundGunshot:
+      path: /Audio/Imperial/CaptureTheFlag/Tanks/Shots/middle_tank.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/empty.ogg
+  - type: ProjectileBatteryAmmoProvider
+    proto: TonkProjectileMT
+    fireCost: 1
+  - type: BatteryWeaponFireModes
+    fireModes:
+    - proto: TonkProjectileMT #Бронебойный
+      fireCost: 1
+    - proto: TonkProjectileMTS #Подкалибер
+      fireCost: 1
+  - type: Battery
+    maxCharge: 42
+    startingCharge: 42
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 2.2
+    baseSprintSpeed : 2.2
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      1700: Critical
+      1701: Dead
+  - type: Reflect
+    reflectProb: .10
+    spread: 120
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: TanksTracksLight
+      params:
+        volume: -12
+  - type: Loadout
+    prototypes: [ MiddleTank ]
+  - type: MouseRotator
+    rotationSpeed: 90
+
+- type: entity
+  parent: PlayableTank
+  id: CTFHeavyTank
+  name: IS-L
+  suffix: TonkCTF, HT, Tank
+  components:
+  - type: Sprite
+    sprite: Imperial/CaptureTheFlag/Tanks/is_l.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+  - type: Gun
+    projectileSpeed: 25
+    fireRate: 0.21
+    angleDecay: 45
+    minAngle: 2
+    maxAngle: 10
+    soundGunshot:
+      path: /Audio/Imperial/CaptureTheFlag/Tanks/Shots/heavy_tank.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/empty.ogg
+  - type: ProjectileBatteryAmmoProvider
+    proto: TonkProjectileHT
+    fireCost: 1
+  - type: BatteryWeaponFireModes
+    fireModes:
+    - proto: TonkProjectileHT #Бронебойный
+      fireCost: 1
+    - proto: TonkProjectileHTS #Подкалибер
+      fireCost: 1
+    - proto: TonkProjectileHTHE #Осколочно-Фугасный
+      fireCost: 1
+  - type: Battery
+    maxCharge: 35
+    startingCharge: 35
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 1.4
+    baseSprintSpeed : 1.4
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      2150: Critical
+      2151: Dead
+  - type: Reflect
+    reflectProb: .35
+    spread: 120
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: TanksTracksHeavy
+      params:
+        volume: -12
+  - type: Loadout
+    prototypes: [ HeavyTank ]
+  - type: MouseRotator
+    rotationSpeed: 60
+
+
+- type: entity
+  parent: PlayableTank
+  id: CTFAntiTank
+  name: ISU-L
+  suffix: TonkCTF, AT, Tank
+  components:
+  - type: Sprite
+    sprite: Imperial/CaptureTheFlag/Tanks/isu_l.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+  - type: Gun
+    projectileSpeed: 40
+    fireRate: 0.1
+    angleDecay: 45
+    minAngle: 2
+    maxAngle: 10
+    soundGunshot:
+      path: /Audio/Imperial/CaptureTheFlag/Tanks/Shots/anti_tank.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/empty.ogg
+  - type: ProjectileBatteryAmmoProvider
+    proto: TonkProjectileAT
+    fireCost: 1
+  - type: BatteryWeaponFireModes
+    fireModes:
+    - proto: TonkProjectileAT #Бронебойный
+      fireCost: 1
+    - proto: TonkProjectileATC #Кумулятивный
+      fireCost: 1
+    - proto: TonkProjectileATHE #Осколочно-Фугасный
+      fireCost: 1
+  - type: Battery
+    maxCharge: 20
+    startingCharge: 20
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 1.5
+    baseSprintSpeed : 1.5
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      1050: Critical
+      1051: Dead
+#  - type: Reflect
+#    reflectProb: .10
+#    spread: 120
+  - type: EyeCursorOffset
+    maxOffset: 5
+    pvsIncrease: 0.6
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: TanksTracksHeavy
+      params:
+        volume: -12
+  - type: Loadout
+    prototypes: [ AntiTank ]
+  - type: MouseRotator
+    rotationSpeed: 70
+
+#Test tank with a 8 directions of sprite
+- type: entity
+  parent: CTFAntiTank
+  id: CTFAntiTankTest
+  name: ISU-Test
+  suffix: TonkCTF, Test
+  components:
+  - type: Sprite
+    sprite: Imperial/CaptureTheFlag/Tanks/isu_test.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive

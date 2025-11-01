@@ -1,0 +1,10 @@
+- type: gamePreset
+  id: TonkCTF
+  alias:
+    - tonks
+  name: tonk-ctf-title
+  description: tonk-ctf-description
+  showInVote: false
+  maxPlayers: 8
+  rules:
+    - TonkCTFRule
