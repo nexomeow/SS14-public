@@ -19,3 +19,4 @@ ctf-blueteamwin = Команда [color=blue]синих[/color] одержала
 ctf-flag-respawned = Флаг вновь появился на своём месте.
 ctf-flag-returned = {$user} вернул {$flag} на своё место!
 ctf-flag-con = {$flag} был захвачен!
+ctf-respawn = {$user} был отремонтирован и перенесен на точку спавна.
