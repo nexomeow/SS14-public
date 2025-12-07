@@ -1,0 +1,11 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakImperialDeveloper
+  name: developer cloak
+  description: When you pushed the fix to the private repo instead of the public (right, Orix?)
+  components:
+  - type: Icon
+    sprite: Imperial/DevCloak/dev.rsi
+    state: icon
+  - type: Sprite
+    sprite: Imperial/DevCloak/dev.rsi
