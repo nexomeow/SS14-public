@@ -1,0 +1,5 @@
+- type: entity
+  parent: MobCat
+  id: MobCatZyapa
+  name: Zyapa
+  descriptrion: Aw, that a good old cat!
