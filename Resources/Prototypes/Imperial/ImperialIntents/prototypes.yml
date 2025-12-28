@@ -1,0 +1,6 @@
+- type: entity
+  abstract: true
+  id: BaseIntenableEntity ## Добавляет ключевые параметры интентов
+  components:
+  - type: Intent
+  - type: Intentable

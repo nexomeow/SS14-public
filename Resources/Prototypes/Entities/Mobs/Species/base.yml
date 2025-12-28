@@ -6,6 +6,7 @@
   - MobPolymorphable
   - MobCombat
   - StripableInventoryBase
+  - BaseIntenableEntity ##ImperialSpace интенты
   id: BaseMobSpecies
   abstract: true
   components:
@@ -167,11 +168,12 @@
   - type: MindContainer
     showExamineInfo: true
   - type: CanEnterCryostorage
-  - type: InteractionPopup
-    successChance: 1
-    interactSuccessString: hugging-success-generic
-    interactSuccessSound: /Audio/Effects/thudswoosh.ogg
-    messagePerceivedByOthers: hugging-success-generic-others
+  ##ImperialSpace убрано для корректной работы интентов
+#  - type: InteractionPopup
+#    successChance: 1
+#    interactSuccessString: hugging-success-generic
+#    interactSuccessSound: /Audio/Effects/thudswoosh.ogg
+#    messagePerceivedByOthers: hugging-success-generic-others
   - type: CanHostGuardian
   - type: NpcFactionMember
     factions:

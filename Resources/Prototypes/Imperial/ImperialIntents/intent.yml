@@ -1,0 +1,39 @@
+- type: alertCategory ## Категория
+  id: Intent
+
+- type: alert
+  id: IntentAlert ## Отображает текущий выбранный интент
+  category: Intent
+  icons:
+  - sprite: /Textures/Imperial/Intents/intent_alert.rsi
+    state: intent_white
+  - sprite: /Textures/Imperial/Intents/intent_alert.rsi
+    state: intent_green
+  - sprite: /Textures/Imperial/Intents/intent_alert.rsi
+    state: intent_blue
+  - sprite: /Textures/Imperial/Intents/intent_alert.rsi
+    state: intent_yellow
+  - sprite: /Textures/Imperial/Intents/intent_alert.rsi
+    state: intent_red
+  name: alerts-intent-name
+  description: alerts-intent-desc
+  minSeverity: 0
+  maxSeverity: 4
+
+- type: alert
+  id: IntentReinforced ## Захват
+  clickEvent: !type:ForceGrabedAlertEvent
+  icons:
+  - sprite: /Textures/Imperial/Intents/intent_states.rsi
+    state: reinforced
+  name: alerts-intent-reinforced-name
+  description: alerts-intent-reinforced-desc
+
+- type: alert
+  id: IntentKill ## Удушение
+  clickEvent: !type:ForceGrabedAlertEvent
+  icons:
+  - sprite: /Textures/Imperial/Intents/intent_states.rsi
+    state: kill
+  name: alerts-intent-kill-name
+  description: alerts-intent-kill-desc

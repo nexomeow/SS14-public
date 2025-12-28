@@ -154,6 +154,7 @@
   components:
   - type: CombatMode
   - type: MeleeWeapon
+    altDisarm: false ##Imperial для корректной работы интентов
     hidden: true
     soundHit:
       collection: MetalThud

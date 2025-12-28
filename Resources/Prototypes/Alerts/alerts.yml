@@ -8,6 +8,7 @@
     - category: Stamina
     - alertType: SuitPower
     - category: Internals
+    - category: Intent ##Imperial Space интенты
     - alertType: Fire
     - alertType: Handcuffed
     - alertType: Ensnared

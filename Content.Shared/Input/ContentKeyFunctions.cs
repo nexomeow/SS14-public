@@ -146,6 +146,7 @@ namespace Content.Shared.Input
         public static readonly BoundKeyFunction ImperialMinigameLeft = "ImperialMinigameLeft";
         public static readonly BoundKeyFunction ImperialMinigameRight = "ImperialMinigameRight";
 
+        public static readonly BoundKeyFunction ChangeIntent = "ChangeIntent"; // Смена интента
         #endregion
 
         // Imperial Options End

@@ -625,6 +625,11 @@ public abstract class SharedStrippableSystem : EntitySystem
 
     private void OnActivateInWorld(EntityUid uid, StrippableComponent component, ActivateInWorldEvent args)
     {
+        // Imperial проверка датафилда. Можно ли открыть интерфейс прямым нажатием?
+        if (!component.DirectPress)
+            return;
+        // Imperial end
+
         if (args.Handled || !args.Complex || args.Target == args.User)
             return;
 

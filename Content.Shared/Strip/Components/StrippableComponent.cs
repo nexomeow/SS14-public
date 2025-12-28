@@ -13,6 +13,14 @@ namespace Content.Shared.Strip.Components
         /// </summary>
         [ViewVariables(VVAccess.ReadWrite), DataField("handDelay")]
         public TimeSpan HandStripDelay = TimeSpan.FromSeconds(4f);
+
+// Imperial Space интенты start
+        /// <summary>
+        ///     Можно ли открыть интерфейс прямым нажатием по сущности?
+        /// </summary>
+        [ViewVariables(VVAccess.ReadWrite), DataField("directPress")]
+        public bool DirectPress = true;
+// Imperial Space интенты end
     }
 
     [NetSerializable, Serializable]

@@ -11,7 +11,8 @@
   id: StripableInventoryBase
   components:
   - type: Strippable
-  - type: UserInterface
+    directPress: false ##Imperial Space этот датафилд добавлен для того, чтобы
+  - type: UserInterface # прямое нажатие на сущность не открывало интерфейс инвентаря
     interfaces:
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface

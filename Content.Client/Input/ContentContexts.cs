@@ -94,6 +94,8 @@ namespace Content.Client.Input
             human.AddFunction(ContentKeyFunctions.ImperialMinigameLeft);
             human.AddFunction(ContentKeyFunctions.ImperialMinigameRight);
             human.AddFunction(ContentKeyFunctions.ImperialMinigameDown);
+
+            human.AddFunction(ContentKeyFunctions.ChangeIntent); // Смена интента
             // Imperial Options End
 
             // actions should be common (for ghosts, mobs, etc)

@@ -60,4 +60,14 @@ public sealed partial class ICCVars : CVars
         TargetOverlayCapturedAimColor = CVarDef.Create("imperial.target_overlay_captured_aim_color", "#FF0000FF", CVar.CLIENTONLY);
 
     #endregion
+
+    #region Imperial Intents
+
+    /// <summary>
+    /// Будет ли работать система интентов? Если нет, то система будет удалять сама себя во время инициализации на сущности
+    /// </summary>
+    public static readonly CVarDef<bool> EnableIntents =
+        CVarDef.Create("intents.enable_intents", true, CVar.SERVERONLY);
+
+    #endregion
 }

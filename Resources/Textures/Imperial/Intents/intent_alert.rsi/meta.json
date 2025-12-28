@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taked from SS220 and slightly modified by texttipo",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "intent_white"
+    },
+    {
+      "name": "intent_green"
+    },
+    {
+      "name": "intent_blue"
+    },
+    {
+      "name": "intent_yellow"
+    },
+    {
+      "name": "intent_red"
+    }
+  ]
+}

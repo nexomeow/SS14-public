@@ -607,4 +607,105 @@ public sealed class PullingSystem : EntitySystem
         StopPulling(pullableUid, pullable);
         return true;
     }
+
+    // Imperial Intent pull start
+    // Обычный пул выдает акшен, который позволяет освободиться, что ломает весь смысл захвата
+    public bool ToggleForcedPull(Entity<PullableComponent?> pullable, EntityUid pullerUid)
+    {
+        if (!Resolve(pullable, ref pullable.Comp, false))
+            return false;
+
+        if (pullable.Comp.Puller == pullerUid)
+        {
+            return TryStopPull(pullable, pullable.Comp);
+        }
+
+        return TryStartForcedPull(pullerUid, pullable, pullableComp: pullable);
+    }
+    public bool TryStartForcedPull(EntityUid pullerUid, EntityUid pullableUid,
+        PullerComponent? pullerComp = null, PullableComponent? pullableComp = null)
+    {
+        if (!Resolve(pullerUid, ref pullerComp, false) ||
+            !Resolve(pullableUid, ref pullableComp, false))
+        {
+            return false;
+        }
+
+        if (pullerComp.Pulling == pullableUid)
+            return true;
+
+        if (!CanPull(pullerUid, pullableUid))
+            return false;
+
+        if (!TryComp(pullerUid, out PhysicsComponent? pullerPhysics) || !TryComp(pullableUid, out PhysicsComponent? pullablePhysics))
+            return false;
+
+        if (TryComp<PullableComponent>(pullerComp.Pulling, out var oldPullable)
+            && !TryStopPull(pullerComp.Pulling.Value, oldPullable, pullerUid))
+            return false;
+
+        if (pullableComp.Puller != null)
+        {
+
+            if (pullableComp.Puller == pullerUid)
+                return false;
+
+            if (!TryStopPull(pullableUid, pullableComp, pullableComp.Puller))
+                return false;
+        }
+
+        var pullAttempt = new PullAttemptEvent(pullerUid, pullableUid);
+        RaiseLocalEvent(pullerUid, pullAttempt);
+
+        if (pullAttempt.Cancelled)
+            return false;
+
+        RaiseLocalEvent(pullableUid, pullAttempt);
+
+        if (pullAttempt.Cancelled)
+            return false;
+
+        _interaction.DoContactInteraction(pullableUid, pullerUid);
+
+        pullableComp.PullJointId = $"pull-joint-{GetNetEntity(pullableUid)}";
+
+        EnsureComp<ActivePullerComponent>(pullerUid);
+        pullerComp.Pulling = pullableUid;
+        pullableComp.Puller = pullerUid;
+
+        pullableComp.PrevFixedRotation = pullablePhysics.FixedRotation;
+
+        if (!_timing.ApplyingState)
+        {
+            var joint = _joints.CreateDistanceJoint(pullableUid, pullerUid,
+                    pullablePhysics.LocalCenter, pullerPhysics.LocalCenter,
+                    id: pullableComp.PullJointId);
+            joint.CollideConnected = false;
+
+            joint.MaxLength = joint.Length + 0.15f;
+            joint.MinLength = 0f;
+
+            joint.Stiffness = 0f;
+
+            _physics.SetFixedRotation(pullableUid, pullableComp.FixedRotationOnPull, body: pullablePhysics);
+        }
+
+        var message = new PullStartedMessage(pullerUid, pullableUid);
+        _modifierSystem.RefreshMovementSpeedModifiers(pullerUid);
+
+        RaiseLocalEvent(pullerUid, message);
+        RaiseLocalEvent(pullableUid, message);
+
+        Dirty(pullerUid, pullerComp);
+        Dirty(pullableUid, pullableComp);
+
+        var pullingMessage =
+            Loc.GetString("getting-pulled-popup", ("puller", Identity.Entity(pullerUid, EntityManager)));
+        _popup.PopupEntity(pullingMessage, pullableUid, pullableUid);
+
+        _adminLogger.Add(LogType.Action, LogImpact.Low,
+            $"{ToPrettyString(pullerUid):user} started forced pulling {ToPrettyString(pullableUid):target}");
+        return true;
+    }
+    // Imperial Intent pull end
 }

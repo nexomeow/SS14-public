@@ -656,4 +656,8 @@ binds:
   type: State
   key: Right
 
+# Intent
+- function: ChangeIntent
+  type: State
+  key: F
 # Imperial Options End
