@@ -1,0 +1,22 @@
+- type: entity
+  parent: MobHuman
+  id: LeagueHuman
+  abstract: true
+  components:
+  - type: LeagueMember
+
+- type: entity
+  parent: LeagueHuman
+  id: LeagueHumanRed
+  suffix: League
+  components:
+  - type: LeagueMember
+    team: Red
+
+- type: entity
+  parent: LeagueHuman
+  id: LeagueHumanBlue
+  suffix: League
+  components:
+  - type: LeagueMember
+    team: Blue

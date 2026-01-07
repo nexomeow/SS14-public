@@ -1,0 +1,57 @@
+- type: entity
+  parent: BaseStructure
+  id: BasePointLeague
+  name: control point
+  description: Catch em' all
+  abstract: true
+  components:
+  - type: Clickable
+  - type: Appearance
+  - type: ControlPoint
+  - type: Sprite
+    sprite: Imperial/League/ControlPoint/control_point.rsi
+    layers:
+    - map: [ "VisualLevel" ]
+      state: white-flag
+      scale: 1.0,1.0
+      shader: unshaded
+  - type: GenericVisualizer
+    visuals:
+      enum.PointVisual.Visual_Layer:
+       VisualLevel:
+          1: ## Neutral
+            sprite: Imperial/League/ControlPoint/control_point.rsi
+            state: white-flag
+            scale: 1.0,1.0
+          2: ## Red
+            sprite: Imperial/League/ControlPoint/control_point.rsi
+            state: red-flag
+            scale: 1.0,1.0
+          3: ## Blue
+            sprite: Imperial/League/ControlPoint/control_point.rsi
+            state: blue-flag
+            scale: 1.0,1.0
+
+- type: entity
+  parent: BasePointLeague
+  id: KOTHPointLeague
+  name: control point
+  description: Catch em
+  suffix: League
+  components:
+  - type: ControlPoint
+    team: Neutral
+    changeable: true
+    pointType: 2 ## Тип царя горы
+
+- type: entity
+  parent: BasePointLeague
+  id: CTPointLeague
+  name: control point
+  description: Catch em
+  suffix: League
+  components:
+  - type: ControlPoint
+    team: Red
+    changeable: false
+    pointType: 3 ## Тип контроля территории
