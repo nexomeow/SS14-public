@@ -10,14 +10,14 @@ public sealed class BriefingOnMindedPrototype : IPrototype
     public string ID { get; } = default!;
 
     [DataField("briefText", required: true)]
-    public LocId букавы { get; set; }
+    public LocId Text { get; set; }
 
     [DataField("textColor", required: true)]
-    public string цвит { get; set; } = string.Empty;
+    public string Color { get; set; } = string.Empty;
 
     [DataField("briefSound", required: true)]
-    public SoundPathSpecifier путь = default!;
+    public SoundPathSpecifier Path = default!;
 
     [DataField("mindRole", required: true)]
-    public EntProtoId<MindRoleComponent> рольСазнания { get; set; } = string.Empty;
+    public EntProtoId<MindRoleComponent> MindRole { get; set; } = string.Empty;
 }

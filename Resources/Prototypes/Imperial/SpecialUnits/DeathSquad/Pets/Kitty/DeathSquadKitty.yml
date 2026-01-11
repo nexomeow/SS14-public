@@ -21,6 +21,8 @@
   - type: Inventory
     speciesId: cat
     templateId: deathsquadcat
+  - type: BriefingOnMinded
+    briefProto: DeathSquadBriefPet
   - type: DamageStateVisuals
     states:
       Alive:

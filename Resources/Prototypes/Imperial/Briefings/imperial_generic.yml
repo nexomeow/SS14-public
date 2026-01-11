@@ -1,0 +1,5 @@
+- type: antag
+  id: GenericSquadron
+  name: imperial-mindroles-squadron
+  antagonist: true
+  objective: imperial-mindroles-objective-squadron

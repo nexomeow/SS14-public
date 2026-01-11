@@ -1,5 +1,7 @@
 using Robust.Shared.Audio;
 using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
+using Color = Robust.Shared.Maths.Color;
 using Content.Server.Antag;
 using Content.Shared.Destructible;
 using Content.Shared.Mind;
@@ -7,41 +9,40 @@ using Content.Shared.Mind.Components;
 using Content.Shared.Roles;
 using Content.Shared.Roles.Components;
 using Content.Server.Imperial.BriefingOnMinded.Components;
+using System.Drawing;
 
 namespace Content.Server.Imperial.BriefingOnMinded.Systems;
 
 public sealed partial class BriefingOnMindedSystem : EntitySystem
 {
-    [Dependency] private readonly AntagSelectionSystem _антажке = default!;
-    [Dependency] private readonly SharedRoleSystem _ролька = default!;
+    [Dependency] private readonly AntagSelectionSystem _antag = default!;
+    [Dependency] private readonly SharedRoleSystem _role = default!;
+    [Dependency] private readonly IPrototypeManager _prototype = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<BriefingOnMindedComponent, MindAddedMessage>(ПриЗаходеГеймераНаРольку);
-        SubscribeLocalEvent<BriefingOnMindedComponent, MindRemovedMessage>(ПриВылетеЧеликаСРольки);
+        SubscribeLocalEvent<BriefingOnMindedComponent, MindAddedMessage>(OnMindAdded);
     }
-    private void ПриЗаходеГеймераНаРольку(EntityUid вместилище, BriefingOnMindedComponent бриф, MindAddedMessage оргументы)
+    private void OnMindAdded(EntityUid uid, BriefingOnMindedComponent brief, MindAddedMessage args)
     {
-        if (!TryComp<ActorComponent>(вместилище, out var актерКомп))
+        if (!TryComp<ActorComponent>(uid, out var actorComp))
             return;
 
-        var прататип = бриф.Briefing;
-        var ыыыы = оргументы.Mind;
-        РассказатьШпендикуЧеЕмуДелать(вместилище, ыыыы, актерКомп.PlayerSession, прататип);
-    }
-    private void РассказатьШпендикуЧеЕмуДелать(EntityUid вместилище, EntityUid сазнание, ICommonSession шпендик, BriefingOnMindedPrototype радастьГМа)
-    {
-        _ролька.MindAddRole(сазнание, радастьГМа.рольСазнания, silent: true);
+        if (!_prototype.TryIndex<BriefingOnMindedPrototype>(brief.Briefing, out var proto))
+            return;
 
-        _антажке.SendBriefing(actorComp.PlayerSession,
-            Loc.GetString(радастьГМа.букавы),
-            радастьГМа.цвит,
-            радастьГМа.путь);
+        ProvideBriefing(uid, args.Mind, actorComp.PlayerSession, proto);
     }
-    private void ПриВылетеЧеликаСРольки(EntityUid вместилище, BriefingOnMindedComponent бриф, MindRemovedMessage оргументы)
+    private void ProvideBriefing(EntityUid uid, EntityUid mind, ICommonSession player, BriefingOnMindedPrototype briefProto)
     {
-        //_ролька.MindRemoveRole(args.Mind.Owner, comp.MindRole);
+        _role.MindAddRole(mind, briefProto.MindRole, silent: true);
+
+        var color = Color.FromHex(briefProto.Color);
+        _antag.SendBriefing(player,
+            Loc.GetString(briefProto.Text),
+            color,
+            briefProto.Path);
     }
 }

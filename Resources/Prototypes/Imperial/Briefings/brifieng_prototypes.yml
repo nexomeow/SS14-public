@@ -1,0 +1,21 @@
+## Настоятельная просьба создавать все прототипы брифингов тут
+## Прописывайте в начале [<Ваша разработка/категория> Start] и [<Ваша разработка/категория> End] в конце соответственно
+## Это нужно для того, чтобы в случае чего это было проще апстримить, пощадите орикса
+
+##Death Squad start
+- type: brifieng
+  id: DeathSquadBrief
+  briefText: mind-brifieng-squadron #Это ваш текст, который игрок получит при вселении в сущность. К сожалению интерполяции тут нет
+  textColor: "#8b00ff" #Цвет текста
+  briefSound:
+    path: /Audio/Imperial/BriefingSounds/squadron_briefing.ogg #Путь к звуку, который будет проигрываться при брифинге
+  mindRole: MindRoleSquadron #Роль выдаваемая после брифинга (командный антагонист, альтернативный синтетик и т.п)
+
+- type: brifieng
+  id: DeathSquadBriefPet
+  briefText: mind-brifieng-squadron-pet
+  textColor: "#8b00ff"
+  briefSound:
+    path: /Audio/Imperial/BriefingSounds/squadron_briefing.ogg
+  mindRole: MindRoleSquadron
+##Death Squad end

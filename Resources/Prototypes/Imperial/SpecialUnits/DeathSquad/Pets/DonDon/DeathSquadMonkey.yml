@@ -5,6 +5,8 @@
   description: Pun Pun's older brother. A good strategist and a professional fighter.
   suffix: DeathSquad
   components:
+  - type: BriefingOnMinded
+    briefProto: DeathSquadBriefPet
   - type: NameIdentifier
     group: Monkey
   - type: Speech

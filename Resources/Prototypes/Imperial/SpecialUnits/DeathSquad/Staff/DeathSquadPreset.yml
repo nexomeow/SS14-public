@@ -54,6 +54,8 @@
       raffle:
         settings: default
     - type: GhostTakeoverAvailable
+    - type: BriefingOnMinded
+      briefProto: DeathSquadBrief
 
 - type: startingGear #gear
   id: DeathSquadEVALodout

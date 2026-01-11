@@ -1,0 +1,8 @@
+- type: entity
+  parent: [ BaseMindRoleAntag, MindRoleGhostRoleNeutral ]
+  id: MindRoleSquadron
+  name: Ghost Role (Squadron)
+  components:
+  - type: MindRole
+    roleType: TeamAntagonist
+    antagPrototype: GenericSquadron

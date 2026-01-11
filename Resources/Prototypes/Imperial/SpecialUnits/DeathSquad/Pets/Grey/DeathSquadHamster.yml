@@ -15,6 +15,8 @@
     - map: [ "enum.DamageStateVisualLayers.Base" ]
       state: hamster
   - type: Appearance
+  - type: BriefingOnMinded
+    briefProto: DeathSquadBriefPet
   - type: InteractionPopup
     successChance: 1
     interactSuccessString: petting-success-dshamster
