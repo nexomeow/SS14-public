@@ -1,0 +1,29 @@
+- type: npcFaction
+  id: Cluster
+  hostile:
+  - SimpleHostile
+  - Syndicate
+  - Xeno
+  - Zombie
+  - Revolutionary
+  - Dragon
+  - AllHostile
+  - Wizard
+  - Xenoborg
+  - Pirates
+  - NanoTrasen
+  - OldMachines
+
+- type: npcFaction
+  id: OldMachines
+  hostile:
+  - SimpleHostile
+  - Pirates
+  - Xeno
+  - Zombie
+  - Revolutionary
+  - Dragon
+  - AllHostile
+  - Wizard
+  - Xenoborg
+  - Cluster

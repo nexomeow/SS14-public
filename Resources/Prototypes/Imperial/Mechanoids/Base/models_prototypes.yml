@@ -1,0 +1,112 @@
+## Placeholder
+- type: mechanoidModel
+  id: Unknown
+
+## Base
+- type: mechanoidModel
+  id: Foundation
+  modelName: FNDT
+  subModelName: "-"
+  color: "#eaeaea"
+  faction: None
+
+- type: mechanoidModel
+  id: Carbine
+  modelName: CRBN
+  subModelName: "-"
+  color: "#eaeaea"
+  faction: None
+
+- type: mechanoidModel
+  id: Meleeslasher
+  modelName: MLSL
+  subModelName: "-"
+  color: "#eaeaea"
+  faction: None
+
+- type: mechanoidModel
+  id: Spiderbot
+  modelName: SPRB
+  subModelName: "-"
+  color: "#eaeaea"
+  faction: None
+
+##Cluster
+- type: mechanoidModel
+  id: TechbotCl
+  modelName: FNDT
+  subModelName: "T"
+  color: "#3F6160"
+  faction: Cluster
+
+##Old Machines
+- type: mechanoidModel
+  id: TechbotOM
+  modelName: FNDT
+  subModelName: "T"
+  color: "#b7b58c"
+  faction: OldMachines
+
+- type: mechanoidModel
+  id: MedibotOM
+  modelName: FNDT
+  subModelName: "M"
+  color: "#b7b58c"
+  faction: OldMachines
+
+- type: mechanoidModel
+  id: EngiebotOM
+  modelName: FNDT
+  subModelName: "E"
+  color: "#b7b58c"
+  faction: OldMachines
+
+- type: mechanoidModel
+  id: CarbineOM
+  modelName: CRBN
+  subModelName: "-"
+  color: "#b7b58c"
+  faction: OldMachines
+
+- type: mechanoidModel
+  id: MeleeslasherOM
+  modelName: MLSL
+  subModelName: "-"
+  color: "#b7b58c"
+  faction: OldMachines
+
+- type: mechanoidModel
+  id: SpiderbotOM
+  modelName: SPRB
+  subModelName: "-"
+  color: "#b7b58c"
+  faction: OldMachines
+
+# Praetorians
+- type: mechanoidModel
+  id: TechbotOM-P
+  modelName: FNDT
+  subModelName: "T|P"
+  color: "#7f7181"
+  faction: OldMachines
+
+- type: mechanoidModel
+  id: CarbineOM-P
+  modelName: CRBN
+  subModelName: "P"
+  color: "#7f7181"
+  faction: OldMachines
+
+- type: mechanoidModel
+  id: MeleeslasherOM-P
+  modelName: MLSL
+  subModelName: "P"
+  color: "#7f7181"
+  faction: OldMachines
+
+- type: mechanoidModel
+  id: SpiderbotOM-P
+  modelName: SPRB
+  subModelName: "P"
+  color: "#7f7181"
+  faction: OldMachines

@@ -1,0 +1,154 @@
+- type: entity
+  id: PartMechanoid
+  parent: BaseItem
+  name: "mechanoid body part"
+  abstract: true
+  components:
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: BodyPart
+  - type: ContainerContainer
+    containers:
+      bodypart: !type:Container
+        ents: []
+  - type: StaticPrice
+    price: 200
+  - type: Tag
+    tags:
+      - Trash
+  - type: Gibbable
+
+- type: entity
+  id: MechanoidTorso
+  name: mech torso
+  parent: PartMechanoid
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BodyPart
+    partType: Torso
+
+- type: entity
+  id: MechanoidArmRight
+  name: mech hand
+  parent: PartMechanoid
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BodyPart
+    partType: Arm
+    symmetry: Right
+
+- type: entity
+  id: MechanoidArmLeft
+  name: mech hand
+  parent: PartMechanoid
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BodyPart
+    partType: Arm
+    symmetry: Left
+
+- type: entity
+  id: MechanoidHandRight
+  name: mech hand
+  parent: PartMechanoid
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BodyPart
+    partType: Hand
+    symmetry: Right
+
+- type: entity
+  id: MechanoidHandLeft
+  name: mech hand
+  parent: PartMechanoid
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BodyPart
+    partType: Hand
+    symmetry: Left
+
+- type: entity
+  id: MechanoidLegRight
+  name: mech leg
+  parent: PartMechanoid
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BodyPart
+    partType: Leg
+    symmetry: Right
+  - type: MovementBodyPart
+
+- type: entity
+  id: MechanoidLegLeft
+  name: mech leg
+  parent: PartMechanoid
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BodyPart
+    partType: Leg
+    symmetry: Left
+  - type: MovementBodyPart
+
+- type: entity
+  id: MechanoidFootRight
+  name: mech leg
+  parent: PartMechanoid
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BodyPart
+    partType: Foot
+    symmetry: Right
+  - type: MovementBodyPart
+
+- type: entity
+  id: MechanoidFootLeft
+  name: mech leg
+  parent: PartMechanoid
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BodyPart
+    partType: Foot
+    symmetry: Left
+  - type: MovementBodyPart
+
+- type: body
+  id: mechanoid_humanoid_body
+  name: "mechanoid_humanoid"
+  root: torso
+  slots:
+    torso:
+      part: MechanoidTorso
+      connections:
+      - right_hand
+      - left_hand
+      - right_leg
+      - left_leg
+    right_hand:
+      part: MechanoidHandRight
+    left_hand:
+      part: MechanoidHandLeft
+    right_leg:
+      part: MechanoidLegRight
+    left_leg:
+      part: MechanoidLegLeft
+
+- type: body
+  id: mechanoid_spider_body
+  name: "mechanoid_spider"
+  root: torso
+  slots:
+    torso:
+      part: MechanoidTorso
+      connections:
+      - right_leg1
+      - left_leg1
+      - right_leg2
+      - left_leg2
+    right_leg1:
+      part: MechanoidLegRight
+    left_leg1:
+      part: MechanoidLegLeft
+    right_leg2:
+      part: MechanoidLegRight
+    left_leg2:
+      part: MechanoidLegLeft

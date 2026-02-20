@@ -1,0 +1,5 @@
+- type: entity
+  parent: MechanoidEngiebotOM
+  id: MechanoidCharacterPeeb
+  name: Пиб
+  suffix: Mech, UniqueCharacter

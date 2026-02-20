@@ -1,0 +1,22 @@
+## Фоундейшен
+- type: entity
+  parent: BaseMechanoid
+  id: BaseMechanoidFoundation
+  name: Urist McFound
+  suffix: Mech, Foundation
+  components:
+  - type: PowerCellDraw
+    drawRate: 0.4
+    enabled: false
+
+## Боевые
+
+- type: entity
+  parent: BaseMechanoid
+  id: BaseMechanoidCarbine
+  name: Urist McCarbine
+  suffix: Mech, Carbine
+  components:
+  - type: PowerCellDraw
+    drawRate: 0.5
+    enabled: false

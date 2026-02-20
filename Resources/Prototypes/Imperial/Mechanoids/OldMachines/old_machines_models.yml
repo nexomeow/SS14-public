@@ -1,0 +1,44 @@
+- type: entity
+  id: BaseOldMachinesMember
+  abstract: true
+  components:
+  - type: NpcFactionMember
+    factions:
+    - OldMachines
+  - type: Hands
+
+- type: entity
+  parent: [ BaseMechanoidFoundation, BaseOldMachinesMember ]
+  id: MechanoidTechbotOM
+  name: UristMc Techbot
+  suffix: OM, Mech
+  components:
+  - type: Mechanoid
+    modelProto: TechbotOM
+
+- type: entity
+  parent: [ BaseMechanoidFoundation, BaseOldMachinesMember ]
+  id: MechanoidEngiebotOM
+  name: UristMc Engiebot
+  suffix: OM, Mech
+  components:
+  - type: Mechanoid
+    modelProto: EngiebotOM
+
+- type: entity
+  parent: [ BaseMechanoidFoundation, BaseOldMachinesMember ]
+  id: MechanoidMedibotOM
+  name: UristMc Medibot
+  suffix: OM, Mech
+  components:
+  - type: Mechanoid
+    modelProto: MedibotOM
+
+- type: entity
+  parent: [ BaseMechanoidFoundation, BaseOldMachinesMember ]
+  id: MechanoidTechbotOM-P
+  suffix: OM, Mech, Praetorian
+  name: UristMc Techbot Praetorian
+  components:
+  - type: Mechanoid
+    modelProto: TechbotOM-P
