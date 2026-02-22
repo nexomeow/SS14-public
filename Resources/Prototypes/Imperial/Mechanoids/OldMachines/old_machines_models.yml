@@ -5,7 +5,6 @@
   - type: NpcFactionMember
     factions:
     - OldMachines
-  - type: Hands
 
 - type: entity
   parent: [ BaseMechanoidFoundation, BaseOldMachinesMember ]
@@ -35,6 +34,15 @@
     modelProto: MedibotOM
 
 - type: entity
+  parent: [ BaseMechanoidCarbine, BaseOldMachinesMember ]
+  id: MechanoidCarbineOM
+  suffix: OM, Mech
+  name: UristMc Carbine
+  components:
+  - type: Mechanoid
+    modelProto: CarbineOM
+
+- type: entity
   parent: [ BaseMechanoidFoundation, BaseOldMachinesMember ]
   id: MechanoidTechbotOM-P
   suffix: OM, Mech, Praetorian
@@ -42,3 +50,36 @@
   components:
   - type: Mechanoid
     modelProto: TechbotOM-P
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      200: Critical
+      500: Dead
+
+- type: entity
+  parent: [ BaseMechanoidCarbine, BaseOldMachinesMember ]
+  id: MechanoidCarbineOM-P
+  suffix: OM, Mech, Praetorian
+  name: UristMc Carbine Praetorian
+  components:
+  - type: Mechanoid
+    modelProto: CarbineOM-P
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      400: Critical
+      500: Dead
+
+- type: entity
+  parent: [ BaseMechanoidMeleeslasher, BaseOldMachinesMember ]
+  id: MechanoidMeleeslasherOM-P
+  suffix: OM, Mech, Praetorian
+  name: UristMc Slasher Praetorian
+  components:
+  - type: Mechanoid
+    modelProto: MeleeslasherOM-P
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      500: Critical
+      600: Dead

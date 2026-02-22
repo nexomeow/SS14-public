@@ -1,0 +1,59 @@
+- type: job
+  id: MechanoidJobEngieswarm
+  name: mechanoid-job-name-engieswarm
+  description: mechanoid-job-desc-engieswarm
+  playTimeTracker: JobMechanoidEngieswarm
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 36000 # 10 hrs
+  weight: 1
+  canBeAntag: false
+  icon: MechanoidJobIconEngieswarm
+  supervisors: mechanoid-supervisors-om-cmd
+  jobEntity: PlayerBorgBattery
+  applyTraits: false
+
+- type: job
+  id: MechanoidJobBlackminers
+  name: mechanoid-job-name-blackminers
+  description: mechanoid-job-desc-blackminers
+  playTimeTracker: JobMechanoidBlackminers
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 36000 # 10 hrs
+  weight: 2
+  canBeAntag: false
+  icon: MechanoidJobIconBlackminers
+  supervisors: mechanoid-supervisors-om-cmd
+  jobEntity: PlayerBorgBattery
+  applyTraits: false
+
+- type: job
+  id: MechanoidJobTechhunters
+  name: mechanoid-job-name-techhunters
+  description: mechanoid-job-desc-techhunters
+  playTimeTracker: JobMechanoidTechhunters
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 36000 # 10 hrs
+  weight: 3
+  canBeAntag: false
+  icon: MechanoidJobIconTechhunters
+  supervisors: mechanoid-supervisors-om-modeus
+  jobEntity: PlayerBorgBattery
+  applyTraits: false
+
+- type: job
+  id: MechanoidJobCUP
+  name: mechanoid-job-name-cup
+  description: mechanoid-job-desc-cup
+  playTimeTracker: JobMechanoidCUP
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 36000 # 10 hrs
+  weight: 6
+  canBeAntag: false
+  icon: MechanoidJobIconCUP
+  supervisors: mechanoid-supervisors-om-ayaks
+  jobEntity: PlayerBorgBattery
+  applyTraits: false

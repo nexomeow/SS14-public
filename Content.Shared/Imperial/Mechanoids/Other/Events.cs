@@ -1,9 +1,13 @@
 using Robust.Shared.GameObjects;
-
-namespace Content.Shared.Imperial.Mechanoids.Other;
-
-[ByRefEvent]
-public struct MechanoidStartEvent(EntityUid uid)
+using Content.Shared.Actions;
+namespace Content.Shared.Imperial.Mechanoids.Other
 {
-    public readonly EntityUid Uid = uid;
+    [ByRefEvent]
+    public struct MechanoidStartEvent(EntityUid uid)
+    {
+        public readonly EntityUid Uid = uid;
+    }
+
+    [ByRefEvent]
+    public sealed partial class MechTurnNightVisionEvent : InstantActionEvent;
 }

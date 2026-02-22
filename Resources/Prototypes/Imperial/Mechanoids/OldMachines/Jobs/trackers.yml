@@ -1,0 +1,23 @@
+- type: playTimeTracker
+  id: JobMechanoidEngieswarm
+
+- type: playTimeTracker
+  id: JobMechanoidBlackminers
+
+- type: playTimeTracker
+  id: JobMechanoidTechhunter
+
+- type: playTimeTracker
+  id: JobMechanoidSBS
+
+- type: playTimeTracker
+  id: JobMechanoidAssaultgroup
+
+- type: playTimeTracker
+  id: JobMechanoidCUP
+
+- type: playTimeTracker
+  id: JobMechanoidSpaceswifts
+
+- type: playTimeTracker
+  id: JobMechanoidPraetorians

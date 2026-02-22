@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "license": "this content is under ICLA licence, read more on https://wiki.imperialspace.net/icla",
+    "copyright": "by @texttipo",
+    "size": {
+        "x": 8,
+        "y": 8
+    },
+    "states": [
+        {
+            "name": "engieswarm"
+        },
+        {
+            "name": "blackminers"
+        },
+        {
+            "name": "techhunters"
+        },
+        {
+            "name": "sbs"
+        },
+        {
+            "name": "assaultgroup"
+        },
+        {
+            "name": "cup"
+        },
+        {
+            "name": "spaceswifts"
+        },
+        {
+            "name": "praetorians"
+        }
+    ]
+}

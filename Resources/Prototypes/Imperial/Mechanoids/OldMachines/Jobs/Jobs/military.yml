@@ -1,0 +1,59 @@
+- type: job
+  id: MechanoidJobSBS
+  name: mechanoid-job-name-sbs
+  description: mechanoid-job-desc-sbs
+  playTimeTracker: JobMechanoidSBS
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 36000 # 10 hrs
+  weight: 4
+  canBeAntag: false
+  icon: MechanoidJobIconSBS
+  supervisors: mechanoid-supervisors-om-ayaks
+  jobEntity: PlayerBorgBattery
+  applyTraits: false
+
+- type: job
+  id: MechanoidJobAssaultgroup
+  name: mechanoid-job-name-assaultgroup
+  description: mechanoid-job-desc-assaultgroup
+  playTimeTracker: JobMechanoidAssaultgroup
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 36000 # 10 hrs
+  weight: 5
+  canBeAntag: false
+  icon: MechanoidJobIconAssaultgroup
+  supervisors: mechanoid-supervisors-om-ayaks
+  jobEntity: PlayerBorgBattery
+  applyTraits: false
+
+- type: job
+  id: MechanoidJobSpaceswifts
+  name: mechanoid-job-name-spaceswifts
+  description: mechanoid-job-desc-spaceswifts
+  playTimeTracker: JobMechanoidSpaceswifts
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 36000 # 10 hrs
+  weight: 7
+  canBeAntag: false
+  icon: MechanoidJobIconSpaceswifts
+  supervisors: mechanoid-supervisors-om-ayaks
+  jobEntity: PlayerBorgBattery
+  applyTraits: false
+
+- type: job
+  id: MechanoidJobPraetorians
+  name: mechanoid-job-name-praetorians
+  description: mechanoid-job-desc-praetorians
+  playTimeTracker: JobMechanoidPraetorians
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 36000 # 10 hrs
+  weight: 8
+  canBeAntag: false
+  icon: MechanoidJobIconPraetorians
+  supervisors: mechanoid-supervisors-om-walverde
+  jobEntity: PlayerBorgBattery
+  applyTraits: false

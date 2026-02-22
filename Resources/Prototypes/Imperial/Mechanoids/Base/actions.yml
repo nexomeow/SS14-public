@@ -1,0 +1,109 @@
+- type: soundCollection
+  id: MechWeaponSound
+  files:
+    - /Audio/Weapons/Guns/MagIn/kinetic_reload.ogg
+
+- type: entity
+  parent: BaseAction
+  id: ActionMechTurnVision
+  name: Turn mech vision
+  description: Turn special vision
+  components:
+  - type: Action
+    useDelay: 2
+    raiseOnUser: true
+    itemIconStyle: BigAction
+    icon:
+      sprite: Interface/Actions/actions_borg.rsi
+      state: no-action
+    clientExclusive: true
+  - type: InstantAction
+    event: !type:MechTurnNightVisionEvent
+
+- type: entity
+  parent: BaseAction
+  id: BaseActionMechHandGive
+  name: BuiltIn Weapon
+  description: placeholder
+  abstract: true
+  components:
+  - type: Action
+    useDelay: 2
+    raiseOnAction: true
+    itemIconStyle: BigAction
+    icon:
+      sprite: Interface/Actions/actions_borg.rsi
+      state: no-action
+  - type: InstantAction
+    event: !type:OnRetractableItemActionEvent
+  - type: RetractableItemAction
+    spawnedPrototype: MechWeaponLmg
+    summonSounds:
+      collection: MechWeaponSound
+    retractSounds:
+      collection: MechWeaponSound
+
+- type: entity
+  parent: BaseActionMechHandGive
+  id: ActionMechWeaponGiveLMG
+  name: BuiltIn Weapon
+  description: Give a built-in lmg to you.
+  components:
+  - type: RetractableItemAction
+    spawnedPrototype: MechWeaponLmg
+    summonSounds:
+      collection: MechWeaponSound
+    retractSounds:
+      collection: MechWeaponSound
+
+- type: entity
+  parent: BaseActionMechHandGive
+  id: ActionMechWeaponGiveHMG
+  name: BuiltIn Weapon
+  description: Give a built-in hmg to you.
+  components:
+  - type: RetractableItemAction
+    spawnedPrototype: MechWeaponHmg
+    summonSounds:
+      collection: MechWeaponSound
+    retractSounds:
+      collection: MechWeaponSound
+
+- type: entity
+  parent: BaseActionMechHandGive
+  id: ActionMechWeaponGiveSwords
+  name: BuiltIn Weapon
+  description: Give a built-in swords to you.
+  components:
+  - type: RetractableItemAction
+    spawnedPrototype: MeleeslasherSwords
+    summonSounds:
+      collection: MechWeaponSound
+    retractSounds:
+      collection: MechWeaponSound
+
+- type: entity
+  parent: BaseActionMechHandGive
+  id: ActionMechWeaponGivePraetorianSwords
+  name: BuiltIn Weapon
+  description: Give a built-in praetorian swords to you.
+  components:
+  - type: RetractableItemAction
+    spawnedPrototype: PraetorianMeleeslasherSwords
+    summonSounds:
+      collection: MechWeaponSound
+    retractSounds:
+      collection: MechWeaponSound
+
+- type: entity
+  parent: BaseActionMechHandGive
+  id: ActionMechWeaponGiveWalverdeSwords
+  name: BuiltIn Weapon
+  description: Give a built-in Walverde swords to you.
+  components:
+  - type: RetractableItemAction
+    spawnedPrototype: WalverdeMeleeslasherSwords
+    summonSounds:
+      collection: MechWeaponSound
+    retractSounds:
+      collection: MechWeaponSound

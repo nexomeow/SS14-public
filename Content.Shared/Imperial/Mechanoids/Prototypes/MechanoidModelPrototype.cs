@@ -20,4 +20,10 @@ public sealed class MechanoidModelPrototype : IPrototype
 
     [DataField("faction")]
     public MechanoidFactionEnum Faction { get; set; } = MechanoidFactionEnum.None;
+
+    [DataField("hasAdds")]
+    public bool HasAdds { get; set; } = false;
+
+    [DataField("builtInActions")]
+    public List<EntProtoId> BuiltInActions = new();
 }

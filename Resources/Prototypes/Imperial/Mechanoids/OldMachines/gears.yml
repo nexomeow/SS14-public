@@ -1,0 +1,37 @@
+- type: startingGear
+  id: MechanoidStandartStartingGear
+  equipment:
+    back: MechStandartBackpack
+    id: MechStandartIDCard
+    ears: ClothingHeadsetGrey
+    #pocket1: #SpiderCharge
+    #pocket2: #PinpointerStation
+  inhand:
+    - JetpackBlackFilled
+  storage:
+    back:
+    - Crowbar
+    - Wrench
+    - Screwdriver
+    - Wirecutter
+    - Welder
+    - Multitool
+
+- type: startingGear
+  id: MechanoidPraetorianStartingGear
+  equipment:
+    back: MechPraetorianBackpack
+    id: MechPraetorianIDCard
+    ears: ClothingHeadsetGrey
+    #pocket1: #SpiderCharge
+    #pocket2: #PinpointerStation
+  inhand:
+    - JetpackBlackFilled
+  storage:
+    back:
+    - Crowbar
+    - Wrench
+    - Screwdriver
+    - Wirecutter
+    - Welder
+    - Multitool

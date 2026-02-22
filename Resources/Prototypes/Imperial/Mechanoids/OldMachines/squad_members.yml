@@ -1,0 +1,111 @@
+# Engie-Swarm ES
+- type: entity
+  parent: MechanoidTechbotOM
+  id: MechanoidTechbotSquadMember-ES
+  suffix: OM, Mech, ES, Squad
+  name: Techbot
+  components:
+  - type: Mechanoid
+    hasChevron: true
+    chevronColor: "#ff8800"
+
+- type: entity
+  parent: MechanoidEngiebotOM
+  id: MechanoidEngiebotSquadMember-ES
+  suffix: OM, Mech, ES, Squad
+  name: Engiebot
+  components:
+  - type: Mechanoid
+    hasChevron: true
+    chevronColor: "#ff8800"
+
+# Black Miners BM
+
+# Tech Hunters TH
+- type: entity
+  parent: MechanoidCarbineOM
+  id: MechanoidCarbineSquadMember-TH
+  suffix: OM, Mech, TH, Squad
+  name: Carbine
+  components:
+  - type: Mechanoid
+    hasChevron: true
+    chevronColor: "#0800ff"
+
+# SBS
+- type: entity
+  parent: MechanoidCarbineOM
+  id: MechanoidCarbineSquadMember-SBS
+  suffix: OM, Mech, SBS, Squad
+  name: Carbine
+  components:
+  - type: Mechanoid
+    hasChevron: true
+    chevronColor: "#07da00"
+
+# Assault Group AG
+
+- type: entity
+  parent: MechanoidCarbineOM
+  id: MechanoidCarbineSquadMember-AG
+  suffix: OM, Mech, AG, Squad
+  name: Carbine
+  components:
+  - type: Mechanoid
+    hasChevron: true
+    chevronColor: "#047c00"
+
+# Clean-Up Division CUP
+
+- type: entity
+  parent: MechanoidCarbineOM
+  id: MechanoidCarbineSquadMember-CUP
+  suffix: OM, Mech, CUP, Squad
+  name: Carbine
+  components:
+  - type: Mechanoid
+    hasChevron: true
+    chevronColor: "#a7ffa4"
+
+# Space Swifts SS
+
+- type: entity
+  parent: MechanoidCarbineOM
+  id: MechanoidCarbineSquadMember-SS
+  suffix: OM, Mech, SS, Squad
+  name: Carbine
+  components:
+  - type: Mechanoid
+    hasChevron: true
+    chevronColor: "#ff00ff"
+
+# Praetorian P
+- type: entity
+  parent: MechanoidTechbotOM-P
+  id: MechanoidTechbotSquadMember-P
+  suffix: OM, Mech, Praetorian, Squad
+  name: Techbot Praetorian
+  components:
+  - type: Mechanoid
+    hasChevron: true
+    chevronColor: "#ca0000"
+
+- type: entity
+  parent: MechanoidCarbineOM-P
+  id: MechanoidCarbineSquadMember-P
+  suffix: OM, Mech, Praetorian, Squad
+  name: Carbine Praetorian
+  components:
+  - type: Mechanoid
+    hasChevron: true
+    chevronColor: "#ca0000"
+
+- type: entity
+  parent: MechanoidMeleeslasherOM-P
+  id: MechanoidMeleeslasherSquadMember-P
+  suffix: OM, Mech, Praetorian, Squad
+  name: Meleeslasher Praetorian
+  components:
+  - type: Mechanoid
+    hasChevron: true
+    chevronColor: "#ca0000"

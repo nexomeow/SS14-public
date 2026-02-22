@@ -1,0 +1,72 @@
+#Standart
+- type: jobIcon
+  abstract: true
+  id: MechanoidJobIcon
+  priority: 1
+  locationPreference: Right
+  isShaded: true
+
+- type: jobIcon
+  parent: MechanoidJobIcon
+  id: MechanoidJobIconEngieswarm
+  icon:
+    sprite: /Textures/Imperial/Mechanoids/Other/job_icons.rsi
+    state: engieswarm
+  jobName: mechanoid-job-name-engieswarm
+
+- type: jobIcon
+  parent: MechanoidJobIcon
+  id: MechanoidJobIconBlackminers
+  icon:
+    sprite: /Textures/Imperial/Mechanoids/Other/job_icons.rsi
+    state: blackminers
+  jobName: mechanoid-job-name-blackminers
+
+- type: jobIcon
+  parent: MechanoidJobIcon
+  id: MechanoidJobIconTechhunters
+  icon:
+    sprite: /Textures/Imperial/Mechanoids/Other/job_icons.rsi
+    state: techhunters
+  jobName: mechanoid-job-name-techhunters
+
+- type: jobIcon
+  parent: MechanoidJobIcon
+  id: MechanoidJobIconSBS
+  icon:
+    sprite: /Textures/Imperial/Mechanoids/Other/job_icons.rsi
+    state: sbs
+  jobName: mechanoid-job-name-sbs
+
+- type: jobIcon
+  parent: MechanoidJobIcon
+  id: MechanoidJobIconAssaultgroup
+  icon:
+    sprite: /Textures/Imperial/Mechanoids/Other/job_icons.rsi
+    state: assaultgroup
+  jobName: mechanoid-job-name-assaultgroup
+
+# Elite
+- type: jobIcon
+  parent: MechanoidJobIcon
+  id: MechanoidJobIconCUP
+  icon:
+    sprite: /Textures/Imperial/Mechanoids/Other/job_icons.rsi
+    state: cup
+  jobName: mechanoid-job-name-cup
+
+- type: jobIcon
+  parent: MechanoidJobIcon
+  id: MechanoidJobIconSpaceswifts
+  icon:
+    sprite: /Textures/Imperial/Mechanoids/Other/job_icons.rsi
+    state: spaceswifts
+  jobName: mechanoid-job-name-spaceswifts
+
+- type: jobIcon
+  parent: MechanoidJobIcon
+  id: MechanoidJobIconPraetorians
+  icon:
+    sprite: /Textures/Imperial/Mechanoids/Other/job_icons.rsi
+    state: praetorians
+  jobName: mechanoid-job-name-praetorians

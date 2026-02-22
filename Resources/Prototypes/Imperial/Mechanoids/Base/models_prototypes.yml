@@ -16,6 +16,8 @@
   subModelName: "-"
   color: "#eaeaea"
   faction: None
+  builtInActions:
+  - ActionMechWeaponGiveLMG
 
 - type: mechanoidModel
   id: Meleeslasher
@@ -23,6 +25,8 @@
   subModelName: "-"
   color: "#eaeaea"
   faction: None
+  builtInActions:
+  - ActionMechWeaponGiveSwords
 
 - type: mechanoidModel
   id: Spiderbot
@@ -67,6 +71,8 @@
   subModelName: "-"
   color: "#b7b58c"
   faction: OldMachines
+  builtInActions:
+  - ActionMechWeaponGiveLMG
 
 - type: mechanoidModel
   id: MeleeslasherOM
@@ -74,6 +80,8 @@
   subModelName: "-"
   color: "#b7b58c"
   faction: OldMachines
+  builtInActions:
+  - ActionMechWeaponGiveSwords
 
 - type: mechanoidModel
   id: SpiderbotOM
@@ -89,6 +97,9 @@
   subModelName: "T|P"
   color: "#7f7181"
   faction: OldMachines
+  hasAdds: true
+  builtInActions:
+  - ActionMechTurnVision
 
 - type: mechanoidModel
   id: CarbineOM-P
@@ -96,6 +107,10 @@
   subModelName: "P"
   color: "#7f7181"
   faction: OldMachines
+  hasAdds: true
+  builtInActions:
+  - ActionMechWeaponGiveHMG
+  - ActionMechTurnVision
 
 - type: mechanoidModel
   id: MeleeslasherOM-P
@@ -103,6 +118,10 @@
   subModelName: "P"
   color: "#7f7181"
   faction: OldMachines
+  hasAdds: true
+  builtInActions:
+  - ActionMechWeaponGivePraetorianSwords
+  - ActionMechTurnVision
 
 - type: mechanoidModel
   id: SpiderbotOM-P
@@ -110,3 +129,17 @@
   subModelName: "P"
   color: "#7f7181"
   faction: OldMachines
+  hasAdds: true
+
+# Unique
+
+- type: mechanoidModel
+  id: MeleeslasherWalverde
+  modelName: MLSL
+  subModelName: "W"
+  color: "#7c8864"
+  faction: OldMachines
+  hasAdds: true
+  builtInActions:
+  - ActionMechWeaponGiveWalverdeSwords
+  - ActionMechTurnVision

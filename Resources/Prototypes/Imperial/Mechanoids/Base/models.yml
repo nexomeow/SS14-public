@@ -5,18 +5,43 @@
   name: Urist McFound
   suffix: Mech, Foundation
   components:
-  - type: PowerCellDraw
-    drawRate: 0.4
-    enabled: false
+  - type: Sprite
+    sprite: Imperial/Mechanoids/Base/foundation.rsi
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      80: Critical
+      500: Dead
 
 ## Боевые
-
 - type: entity
   parent: BaseMechanoid
   id: BaseMechanoidCarbine
   name: Urist McCarbine
   suffix: Mech, Carbine
   components:
-  - type: PowerCellDraw
-    drawRate: 0.5
-    enabled: false
+  - type: Sprite
+    sprite: Imperial/Mechanoids/Base/carbine.rsi
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      200: Critical
+      500: Dead
+  - type: Mechanoid
+    modelProto: Carbine
+
+- type: entity
+  parent: BaseMechanoid
+  id: BaseMechanoidMeleeslasher
+  name: Urist McSlasher
+  suffix: Mech, Carbine
+  components:
+  - type: Sprite
+    sprite: Imperial/Mechanoids/Base/meleeslasher.rsi
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      300: Critical
+      500: Dead
+  - type: Mechanoid
+    modelProto: Meleeslasher

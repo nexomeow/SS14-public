@@ -1,0 +1,22 @@
+// Это говно написано нейронкой, потому что явротебал клиентскую часть сс14
+
+uniform sampler2D screen;
+
+void fragment() {
+    vec2 coord = FRAGCOORD.xy / SCREEN_PIXEL_SIZE;
+    vec4 screenColor = texture(screen, coord);
+
+    float brightness = (screenColor.r + screenColor.g + screenColor.b) / 3.0;
+
+    // Шум по всему экрану (используем сумму x и y)
+    float noise = fract(sin(coord.x * 2500.0 + coord.y * 2500.0) * 10000.0);
+
+    float scanline = sin(coord.y * 1200.0) * 0.5 + 0.5;
+    scanline = 0.85 + scanline * 0.15;
+
+    float xmod = 0.95 + sin(coord.x * 100.0) * 0.05;
+
+    float red = (brightness * 0.8 + noise * 0.2) * scanline * xmod;
+
+    COLOR = vec4(red, 0.0, 0.0, 0.3);
+}

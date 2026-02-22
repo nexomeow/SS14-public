@@ -1,0 +1,16 @@
+- type: department
+  id: OldMachines
+  name: department-mechanoid-oldmachines-name
+  description: department-mechanoid-oldmachines-desc
+  color: "#708b2a"
+  roles:
+  - MechanoidJobEngieswarm ##Инжерой
+  - MechanoidJobBlackminers ##Чёрные шахтеры
+  - MechanoidJobTechhunters ##Охотники за технологиями
+  - MechanoidJobSBS ##Рядовой боевой отряд
+  - MechanoidJobAssaultgroup ##Штурмовая группа
+  - MechanoidJobCUP ##Клин-Ап Дивизия
+  - MechanoidJobSpaceswifts ##Космические стрижи
+  - MechanoidJobPraetorians ##Преторианцы
+  editorHidden: false
+  weight: 140

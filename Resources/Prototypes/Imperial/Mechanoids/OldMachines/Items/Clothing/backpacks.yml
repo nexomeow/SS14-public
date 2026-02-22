@@ -1,0 +1,35 @@
+- type: entity
+  parent: ClothingBackpack
+  id: MechPraetorianBackpack
+  name: praetorian backpack
+  suffix: Mech
+  description: Backpack of Walverde elite troops - praetorians.
+  components:
+  - type: Sprite
+    sprite: Imperial/DeadSector/backpacks/ANARC164.rsi
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,11,4
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 0.9
+  - type: HeldSpeedModifier
+
+- type: entity
+  parent: ClothingBackpack
+  id: MechStandartBackpack
+  name: mechanoid standart backpack
+  suffix: Mech
+  description: A standart backpack for military members of the old machines.
+  components:
+  - type: Sprite
+    sprite: Imperial/DeadSector/backpacks/ArmyHikingBackpackDesert.rsi
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,8,3
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 0.9
+  - type: HeldSpeedModifier

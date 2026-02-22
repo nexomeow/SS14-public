@@ -49,25 +49,40 @@
   - type: Sprite
     sprite: Imperial/Mechanoids/Base/foundation.rsi
     layers:
-    - map: [ "enum.HumanoidVisualLayers.Chest" ]
+    - map: [ "enum.MechanoidVisualLayers.Chest" ]
       state: body
-    - map: [ "enum.HumanoidVisualLayers.Head" ]
+    - map: [ "enum.MechanoidVisualLayers.Head" ]
       state: head
-    - map: [ "enum.HumanoidVisualLayers.Eyes" ]
+    - map: [ "enum.MechanoidVisualLayers.Eyes" ]
       state: eyes
-    - map: [ "enum.HumanoidVisualLayers.LLeg" ]
+    - map: [ "enum.MechanoidVisualLayers.LLeg" ]
       state: l_leg
-    - map: [ "enum.HumanoidVisualLayers.RLeg" ]
+    - map: [ "enum.MechanoidVisualLayers.RLeg" ]
       state: r_leg
-    - map: [ "enum.HumanoidVisualLayers.LHand" ]
+    - map: [ "enum.MechanoidVisualLayers.AddsLayer" ]
+    - map: [ "enum.MechanoidVisualLayers.LHand" ]
       state: l_hand
-    - map: [ "enum.HumanoidVisualLayers.RHand" ]
+    - map: [ "enum.MechanoidVisualLayers.RHand" ]
       state: r_hand
+    - map: [ "enum.MechanoidVisualLayers.ChevronLayer" ]
+      state: chevron
     - map: [ "back" ]
     - map: [ "head" ]
+  - type: GenericVisualizer
+    visuals:
+      enum.MechanoidVisualLayers.Adds:
+        enum.MechanoidVisualLayers.AddsLayer:
+          True: { state: adds }
+          False: { state: nothing }
+      enum.MechanoidVisualLayers.Chevron:
+        enum.MechanoidVisualLayers.ChevronLayer:
+          True: { visible: true }
+          False: { visible: false }
   - type: Appearance
   - type: RotationVisuals
     horizontalRotation: 90
+  - type: IdExaminable
+  - type: Identity
   - type: MobState
     allowedStates:
     - Alive
@@ -76,8 +91,8 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      200: Critical
-      250: Dead
+      80: Critical
+      500: Dead
     stateAlertDict:
       Alive: BorgHealth
       Critical: BorgCrit
@@ -98,18 +113,11 @@
         type: StrippableBoundUserInterface
   - type: Inventory
     templateId: mechanoid_humanoid_inv
+  - type: Hands
   - type: ComplexInteraction
+  - type: Strippable
+  - type: Stripping
   - type: IntrinsicRadioReceiver
-#  - type: IntrinsicRadioTransmitter
-#    channels:
-#    - Binary
-#    - Common
-#    - Science
-#  - type: ActiveRadio
-#    channels:
-#    - Binary
-#    - Common
-#    - Science
   - type: ZombieImmune
   - type: Repairable
     doAfterDelay: 10
@@ -117,19 +125,8 @@
   - type: ContainerContainer
     containers:
       borg_brain: !type:ContainerSlot { }
-      cell_slot: !type:ContainerSlot { }
       borg_module: !type:Container { }
       part-container: !type:Container
-  - type: PowerCellSlot
-    cellSlotId: cell_slot
-    fitsInCharger: true
-  - type: PowerCellDraw
-    drawRate: 0.6
-    enabled: false
-  - type: ItemSlots
-    slots:
-      cell_slot:
-        name: power-cell-slot-component-slot-name-default
   - type: Body
     prototype: mechanoid_humanoid_body
   - type: StatusEffects
@@ -143,7 +140,7 @@
   - type: Vocal
     sounds:
       Unsexed: UnisexSilicon
-    wilhelmProbability: 0
+    wilhelmProbability: 0.01
   - type: DamagedSiliconAccent
   - type: UnblockableSpeech
   - type: FootstepModifier
@@ -155,7 +152,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 350
+        damage: 500
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -163,42 +160,8 @@
       - !type:EmptyContainersBehaviour
         containers:
         - borg_brain
-        - borg_module
-        - cell_slot
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: HandheldLight
-    toggleOnInteract: false
-    wattage: 0.2
-    blinkingBehaviourId: blinking
-    radiatingBehaviourId: radiating
-  # These two components are required to make HandheldLight work, even though we don't even have ItemToggle.
-  # The code is a total mess and needs a complete rewrite.
-  - type: ItemTogglePointLight
-  - type: ToggleableVisuals
-    spriteLayer: light
-  - type: LightBehaviour
-    behaviours:
-    - !type:FadeBehaviour
-      id: radiating
-      maxDuration: 2.0
-      startValue: 3.0
-      endValue: 2.0
-      isLooped: true
-      reverseWhenFinished: true
-    - !type:PulseBehaviour
-      id: blinking
-      interpolate: Nearest
-      maxDuration: 1.0
-      startValue: 0.1
-      endValue: 2.0
-      isLooped: true
-  - type: PointLight
-    enabled: false
-    mask: /Textures/Effects/LightMasks/cone.png
-    autoRot: true
-    radius: 4
-    netsync: false
   - type: Pullable
   - type: Puller
     needsHands: false
@@ -215,4 +178,4 @@
   - type: DamageOnInteractProtection
     damageProtection:
       flatReductions:
-        Heat: 10 # capable of touching light bulbs and stoves without feeling pain!
+        Heat: 10

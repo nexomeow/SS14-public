@@ -1,10 +1,29 @@
 using Robust.Shared.GameObjects;
-
-namespace Content.Shared.Imperial.Mechanoids.Other;
-public enum MechanoidFactionEnum
+using Robust.Shared.Serialization;
+namespace Content.Shared.Imperial.Mechanoids.Other
 {
-    None,
-    Strangers,
-    Cluster,
-    OldMachines
+    [Serializable, NetSerializable]
+    public enum MechanoidVisualLayers : byte
+    {
+        Chest,
+        Head,
+        Eyes,
+        RHand,
+        LHand,
+        RLeg,
+        LLeg,
+        Chevron,
+        ChevronLayer,
+        Adds,
+        AddsLayer,
+
+    }
+    [Serializable, NetSerializable]
+    public enum MechanoidFactionEnum
+    {
+        None,
+        Strangers,
+        Cluster,
+        OldMachines
+    }
 }

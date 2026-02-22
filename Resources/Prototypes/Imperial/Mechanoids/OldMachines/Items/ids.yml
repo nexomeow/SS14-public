@@ -1,0 +1,25 @@
+- type: entity
+  parent: IDCardStandard
+  id: MechStandartIDCard
+  name: mechanoid ID card
+  components:
+    - type: Sprite
+      sprite: Imperial/Other/ErtCall/deadsquadCard.rsi
+      layers:
+        - state: blackcard
+        - state: deadsquadID
+    - type: PresetIdCard
+      job: ImperialDeathSquad
+
+- type: entity
+  parent: IDCardStandard
+  id: MechPraetorianIDCard
+  name: praetorian ID card
+  components:
+    - type: Sprite
+      sprite: Imperial/Other/ErtCall/deadsquadCard.rsi
+      layers:
+        - state: blackcard
+        - state: deadsquadID
+    - type: PresetIdCard
+      job: MechanoidJobPraetorians
