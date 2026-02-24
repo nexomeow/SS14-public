@@ -9,7 +9,7 @@ void fragment() {
     float brightness = (screenColor.r + screenColor.g + screenColor.b) / 3.0;
 
     // Шум по всему экрану (используем сумму x и y)
-    float noise = fract(sin(coord.x * 2500.0 + coord.y * 2500.0) * 10000.0);
+    float noise = fract(sin(coord.x * 4000.0 + coord.y * 4000.0) * 10000.0);
 
     float scanline = sin(coord.y * 1200.0) * 0.5 + 0.5;
     scanline = 0.85 + scanline * 0.15;

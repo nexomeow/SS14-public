@@ -1,0 +1,101 @@
+#- type: mechanoidsSquad
+#  id: MechSquadEngieswarm
+#  name: mechanoid-squad-Engieswarm-name
+#  desc: mechanoid-squad-Engieswarm-desc
+#  squadColor: "#ff8800"
+#  staff:
+
+#- type: mechanoidsSquad
+#  id: MechSquadBlackminers
+#  name: mechanoid-squad-Blackminers-name
+#  desc: mechanoid-squad-Blackminers-desc
+#  squadColor: "#4e2900"
+#  staff:
+
+#- type: mechanoidsSquad
+#  id: MechSquadTechhunters
+#  name: mechanoid-squad-techhunters-name
+#  desc: mechanoid-squad-techhunters-desc
+#  squadColor: "#0800ff"
+#  staff:
+
+#- type: mechanoidsSquad
+#  id: MechSquadSBS
+#  name: mechanoid-squad-sbs-name
+#  desc: mechanoid-squad-sbs-desc
+#  squadColor: "#07da00"
+#  staff:
+
+#- type: mechanoidsSquad
+#  id: MechSquadAssaultgroup
+#  name: mechanoid-squad-assaultgroup-name
+#  desc: mechanoid-squad-assaultgroup-desc
+#  squadColor: "#047c00"
+#  staff:
+
+  #Elite
+#- type: mechanoidsSquad
+#  id: MechSquadCUP
+#  name: mechanoid-squad-cup-name
+#  desc: mechanoid-squad-cup-desc
+#  squadColor: "#a7ffa4"
+#  staff:
+
+#- type: mechanoidsSquad
+#  id: MechSquadSpaceswifts
+#  name: mechanoid-squad-spaceswifts-name
+#  desc: mechanoid-squad-spaceswifts-desc
+#  squadColor: "#ff00ff"
+#  staff:
+
+- type: mechanoidsSquad
+  id: MechSquadPraetorians
+  name: mechanoid-squad-praetorians-name
+  desc: mechanoid-squad-praetorians-desc
+  squadColor: "#ca1d1d"
+  componentsToAdd:
+  - type: BriefingOnMinded
+    briefProto: PraetoriansBrief
+  - type: GhostTakeoverAvailable
+  - type: Loadout
+    prototypes: [ MechanoidPraetorianStartingGear ]
+  - type: RandomMetadata
+    nameSegments:
+    - PraetoriansFirst
+    - PraetoriansSecond
+  - type: GhostRole
+    name: mechanoid-ghostrole-praetorians-name
+    description: mechanoid-ghostrole-praetorians-desc
+    rules: mechanoid-ghostrole-praetorians-rules
+    raffle:
+      settings: default
+  - type: CrewSkills
+    skills:
+      - skillBotany #Base
+      - skillBaseMed
+      - skillBaseConstraction
+      - skillCooking  #Easy
+      - skillBartending
+      - skillHacking
+      - skillInstrumentation #Medium
+      - skillMaintenance
+      - skillMediumConstruction
+      - skillMediumBotany
+      - skillBasicAtmos
+      - skillMedicalEquipment
+      - skillPharmacology
+      - skillPiloting #Hard
+      - skillAtmos
+      - skillHardInstrumentation
+      - skillRobotics
+      - skillResearch
+      - skillPharmaceuticals
+      - skillShooting
+      - skillSurgery
+      - skillNeuroSurgery
+  staff:
+  - MechanoidTechbotOM-P
+  - MechanoidCarbineOM-P
+  - MechanoidCarbineOM-P
+  - MechanoidMeleeslasherOM-P
+  - MechanoidMeleeslasherOM-P

@@ -1,0 +1,11 @@
+- type: localizedDataset
+  id: PraetoriansFirst
+  values:
+    prefix: mech-squad-name-praetorians-first-
+    count: 11
+
+- type: localizedDataset
+  id: PraetoriansSecond
+  values:
+    prefix: mech-squad-name-praetorians-second-
+    count: 11

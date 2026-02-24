@@ -2,7 +2,6 @@ using System.Linq;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Prototypes;
 using Content.Shared.Actions;
-using Content.Shared.Humanoid;
 using Content.Shared.Examine;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Imperial.Mechanoids.Other;
@@ -42,8 +41,11 @@ public abstract class SharedMechanoidSystem : EntitySystem
         args.PushMarkup(Loc.GetString("mechanoid-model-examine", ("model", modelProto.ModelName), ("subModel", modelProto.SubModelName)));
     }
     // Методы
-    private void SetSpriteLayers(EntityUid uid, MechanoidComponent mech)
+    public void SetSpriteLayers(EntityUid uid, MechanoidComponent? mech = null)
     {
+        if (!Resolve(uid, ref mech))
+            return;
+
         if (!_proto.TryIndex(mech.Model, out var modelProto)) return;
 
         if (TryComp<AppearanceComponent>(uid, out var appearance))

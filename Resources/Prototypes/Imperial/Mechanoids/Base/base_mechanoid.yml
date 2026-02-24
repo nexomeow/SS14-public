@@ -46,6 +46,7 @@
   - type: MovementSpeedModifier
     baseWalkSpeed : 2.5
     baseSprintSpeed : 4.5
+  - type: Gibbable
   - type: Sprite
     sprite: Imperial/Mechanoids/Base/foundation.rsi
     layers:
@@ -141,7 +142,6 @@
     sounds:
       Unsexed: UnisexSilicon
     wilhelmProbability: 0.01
-  - type: DamagedSiliconAccent
   - type: UnblockableSpeech
   - type: FootstepModifier
     footstepSoundCollection:

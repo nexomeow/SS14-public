@@ -12,6 +12,8 @@
       0: Alive
       80: Critical
       500: Dead
+  - type: Mechanoid
+    modelProto: Foundation
 
 ## Боевые
 - type: entity
@@ -45,3 +47,6 @@
       500: Dead
   - type: Mechanoid
     modelProto: Meleeslasher
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 3
+    baseSprintSpeed : 5

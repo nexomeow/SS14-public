@@ -35,7 +35,7 @@
   color: "#eaeaea"
   faction: None
 
-##Cluster
+## Cluster
 - type: mechanoidModel
   id: TechbotCl
   modelName: FNDT
@@ -43,7 +43,32 @@
   color: "#3F6160"
   faction: Cluster
 
-##Old Machines
+- type: mechanoidModel
+  id: CarbineCl
+  modelName: CRBN
+  subModelName: "-"
+  color: "#3F6160"
+  faction: Cluster
+  builtInActions:
+  - ActionMechWeaponGiveLMG
+
+- type: mechanoidModel
+  id: MeleeslasherCl
+  modelName: MLSL
+  subModelName: "-"
+  color: "#3F6160"
+  faction: Cluster
+  builtInActions:
+  - ActionMechWeaponGiveSwords
+
+- type: mechanoidModel
+  id: SpiderbotCl
+  modelName: SPRB
+  subModelName: "-"
+  color: "#3F6160"
+  faction: Cluster
+
+## Old Machines
 - type: mechanoidModel
   id: TechbotOM
   modelName: FNDT
@@ -132,7 +157,6 @@
   hasAdds: true
 
 # Unique
-
 - type: mechanoidModel
   id: MeleeslasherWalverde
   modelName: MLSL

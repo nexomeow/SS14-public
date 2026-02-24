@@ -1,0 +1,15 @@
+- type: entity
+  parent: MindRoleGhostRoleNeutral
+  id: MindRoleMechanoidStandart
+  name: Ghost Role (Mechanoid)
+  components:
+  - type: MindRole
+    roleType: Silicon
+
+- type: entity
+  parent: MindRoleGhostRoleNeutral
+  id: MindRoleMechanoidPraetorian
+  name: Ghost Role (Praetorian)
+  components:
+  - type: MindRole
+    roleType: Silicon

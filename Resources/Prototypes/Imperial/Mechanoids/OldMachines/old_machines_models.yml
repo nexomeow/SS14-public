@@ -43,6 +43,16 @@
     modelProto: CarbineOM
 
 - type: entity
+  parent: [ BaseMechanoidMeleeslasher, BaseOldMachinesMember ]
+  id: MechanoidMeleeslasherOM
+  suffix: OM, Mech
+  name: UristMc Slasher
+  components:
+  - type: Mechanoid
+    modelProto: MeleeslasherOM
+
+# Praetorians
+- type: entity
   parent: [ BaseMechanoidFoundation, BaseOldMachinesMember ]
   id: MechanoidTechbotOM-P
   suffix: OM, Mech, Praetorian

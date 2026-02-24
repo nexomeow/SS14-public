@@ -1,24 +1,69 @@
 - type: entity
-  parent: MechanoidEngiebotSquadMember-ES
+  parent: MechanoidEngiebotOM
   id: MechanoidCharacterPeeb
   name: Пиб
   suffix: OM, UniqueCharacter
+  components:
+  - type: Mechanoid
+    hasChevron: true
+    chevronColor: "#ff8800"
+  - type: CrewSkills
+    skills:
+      - skillBotany #Base
+      - skillBaseMed
+      - skillBaseConstraction
+      - skillHacking
+      - skillInstrumentation #Medium
+      - skillMaintenance
+      - skillMediumConstruction
+      - skillBasicAtmos
+      - skillPiloting #Hard
+      - skillAtmos
+      - skillHardInstrumentation
+      - skillShooting
+
+#- type: entity
+#  parent: MechanoidCarbineSquadMember-SBS
+#  id: MechanoidCharacterSlatterFin
+#  name: Слаттер-Фин
+#  suffix: OM, UniqueCharacter
 
 - type: entity
-  parent: MechanoidCarbineSquadMember-SBS
-  id: MechanoidCharacterSlatterFin
-  name: Слаттер-Фин
-  suffix: OM, UniqueCharacter
-
-- type: entity
-  parent: MechanoidCarbineSquadMember-P
+  parent: MechanoidCarbineOM-P
   id: MechanoidCharacterChimi
   name: Чими
   suffix: OM, UniqueCharacter
   components:
+  - type: Mechanoid
+    hasChevron: true
+    chevronColor: "#ca0000"
   - type: Grammar
     attributes:
       gender: female ## Девушка механоид внеземной красоты :з
+  - type: CrewSkills
+    skills:
+      - skillBotany #Base
+      - skillBaseMed
+      - skillBaseConstraction
+      - skillCooking  #Easy
+      - skillBartending
+      - skillHacking
+      - skillInstrumentation #Medium
+      - skillMaintenance
+      - skillMediumConstruction
+      - skillMediumBotany
+      - skillBasicAtmos
+      - skillMedicalEquipment
+      - skillPharmacology
+      - skillPiloting #Hard
+      - skillAtmos
+      - skillHardInstrumentation
+      - skillRobotics
+      - skillResearch
+      - skillPharmaceuticals
+      - skillShooting
+      - skillSurgery
+      - skillNeuroSurgery
 
 - type: entity
   parent: MechanoidMeleeslasherOM-P
@@ -30,3 +75,27 @@
     hasChevron: true
     chevronColor: "#f6ff00" ##Шеврон командиров старых машин
     modelProto: MeleeslasherWalverde
+  - type: CrewSkills
+    skills:
+      - skillBotany #Base
+      - skillBaseMed
+      - skillBaseConstraction
+      - skillCooking  #Easy
+      - skillBartending
+      - skillHacking
+      - skillInstrumentation #Medium
+      - skillMaintenance
+      - skillMediumConstruction
+      - skillMediumBotany
+      - skillBasicAtmos
+      - skillMedicalEquipment
+      - skillPharmacology
+      - skillPiloting #Hard
+      - skillAtmos
+      - skillHardInstrumentation
+      - skillRobotics
+      - skillResearch
+      - skillPharmaceuticals
+      - skillShooting
+      - skillSurgery
+      - skillNeuroSurgery
