@@ -27,7 +27,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      200: Critical
+      230: Critical
       500: Dead
   - type: Mechanoid
     modelProto: Carbine
@@ -36,7 +36,7 @@
   parent: BaseMechanoid
   id: BaseMechanoidMeleeslasher
   name: Urist McSlasher
-  suffix: Mech, Carbine
+  suffix: Mech, Meleeslasher
   components:
   - type: Sprite
     sprite: Imperial/Mechanoids/Base/meleeslasher.rsi
@@ -50,3 +50,22 @@
   - type: MovementSpeedModifier
     baseWalkSpeed : 3
     baseSprintSpeed : 5
+
+- type: entity
+  parent: BaseMechanoid
+  id: BaseMechanoidSpiderbot
+  name: Urist McSpider
+  suffix: Mech, Spiderbot
+  components:
+  - type: Sprite
+    sprite: Imperial/Mechanoids/Base/spiderbot.rsi
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      180: Critical
+      500: Dead
+  - type: Mechanoid
+    modelProto: Spiderbot
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 2
+    baseSprintSpeed : 4

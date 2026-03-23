@@ -1,9 +1,44 @@
-#- type: mechanoidsSquad
-#  id: MechSquadEngieswarm
-#  name: mechanoid-squad-Engieswarm-name
-#  desc: mechanoid-squad-Engieswarm-desc
-#  squadColor: "#ff8800"
-#  staff:
+- type: mechanoidsSquad
+  id: MechSquadEngieswarm
+  name: mechanoid-squad-Engieswarm-name
+  desc: mechanoid-squad-Engieswarm-desc
+  squadColor: "#ff8800"
+  componentsToAdd:
+  - type: BriefingOnMinded
+    briefProto: EngiswarmBrief
+  - type: GhostTakeoverAvailable
+  - type: Loadout
+    prototypes: [ MechanoidEngieswarmStartingGear ]
+  - type: RandomMetadata
+    nameSegments:
+    - PraetoriansFirst
+    - PraetoriansSecond
+  - type: GhostRole
+    name: mechanoid-ghostrole-engieswarm-name
+    description: mechanoid-ghostrole-engieswarm-desc
+    rules: mechanoid-ghostrole-engieswarm-rules
+    raffle:
+      settings: default
+  - type: CrewSkills
+    skills:
+      - skillBotany #Base
+      - skillBaseMed
+      - skillBaseConstraction
+      - skillHacking #Easy
+      - skillInstrumentation #Medium
+      - skillMaintenance
+      - skillBasicAtmos
+      - skillPiloting #Hard
+      - skillAtmos
+      - skillHardInstrumentation
+      - skillShooting
+  staff:
+  - MechanoidTechbotOM
+  - MechanoidEngiebotOM
+  - MechanoidEngiebotOM
+  - MechanoidEngiebotOM
+  - MechanoidCarbineOM
+  - MechanoidCarbineOM
 
 #- type: mechanoidsSquad
 #  id: MechSquadBlackminers
@@ -99,3 +134,6 @@
   - MechanoidCarbineOM-P
   - MechanoidMeleeslasherOM-P
   - MechanoidMeleeslasherOM-P
+  - MechanoidSpiderbotOM-P
+  #- MechanoidSentinelOM-P
+  #- MechanoidSentinelOM-P

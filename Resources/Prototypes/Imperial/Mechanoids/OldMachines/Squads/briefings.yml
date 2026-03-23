@@ -1,7 +1,15 @@
 - type: briefing
   id: PraetoriansBrief
   briefText: mind-brifieng-praetorians #Это ваш текст, который игрок получит при вселении в сущность. К сожалению интерполяции тут нет
-  textColor: "#ca1d1d" #Цвет текста
+  textColor: "#7f3975" #Цвет текста
   briefSound:
     path: /Audio/Ambience/Antag/nukeops_start.ogg #Путь к звуку, который будет проигрываться при брифинге
   mindRole: MindRoleMechanoidPraetorian #Роль выдаваемая после брифинга (командный антагонист, альтернативный и т.д.)
+
+- type: briefing
+  id: EngiswarmBrief
+  briefText: mind-brifieng-engieswarm
+  textColor: "#ff8800" #Цвет текста
+  briefSound:
+    path: /Audio/Ambience/Antag/nukeops_start.ogg
+  mindRole: MindRoleMechanoidStandart

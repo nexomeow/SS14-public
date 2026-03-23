@@ -22,12 +22,6 @@
       - skillHardInstrumentation
       - skillShooting
 
-#- type: entity
-#  parent: MechanoidCarbineSquadMember-SBS
-#  id: MechanoidCharacterSlatterFin
-#  name: Слаттер-Фин
-#  suffix: OM, UniqueCharacter
-
 - type: entity
   parent: MechanoidCarbineOM-P
   id: MechanoidCharacterChimi
@@ -75,6 +69,11 @@
     hasChevron: true
     chevronColor: "#f6ff00" ##Шеврон командиров старых машин
     modelProto: MeleeslasherWalverde
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      800: Critical
+      1000: Dead
   - type: CrewSkills
     skills:
       - skillBotany #Base

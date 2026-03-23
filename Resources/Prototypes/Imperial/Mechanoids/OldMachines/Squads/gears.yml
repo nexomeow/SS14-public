@@ -3,11 +3,31 @@
   equipment:
     back: MechStandartBackpack
     id: MechStandartIDCard
-    ears: ClothingHeadsetGrey
-    #pocket1: #SpiderCharge
-    #pocket2: #PinpointerStation
+    ears: ClothingHeadsetOldMachines
+    #pocket1:
+    #pocket2:
   inhand:
     - JetpackBlackFilled
+  storage:
+    back:
+    - Crowbar
+    - Wrench
+    - Screwdriver
+    - Wirecutter
+    - Welder
+    - Multitool
+
+- type: startingGear
+  id: MechanoidEngieswarmStartingGear
+  equipment:
+    back: ClothingBackpackDuffelEngineering
+    id: MechStandartIDCard
+    ears: ClothingHeadsetOldMachines
+    head: ClothingHeadHatHardhatYellow
+    #pocket1:
+    #pocket2:
+  #inhand:
+  #  - JetpackBlackFilled
   storage:
     back:
     - Crowbar
@@ -22,9 +42,9 @@
   equipment:
     back: MechPraetorianBackpack
     id: MechPraetorianIDCard
-    ears: ClothingHeadsetGrey
-    #pocket1: #SpiderCharge
-    #pocket2: #PinpointerStation
+    ears: ClothingHeadsetOldMachines
+    #pocket1:
+    #pocket2:
   inhand:
     - JetpackBlackFilled
   storage:

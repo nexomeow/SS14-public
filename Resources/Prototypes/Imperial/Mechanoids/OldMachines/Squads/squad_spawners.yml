@@ -11,3 +11,17 @@
       - state: icon
   - type: MechSquad
     squadProto: MechSquadPraetorians
+
+- type: entity
+  parent: BaseStructure
+  id: MechSquadSpawnerEngieswarm
+  name: MechSquadSpawnerEngieswarm
+  description: MechSquadSpawnerEngieswarm
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: Imperial/Mechanoids/Items/slasher_swords.rsi
+    layers:
+      - state: icon
+  - type: MechSquad
+    squadProto: MechSquadEngieswarm

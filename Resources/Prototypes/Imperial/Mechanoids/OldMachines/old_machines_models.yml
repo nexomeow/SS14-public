@@ -51,6 +51,15 @@
   - type: Mechanoid
     modelProto: MeleeslasherOM
 
+- type: entity
+  parent: [ BaseMechanoidSpiderbot, BaseOldMachinesMember ]
+  id: MechanoidSpiderbotOM
+  suffix: OM, Mech
+  name: UristMc Spider
+  components:
+  - type: Mechanoid
+    modelProto: SpiderbotOM
+
 # Praetorians
 - type: entity
   parent: [ BaseMechanoidFoundation, BaseOldMachinesMember ]
@@ -77,7 +86,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      400: Critical
+      450: Critical
       500: Dead
 
 - type: entity
@@ -92,4 +101,18 @@
     thresholds:
       0: Alive
       500: Critical
+      650: Dead
+
+- type: entity
+  parent: [ BaseMechanoidSpiderbot, BaseOldMachinesMember ]
+  id: MechanoidSpiderbotOM-P
+  suffix: OM, Mech, Praetorian
+  name: UristMc Spider Praetorian
+  components:
+  - type: Mechanoid
+    modelProto: SpiderbotOM-P
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      380: Critical
       600: Dead
