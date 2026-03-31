@@ -1,0 +1,23 @@
+- type: entity
+  parent: BaseActionPolymorph
+  id: ActionPolymorphBibika
+  name: Вызвать бибику
+  description: Еду по шоссе прям после пивка...
+  components:
+  - type: Action
+    icon:
+      sprite: Imperial/Other/DatFuckenClownChariot/car.rsi
+      state: icon
+  - type: InstantAction
+    event: !type:PolymorphActionEvent
+      protoId: ClownCarPoly
+
+- type: polymorph
+  id: ClownCarPoly
+  configuration:
+    entity: ClownBibika
+    transferName: true
+    inventory: None
+    revertOnDeath: true
+    revertOnCrit: true
+    forced: true

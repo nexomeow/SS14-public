@@ -1,0 +1,65 @@
+- type: entity
+  parent: [ BaseMob, MobDamageable, MobCombat, MobFlammable ]
+  id: ClownBibika
+  name: бибика
+  suffix: Admeme
+  description: Колесницу клоуна не остановить!
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: Imperial/Other/DatFuckenClownChariot/car.rsi
+    layers:
+    - state: clown_car
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 185
+        restitution: 0.0
+        hard: true
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+  - type: CombatMode
+    toggleMouseRotator: false
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      500: Dead
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 300
+      behaviors:
+      - !type:EmptyAllContainersBehaviour
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: Emoting
+  - type: BodyEmotes
+    soundsId: GeneralBodyEmotes
+  - type: Grammar
+    attributes:
+      proper: true
+  - type: MobPrice
+    price: 13
+  - type: Tag
+    tags:
+    - FootstepSound
+    - DoorBumpOpener
+  - type: MovementSpeedModifier
+    baseSprintSpeed: 5
+    baseWalkSpeed: 3
+  - type: Bibika
+  - type: AmbientSound
+    volume: 3
+    range: 10
+    sound:
+      path: /Audio/Imperial/ClownChariot/driving-inma-car.ogg
+  - type: FootstepModifier
+    footstepSoundCollection:
+      path: /Audio/Imperial/ClownChariot/car_sound1.ogg
